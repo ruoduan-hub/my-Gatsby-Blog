@@ -41,7 +41,6 @@ const Bio = () => {
         marginBottom: rhythm(2.5),
       }}
     >
-      <Button>洒大洒大</Button>
       <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author}
@@ -63,6 +62,7 @@ const Bio = () => {
           You should follow him on Twitter
         </a>
       </p>
+      <Button onClick={()=> alert(123)}>antd 测试按钮</Button>
     </div>
   )
 }
