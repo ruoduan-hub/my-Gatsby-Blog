@@ -10,7 +10,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 
 import { rhythm } from "../utils/typography"
-import { Button } from 'antd';
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -62,7 +61,6 @@ const Bio = () => {
           You should follow him on Twitter
         </a>
       </p>
-      <Button onClick={()=> alert(123)}>antd 测试按钮</Button>
     </div>
   )
 }

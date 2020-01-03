@@ -1,13 +1,13 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Nav from '../components/nav'
 
 import { rhythm } from "../utils/typography"
 import './index.css'
+
 
 
 class BlogIndex extends React.Component {
@@ -20,11 +20,10 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
         <Nav />
-        <Bio />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <article key={node.fields.slug}>
+            <article key={node.fields.slug} style={{margin: '2rem 0'}}>
               <header>
                 <h3
                   style={{

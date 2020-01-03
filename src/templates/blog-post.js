@@ -5,6 +5,8 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import { Nav } from 'office-ui-fabric-react/lib/Nav';
+
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -19,6 +21,38 @@ class BlogPostTemplate extends React.Component {
           description={post.frontmatter.description || post.excerpt}
         />
         <article>
+          {/* 导航栏 */}
+            <Nav
+            groups={[
+              {
+                links: [
+                  {
+                    name: 'Menu',
+                    links: [
+                      {
+                        key: 'Home',
+                        name: '首页',
+                        url: '/',
+                        icon:'HomeVerify'
+                      },
+                      {
+                        key: 'Tag',
+                        name: '标签',
+                        url: '/',
+                        icon:'BacklogList'
+                      },
+                      {
+                        key: 'About',
+                        name: '关于我',
+                        url: '/about',
+                        icon:'AccountBrowser'
+                      }
+                    ]
+                  },
+                ]
+              }
+            ]}
+          />
           <header>
             <h1
               style={{
