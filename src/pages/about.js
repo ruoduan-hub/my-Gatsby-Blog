@@ -2,7 +2,6 @@ import React  from 'react'
 import { Skeleton, Card, Icon, Avatar } from 'antd';
 // 导入公共样式
 import { rhythm } from "../utils/typography"
-import { FontSizes } from 'office-ui-fabric-react';
 const { Meta } = Card;
 
 
