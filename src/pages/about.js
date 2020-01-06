@@ -6,7 +6,8 @@ const { Meta } = Card;
 
 
 
-const About = () => {
+const About = (props) => {
+  console.log(props)
   return (
     <>
        <div
@@ -42,3 +43,31 @@ const About = () => {
 
 
 export default About
+
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "YYYY 年 MM 月 DD 日")
+            title
+            description
+            aa
+            tags
+          }
+        }
+      }
+    }
+  }
+`

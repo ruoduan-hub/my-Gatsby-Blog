@@ -6,6 +6,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const tagsIndex = path.resolve(`./src/templates/tags-index.js`)
+
   const result = await graphql(
     `
       {
@@ -20,6 +22,7 @@ exports.createPages = async ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                tags
               }
             }
           }
@@ -32,9 +35,9 @@ exports.createPages = async ({ graphql, actions }) => {
     throw result.errors
   }
 
-  // Create blog posts pages.
+  // 获取md数据
   const posts = result.data.allMarkdownRemark.edges
-
+  // 创建首页
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
@@ -49,6 +52,18 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  // 创建标签过滤后的首页
+  posts.forEach((tags, index) => {
+    createPage({
+      path: `/tags/${tags.node.frontmatter.tags}`,
+      component: tagsIndex,
+      context: {
+        tags: tags.node.frontmatter.tags, // 模版传餐 把标签字段传过去
+      },
+    })
+  })
+
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

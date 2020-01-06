@@ -24,7 +24,7 @@ const Nav = () => {
 
                 <li style={{display: 'flex',flexDirection: 'column'}}>
                     <Icon style={{fontSize: '3rem'}} iconName="BacklogList" />
-                    <CompoundButton style={{width:'6rem'}} secondaryText="Tag ."
+                    <CompoundButton style={{width:'6rem'}} secondaryText="Tags ."
                     onClick={()=> window.location.pathname=`/`}
                     >
                         标签
