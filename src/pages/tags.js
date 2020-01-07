@@ -1,7 +1,7 @@
 import React  from 'react'
 import { Link } from 'gatsby'
 import { Card } from 'antd';
-import { rhythm, } from "../utils/typography"
+import { rhythm, scale} from "../utils/typography"
 import { randomColor } from '../utils/utils'
 import Img from '../components/img'
 import Nav from '../components/nav'
@@ -9,24 +9,31 @@ import './style/tags.css'
 
 
 
+
 const Tags = (props) => {
   let urlData = {}
+  const title = props.data.site.siteMetadata.title
   props.data.allMarkdownRemark.edges.forEach((item => {
     urlData[item.node.frontmatter.tags] = item.node.frontmatter.tags
   }))
-
-  console.log(urlData)
+  const imgStyle = {
+    position: 'relative',
+  }
+  if (Number(document.body.scrollWidth > 768)) {
+    imgStyle.minHeight = '30rem'
+  }
+  console.log(props.data)
 
   return (
     <>
-    <div style={{position: 'relative'}}>
+    <div style={imgStyle}>
       <Img />
       <div style={{
       backgroundColor:'rgba(255,255,255,0.5)',
       position: 'absolute',
       bottom: '0rem',
       width:' 100%',
-      height: 'auto'
+      height: 'auto',
       }}>
         <div style={{
           marginLeft: `auto`,
@@ -36,6 +43,31 @@ const Tags = (props) => {
           <Nav />
         </div>
       </div>
+
+      <h1
+        className="blogName"
+          style={{
+            ...scale(2),
+            marginBottom: rhythm(1.5),
+            marginTop: 0,
+            position: 'absolute',
+            top: '30%',
+            left: '10%',
+            fontSize: '5rem'
+            
+          }}
+        >
+          <Link
+            style={{
+              boxShadow: `none`,
+              textDecoration: `none`,
+              color: `rgba(255,255,255,0.6)`,
+            }}
+            to={`/`}
+          >
+            {title}
+          </Link>
+        </h1>
     </div>
 
     <div className="title" style={{
