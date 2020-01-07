@@ -15,12 +15,11 @@ ul {
     font-family: 'Press Start 2P', cursive !important;
 }
 
-/* .imgaft::after {
-    content: "";
-    height: 100%;
-    width: 100vh;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: url('https://tva1.sinaimg.cn/large/006tNbRwly1gana6b5ogxj31900u0npd.jpg') no-repeat center;
-} */
+.postArticle{
+    padding: 1rem;
+    border-radius: 10px;
+    background: rgba(234, 234, 234, .2);
+}
+.postArticle:hover {
+    box-shadow: -10px 11px 12px 6px #3333;
+}
