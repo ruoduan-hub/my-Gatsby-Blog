@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
-
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
@@ -12,8 +11,9 @@ class Layout extends React.Component {
     if (location.pathname === rootPath) {
       header = (
         <h1
+        className="blogName"
           style={{
-            ...scale(1.5),
+            ...scale(2),
             marginBottom: rhythm(1.5),
             marginTop: 0,
           }}
@@ -33,9 +33,11 @@ class Layout extends React.Component {
     } else {
       header = (
         <h3
+          className="blogName"
           style={{
-            fontFamily: `Montserrat, sans-serif`,
             marginTop: 0,
+            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+            fontSize: '2.5rem'
           }}
         >
           <Link
@@ -56,7 +58,7 @@ class Layout extends React.Component {
         style={{
           marginLeft: `auto`,
           marginRight: `auto`,
-          maxWidth: rhythm(24),
+          maxWidth: rhythm(25),
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >

@@ -4,10 +4,10 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Nav from '../components/nav'
-
+import { randomColor } from '../utils/utils'
 
 import { rhythm } from "../utils/typography"
-import './index.css'
+import './style/index.css'
 
 
 
@@ -31,7 +31,7 @@ class BlogIndex extends React.Component {
                     marginBottom: rhythm(1 / 4),
                   }}
                 >
-                  <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                  <Link style={{ boxShadow: `none`,color: randomColor() }} to={node.fields.slug}>
                     {title}
                   </Link>
                 </h3>

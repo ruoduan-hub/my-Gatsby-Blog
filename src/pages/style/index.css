@@ -1,0 +1,16 @@
+/* 全局样式 */
+@import '~antd/dist/antd.css';
+@import url('https://fonts.googleapis.com/css?family=Black+Ops+One|Bowlby+One+SC|Press+Start+2P&display=swap');
+
+*{
+    list-style: none;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+.blogName {
+    font-family: 'Press Start 2P', cursive !important;
+}

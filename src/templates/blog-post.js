@@ -37,7 +37,7 @@ class BlogPostTemplate extends React.Component {
                       {
                         key: 'Tag',
                         name: '标签',
-                        url: '/',
+                        url: '/tags',
                         icon:'BacklogList'
                       },
                       {
