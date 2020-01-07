@@ -26,7 +26,7 @@ const Tags = (props) => {
 
   return (
     <>
-    <div style={imgStyle}>
+    <div className="tagsImg" style={imgStyle}>
       <Img />
       <div style={{
       backgroundColor:'rgba(255,255,255,0.5)',

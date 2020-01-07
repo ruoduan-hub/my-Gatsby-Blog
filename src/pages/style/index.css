@@ -31,3 +31,9 @@ ul {
     background-size: 100% 100%;
     background-attachment: fixed;
 }
+.tagsImg{
+    background: url(../../../content/assets/7026.jpg) no-repeat center top;background-size: 100%;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+}
