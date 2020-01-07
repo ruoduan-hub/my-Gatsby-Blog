@@ -18,6 +18,7 @@ class BlogIndex extends React.Component {
     const posts = data.allMarkdownRemark.edges
     console.log(this.props)
     return (
+      <div className="bg">
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
         <Nav />
@@ -48,6 +49,7 @@ class BlogIndex extends React.Component {
           )
         })}
       </Layout>
+      </div>
     )
   }
 }
