@@ -14,5 +14,10 @@ const randomImg = {
 	baidu: 'http://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1' //（必应返回JSON数据，具体百度
 }
 
+// 打开网页
+const openPage = (uri) => {
+	window.open(uri)
+}
 
-export { randomColor, randomImg }
+
+export { randomColor, randomImg, openPage}

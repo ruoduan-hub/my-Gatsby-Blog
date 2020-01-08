@@ -1,11 +1,28 @@
 module.exports = {
+  // 设置个人信息
   siteMetadata: {
     title: `Ruoduan' Blog`,
-    author: `朱若端`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    author: `Ruoduan`,
+    description: `我的介绍...`,
+    siteUrl: `https://github.com/Chad97`,
     social: {
-      twitter: `kylemathews`,
+      github: `https://github.com/Chad97`,
+      zhihu: `https://www.zhihu.com/people/ruoduan/activities`,
+      weibo: `https://weibo.com/p/1005055024868417`,
+      email: 'z.ruoduan@gmail.com',
+      twitter: `xxx`,
+      aboutLike:[
+        'Coding', '音乐', '吉他', '民谣','游戏'
+      ],
+      skill: [
+        'web 前端开发工程师，Vue👌React👌Python👌Linux👌',
+        '尝试过 ReactNative 处于兴趣，一个人写感觉好累，不过确实能快速迭代开发app',
+        '不会python的前端不是好产品经理，各种数据库咯～ Nodejs 长时间不用 忘了大半',
+        '代码洁癖 对脏代码 0 容忍, review — 喷子',
+        'Nginx、Linux、当然是部署我的各种blog和项目咯，喜欢折腾 Docker + Pythonn 真香',
+        'switch 塞尔达爆肝 ～, LOL 下水道 ___',
+        '噢～， 对了 Gatsby + Graphql 他香爆拉～'
+      ]
     },
   },
   plugins: [

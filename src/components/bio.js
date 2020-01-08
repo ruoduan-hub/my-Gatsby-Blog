@@ -55,10 +55,11 @@ const Bio = () => {
       {
         isShow?
       <div style={{display: 'flex',justifyContent: 'center',flexDirection: 'column'}}>
+        <p style={{fontFamily: 'Ma Shan Zheng,cursive',fontSize: '1rem'}}> 如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作! </p>
         <ButtonGroup style={{margin: '2rem 0'}}>
           <Button onClick={() => setQrcode(data.wechat.childImageSharp.fixed)} style={{backgroundColor: '#24AA39',borderColor:"#24AA39"}} color="red" type="primary">
             <Icon type="wechat" />
-            微信
+            微&nbsp;&nbsp;&nbsp;&nbsp;信 
             </Button>
           <Button onClick={() => setQrcode(data.alipay.childImageSharp.fixed)} style={{backgroundColor: '#039AE3',borderColor:"#039AE3"}} type="primary">
             支付宝
