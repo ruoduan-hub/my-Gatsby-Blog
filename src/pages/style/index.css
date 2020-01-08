@@ -30,10 +30,16 @@ ul {
     height: 100%;
     background-size: 100% 100%;
     background-attachment: fixed;
+    min-height: 100vh;
 }
 .tagsImg{
     background: url(../../../content/assets/7026.jpg) no-repeat center top;background-size: 100%;
     width: 100%;
     height: 100%;
     background-size: 100% 100%;
+}
+
+.nextText {
+    font-size: 1rem;
+    font-family: 'Black Ops One', cursive;
 }

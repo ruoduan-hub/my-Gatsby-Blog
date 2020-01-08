@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
+import { randomColor } from '../utils/utils'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Nav from '../components/nav'
@@ -19,20 +19,21 @@ class TagsIndex extends React.Component {
     console.log(this.props)
     
     return (
+      <div className="bg">
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
         <Nav />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <article key={node.fields.slug} style={{margin: '2rem 0'}}>
+            <article className="postArticle" key={node.fields.slug} style={{margin: '2rem 0'}}>
               <header>
                 <h3
                   style={{
                     marginBottom: rhythm(1 / 4),
                   }}
                 >
-                  <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                  <Link style={{ boxShadow: `none`,color: randomColor() }} to={node.fields.slug}>
                     {title}
                   </Link>
                 </h3>
@@ -49,6 +50,7 @@ class TagsIndex extends React.Component {
           )
         })}
       </Layout>
+      </div>
     )
   }
 }

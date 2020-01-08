@@ -5,18 +5,26 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
+import { Button, Icon } from 'antd'
+const ButtonGroup = Button.Group;
 
-import { rhythm } from "../utils/typography"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+      wechat: file(absolutePath: { regex: "/wechatImage.jpg/" }) {
         childImageSharp {
-          fixed(width: 50, height: 50) {
+          fixed {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      alipay: file(absolutePath: { regex: "/alipayImage.jpg/" }) {
+        childImageSharp {
+          fixed {
             ...GatsbyImageSharpFixed
           }
         }
@@ -31,37 +39,48 @@ const Bio = () => {
       }
     }
   `)
-
-  const { author, social } = data.site.siteMetadata
+  let [isShow, setShow] = useState(false)
+  let [qrcode, setQrcode] = useState(data.wechat.childImageSharp.fixed)
   return (
+    <>
+      <Button onClick={() => setShow(!isShow) } icon="qrcode">打赏支持</Button>
+    
     <div
-      style={{
-        display: `flex`,
-        marginBottom: rhythm(2.5),
-      }}
+    style={{
+      margin: '2rem 0',
+      display: 'flex',
+    }}
     >
-      <Image
-        fixed={data.avatar.childImageSharp.fixed}
-        alt={author}
-        style={{
-          marginRight: rhythm(1 / 2),
-          marginBottom: 0,
-          minWidth: 50,
-          borderRadius: `100%`,
-        }}
-        imgStyle={{
-          borderRadius: `50%`,
-        }}
-      />
-      <p>
-        Written by <strong>{author}</strong> who lives and works in San
-        Francisco building useful things.
-        {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
-        </a>
-      </p>
+      
+      {
+        isShow?
+      <div style={{display: 'flex',justifyContent: 'center',flexDirection: 'column'}}>
+        <ButtonGroup style={{margin: '2rem 0'}}>
+          <Button onClick={() => setQrcode(data.wechat.childImageSharp.fixed)} style={{backgroundColor: '#24AA39',borderColor:"#24AA39"}} color="red" type="primary">
+            <Icon type="wechat" />
+            微信
+            </Button>
+          <Button onClick={() => setQrcode(data.alipay.childImageSharp.fixed)} style={{backgroundColor: '#039AE3',borderColor:"#039AE3"}} type="primary">
+            支付宝
+            <Icon type="alipay" />
+          </Button>
+        </ButtonGroup>
+
+        <div>
+            <Image
+              fixed={qrcode}
+              style={{
+                maxHeight: '30rem',
+              }}
+              
+          />
+        </div>
+      </div>
+      : null
+      }
+      
     </div>
+    </>
   )
 }
 

@@ -8,9 +8,11 @@ const { Meta } = Card;
 
 const About = (props) => {
   console.log(props)
+  
   return (
     <>
        <div
+       className="btn"
        style={{
         marginLeft: `auto`,
         marginRight: `auto`,
