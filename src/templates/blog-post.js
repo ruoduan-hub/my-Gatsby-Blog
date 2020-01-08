@@ -5,7 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
-import { Nav } from 'office-ui-fabric-react/lib/Nav';
+import MyNav from '../components/nav'
 import { Icon } from 'antd'
 
 class BlogPostTemplate extends React.Component {
@@ -20,38 +20,7 @@ class BlogPostTemplate extends React.Component {
           description={post.frontmatter.description || post.excerpt}
         />
         <article>
-          {/* 导航栏 */}
-            <Nav
-            groups={[
-              {
-                links: [
-                  {
-                    name: 'Menu',
-                    links: [
-                      {
-                        key: 'Home',
-                        name: '首页',
-                        url: '/',
-                        icon:'HomeVerify'
-                      },
-                      {
-                        key: 'Tag',
-                        name: '标签',
-                        url: '/tags',
-                        icon:'BacklogList'
-                      },
-                      {
-                        key: 'About',
-                        name: '关于我',
-                        url: '/about',
-                        icon:'AccountBrowser'
-                      }
-                    ]
-                  },
-                ]
-              }
-            ]}
-          />
+          <MyNav small={true} />
           <header>
             <h1
               style={{

@@ -4,7 +4,7 @@ import { Card } from 'antd';
 import { rhythm, scale} from "../utils/typography"
 import { randomColor } from '../utils/utils'
 import Img from '../components/img'
-import Nav from '../components/nav'
+import MyNav from '../components/nav'
 import './style/tags.css'
 
 
@@ -40,7 +40,7 @@ const Tags = (props) => {
           marginRight: `auto`,
           maxWidth: rhythm(40),
           } }>
-          <Nav />
+          <MyNav />
         </div>
       </div>
 

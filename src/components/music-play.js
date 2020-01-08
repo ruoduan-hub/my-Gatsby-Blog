@@ -6,7 +6,11 @@ const MusicPlay = (props) => {
         console.log('onPlay');
     }
     return (
-        <div>
+        <div style={{
+            position: 'absolute',
+            right: '5rem',
+            top: '0'
+        }}>
             <Cplayer 
                 onPlay={onPlay}
                 playlist={[

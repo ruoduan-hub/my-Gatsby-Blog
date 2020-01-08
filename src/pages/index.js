@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Nav from '../components/nav'
+import MyNav from '../components/nav'
 import { randomColor } from '../utils/utils'
 
 import { rhythm } from "../utils/typography"
@@ -21,7 +21,7 @@ class BlogIndex extends React.Component {
       <div className="bg">
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
-        <Nav />
+        <MyNav />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (

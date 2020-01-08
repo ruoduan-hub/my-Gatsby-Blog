@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import { randomColor } from '../utils/utils'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Nav from '../components/nav'
+import MyNav from '../components/nav'
 
 
 import { rhythm } from "../utils/typography"
@@ -22,7 +22,7 @@ class TagsIndex extends React.Component {
       <div className="bg">
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
-        <Nav />
+        <MyNav />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (

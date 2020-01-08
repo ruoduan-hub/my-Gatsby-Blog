@@ -1,34 +1,58 @@
-import React  from 'react'
+import React, {useState}  from 'react'
 import MusicPlay from '../components/music-play'
-import { Card, Icon, Avatar, Descriptions, Row, Col, Tag, List, Divider } from 'antd';
+import MyNav from '../components/nav'
+import { Card, Icon, Avatar, Descriptions, Row, Col, Tag, List, Divider, Drawer, Button } from 'antd';
 // 导入公共样式
 import { rhythm } from "../utils/typography"
 import { openPage, randomColor } from '../utils/utils'
 const { Meta } = Card;
 
 
-
-
 const About = (props) => {
   console.log(props)
   const {author, description} = props.data.site.siteMetadata
   const { github, zhihu, weibo, email, aboutLike, skill } = props.data.site.siteMetadata.social
+  // 抽屉状态
+  let [visible, setVisible] = useState(false)
   
+  const showDrawer = () => {
+    setVisible(true)
+  };
+
+  const onClose = () => {
+    setVisible(false)
+  };
+
   return (
     <>
-      <div className="leftController">
-        <MusicPlay />
-      </div>
-
       <div className="about"
        style={{
         marginLeft: `auto`,
         marginRight: `auto`,
         maxWidth: rhythm(40),
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        display: 'flex'
+        position:'relative',
       }}
        >
+         {/* 左侧抽屉菜单 */}
+        <div className="leftController">
+          <Button type="primary" onClick={showDrawer}>
+            Menu
+          </Button>
+          <Drawer
+            placement="left"
+            closable={false}
+            onClose={onClose}
+            visible={visible}
+          >
+            <MyNav small={true} />
+            <p>Some contents...</p>
+            <p>Some contents...</p>
+          </Drawer>
+      </div>
+
+      <MusicPlay />
+
       <Row>
       <Col xs={24} sm={24} md={8} lg={8} xl={8}>
         <div className="aboutCard">
