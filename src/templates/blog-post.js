@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
+import Comment from '../components/comment'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
@@ -14,6 +15,7 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
     return (
+      <>
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title={post.frontmatter.title}
@@ -79,6 +81,10 @@ class BlogPostTemplate extends React.Component {
           </ul>
         </nav>
       </Layout>
+
+      <Comment path={this.props.path} />
+      </>
+      
     )
   }
 }

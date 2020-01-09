@@ -65,9 +65,9 @@ class Layout extends React.Component {
         <header>{header}</header>
         <main>{children}</main>
         <footer>
+          {/* TODO 授权文字 */}
           © {new Date().getFullYear()}, Built with
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
       </div>
     )

@@ -1,17 +1,15 @@
 // 导航栏组件
 import React from "react"
-import { CompoundButton } from 'office-ui-fabric-react/lib/Button';
-import { Nav } from 'office-ui-fabric-react/lib/Nav';
-import { Icon } from 'office-ui-fabric-react/lib/Icon';
+import { Icon } from 'antd'
+import { Nav, } from 'office-ui-fabric-react'
 // 引入图标
 import { initializeIcons } from '@uifabric/icons';
 initializeIcons();
 
 
 const MyNav = (props) => {
-    
-    {
-        if (props.small) {
+  {
+        if (props.small && typeof window !== 'undefined' && true) {
             return (<>
             {/* 导航栏 */}
             <Nav
@@ -48,32 +46,23 @@ const MyNav = (props) => {
             </>)
         } else {
             return (<>
-            <ul style={{display: 'flex',justifyContent:'space-between'}}>
+            <ul style={{display: 'flex',justifyContent:'space-between', height: '2rem'}}>
                 <li style={{display: 'flex',flexDirection: 'column'}} >
-                    <Icon style={{fontSize: '3rem'}} iconName="HomeVerify" />
-                    <CompoundButton style={{width:'6rem'}} secondaryText="Home Blog ." 
-                    onClick={()=> window.location.pathname=`/`}
-                    >
-                        首页
-                    </CompoundButton>  
+                    <Icon style={{fontSize: '3rem', marginBottom: '1rem'}} type="home"
+                      onClick={() => window.location.pathname = '/'}
+                    />
                 </li>
 
                 <li style={{display: 'flex',flexDirection: 'column'}}>
-                    <Icon style={{fontSize: '3rem'}} iconName="BacklogList" />
-                    <CompoundButton style={{width:'6rem'}} secondaryText="Tags ."
-                    onClick={()=> window.location.pathname=`/tags`}
-                    >
-                        标签
-                        </CompoundButton>
+                    <Icon style={{fontSize: '3rem', marginBottom: '1rem'}} type="unordered-list"
+                      onClick={() => window.location.pathname = '/tags'}
+                    />
                 </li>
 
                 <li style={{display: 'flex',flexDirection: 'column'}}>
-                    <Icon style={{fontSize: '3rem'}} iconName="AccountBrowser" />
-                    <CompoundButton style={{width:'6rem'}} secondaryText="About ."
-                    onClick={()=> window.location.pathname=`/about/`}
-                    >
-                    作者
-                    </CompoundButton>
+                    <Icon style={{fontSize: '3rem', marginBottom: '1rem'}} type="user" 
+                      onClick={() => window.location.pathname = '/about'}
+                    />
                 </li>
             </ul>
             <br />

@@ -1,10 +1,11 @@
 import React  from 'react'
 import { Link } from 'gatsby'
-import { Card } from 'antd';
+import { Card, Row, Col } from 'antd';
 import { rhythm, scale} from "../utils/typography"
 import { randomColor } from '../utils/utils'
 import Img from '../components/img'
 import MyNav from '../components/nav'
+import Comment from '../components/comment'
 import './style/tags.css'
 
 
@@ -18,12 +19,9 @@ const Tags = (props) => {
   }))
   const imgStyle = {
     position: 'relative',
-  }
-  if (Number(document.body.scrollWidth > 768)) {
-    imgStyle.minHeight = '30rem'
+    minHeight: '30rem'
   }
   console.log(props.data)
-
   return (
     <>
     <div className="tagsImg" style={imgStyle}>
@@ -38,7 +36,8 @@ const Tags = (props) => {
         <div style={{
           marginLeft: `auto`,
           marginRight: `auto`,
-          maxWidth: rhythm(40),
+          maxWidth: rhythm(30),
+          padding: '1rem 0'
           } }>
           <MyNav />
         </div>
@@ -79,20 +78,37 @@ const Tags = (props) => {
         
 
         <Card title="Click on the tab to jump to the corresponding article">
-          {
-            Object.keys(urlData).map((key) =>
-            <Card.Grid style={{
-              width: Number(document.body.clientWidth) < 768?'50%':'25%' ,
-              minHeight: '3em',
-              textAlign: 'center',
-              fontSize: '20px'  
-            }}>
-              <Link style={{color: randomColor(), width:'%100',height:'100%' }} to={`/tags/${key}`}>{key}</Link>
-            </Card.Grid>
-            )
-          }
+            <Row>
+              <Col md={24} xs={0} >
+                {Object.keys(urlData).map((key) =>
+                  <Card.Grid key={key} style={{
+                    width: '25%' ,
+                    minHeight: '3em',
+                    textAlign: 'center',
+                    fontSize: '20px'  
+                  }}>
+                    <Link style={{color: randomColor(), width:'%100',height:'100%' }} to={`/tags/${key}`}>{key}</Link>
+                  </Card.Grid>
+                )}
+              </Col>
+              <Col  md={0} xs={24}>
+                {Object.keys(urlData).map((key) =>
+                  <Card.Grid key={key} style={{
+                    width: '50%' ,
+                    minHeight: '3em',
+                    textAlign: 'center',
+                    fontSize: '20px'  
+                  }}>
+                    <Link style={{color: randomColor(), width:'%100',height:'100%' }} to={`/tags/${key}`}>{key}</Link>
+                  </Card.Grid>
+                )}
+              </Col>
+            </Row>
+            
         </Card>
         </div>
+
+        <Comment path={props.path} />
     </>
   )
 }

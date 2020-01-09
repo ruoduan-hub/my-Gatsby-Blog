@@ -1,7 +1,8 @@
 import React, {useState}  from 'react'
 import MusicPlay from '../components/music-play'
 import MyNav from '../components/nav'
-import { Card, Icon, Avatar, Descriptions, Row, Col, Tag, List, Divider, Drawer, Button } from 'antd';
+import Comment from '../components/comment'
+import { Card, Icon, Avatar, Descriptions, Row, Col, Tag, List, Divider, Drawer,  } from 'antd';
 // 导入公共样式
 import { rhythm } from "../utils/typography"
 import { openPage, randomColor } from '../utils/utils'
@@ -9,7 +10,7 @@ const { Meta } = Card;
 
 
 const About = (props) => {
-  console.log(props)
+  
   const {author, description} = props.data.site.siteMetadata
   const { github, zhihu, weibo, email, aboutLike, skill } = props.data.site.siteMetadata.social
   // 抽屉状态
@@ -36,9 +37,12 @@ const About = (props) => {
        >
          {/* 左侧抽屉菜单 */}
         <div className="leftController">
-          <Button type="primary" onClick={showDrawer}>
+          {/* <Button type="primary" onClick={showDrawer}>
             Menu
-          </Button>
+          </Button> */}
+          <span style={{padding: '1rem',position: 'relative',top:'-1rem'}}>
+          <Icon style={{fontSize: '2rem'}} onClick={showDrawer} type="windows" theme="filled" />
+          </span>
           <Drawer
             placement="left"
             closable={false}
@@ -46,8 +50,8 @@ const About = (props) => {
             visible={visible}
           >
             <MyNav small={true} />
-            <p>Some contents...</p>
-            <p>Some contents...</p>
+            <p>还没想好要放什么 ...</p>
+            <p> ...</p>
           </Drawer>
       </div>
 
@@ -112,6 +116,8 @@ const About = (props) => {
       </Row>
       </div>
       <Divider />
+
+      <Comment path={props.path} />
     </>
   )
 }
