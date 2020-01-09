@@ -8,8 +8,8 @@ const Comment = (props) => {
     console.log(props)
     useEffect(() => {
         let gitalk = new Gitalk({
-            clientID: 'fad2bb575a7f7c6bd704',
-            clientSecret: '57f5ef5bb1704102ec4474ad83b524c2a4d14462',
+            clientID: props.gitalkConfig.clientID, // github api
+            clientSecret: props.gitalkConfig.clientSecret, // github api
             repo: 'GatsbtBlogCommentStore',
             owner: 'chad97',
             admin: ['chad97'],

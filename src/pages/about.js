@@ -10,9 +10,10 @@ const { Meta } = Card;
 
 
 const About = (props) => {
-  
+  console.log(props, 'aa')
   const {author, description} = props.data.site.siteMetadata
   const { github, zhihu, weibo, email, aboutLike, skill } = props.data.site.siteMetadata.social
+  const { gitalkConfig } = props.data.site.siteMetadata
   // 抽屉状态
   let [visible, setVisible] = useState(false)
   
@@ -117,7 +118,7 @@ const About = (props) => {
       </div>
       <Divider />
 
-      <Comment path={props.path} />
+      <Comment gitalkConfig={gitalkConfig} path={props.path} />
     </>
   )
 }
@@ -133,6 +134,10 @@ export const pageQuery = graphql`
         title
         author
         description
+        gitalkConfig {
+          clientID
+          clientSecret
+        }
         social {
           github
           zhihu
