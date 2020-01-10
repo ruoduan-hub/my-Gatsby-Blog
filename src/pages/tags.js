@@ -19,7 +19,8 @@ const Tags = (props) => {
   }))
   const imgStyle = {
     position: 'relative',
-    minHeight: '30rem'
+    minHeight: '30rem',
+    overflow: 'hidden'
   }
   console.log(props.data)
   return (
@@ -79,7 +80,7 @@ const Tags = (props) => {
 
         <Card title="Click on the tab to jump to the corresponding article">
             <Row>
-              <Col md={24} xs={0} >
+              <Col md={24} sm={0} xs={0} >
                 {Object.keys(urlData).map((key) =>
                   <Card.Grid key={key} style={{
                     width: '25%' ,
@@ -91,7 +92,7 @@ const Tags = (props) => {
                   </Card.Grid>
                 )}
               </Col>
-              <Col  md={0} xs={24}>
+              <Col  md={0} sm={24} xs={24}>
                 {Object.keys(urlData).map((key) =>
                   <Card.Grid key={key} style={{
                     width: '50%' ,
@@ -108,7 +109,7 @@ const Tags = (props) => {
         </Card>
         </div>
 
-        <Comment gitalkConfig={props.data.site.siteMetadata.gitalkConfig} path={props.path} />
+    <Comment gitalkConfig={props.data.site.siteMetadata.gitalkConfig} path={props.path} />
     </>
   )
 }
