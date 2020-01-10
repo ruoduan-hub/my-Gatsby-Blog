@@ -139,7 +139,6 @@ export const pageQuery = graphql`
             date(formatString: "YYYY 年 MM 月 DD 日 HH:MM:SS")
             title
             tags
-            comments
             categories
           }
         }
