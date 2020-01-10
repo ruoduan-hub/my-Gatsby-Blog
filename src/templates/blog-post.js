@@ -82,7 +82,7 @@ class BlogPostTemplate extends React.Component {
         </nav>
       </Layout>
 
-      <Comment path={this.props.path} />
+      <Comment gitalkConfig={this.props.data.site.siteMetadata.gitalkConfig} path={this.props.path} />
       </>
       
     )
@@ -96,6 +96,10 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        gitalkConfig {
+          clientID
+          clientSecret
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -103,9 +107,11 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       html
       frontmatter {
-        title
-        date(formatString: "MMMM DD, YYYY")
-        description
+        date(formatString: "YYYY 年 MM 月 DD 日")
+            title
+            tags
+            comments
+            categories
       }
     }
   }

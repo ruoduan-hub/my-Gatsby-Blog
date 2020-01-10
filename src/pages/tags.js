@@ -108,7 +108,7 @@ const Tags = (props) => {
         </Card>
         </div>
 
-        <Comment path={props.path} />
+        <Comment gitalkConfig={props.data.site.siteMetadata.gitalkConfig} path={props.path} />
     </>
   )
 }
@@ -122,6 +122,10 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        gitalkConfig {
+          clientID
+          clientSecret
+        }
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
@@ -132,11 +136,11 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "YYYY 年 MM 月 DD 日")
+            date(formatString: "YYYY 年 MM 月 DD 日 HH:MM:SS")
             title
-            description
-            aa
             tags
+            comments
+            categories
           }
         }
       }
