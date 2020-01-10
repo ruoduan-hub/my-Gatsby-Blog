@@ -4,13 +4,13 @@
 
 
 ### 插件 🔥
-- add gatsby-remark-vscode // 代码高亮插件
-- add antd // 蚂蚁金服框架
-- add typography-theme-github // Typography.js主题
-- add office-ui-fabric-react // 微软的极简UI框架
-- add gitalk //基于github开源评论系统
-- add react-cplayer // react 音乐播放器
-- add spark-md5 // 十六进制md5 为comment 系统 提供不超过50位的 主键
+- gatsby-remark-vscode // 代码高亮插件
+- antd // 蚂蚁金服框架
+- typography-theme-github // Typography.js主题
+- office-ui-fabric-react // 微软的极简UI框架
+- gitalk //基于github开源评论系统
+- react-cplayer // react 音乐播放器
+- spark-md5 // 十六进制md5 为comment 系统 提供不超过50位的 主键
 - netlify-cms-app // netlify 自动化发布部署
 
 
