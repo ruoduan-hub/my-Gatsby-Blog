@@ -64,9 +64,9 @@ class Layout extends React.Component {
       >
         <header>{header}</header>
         <main>{children}</main>
-        <footer>
+        <footer style={{color:'#333'}}>
           {/* TODO 授权文字 */}
-          © {new Date().getFullYear()}, Built with
+          © {new Date().getFullYear()}, 滇ICP备19003866号 本网站版权归本站作者Ruoduan所有
           {` `}
         </footer>
       </div>
