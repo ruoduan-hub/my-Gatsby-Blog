@@ -6,8 +6,8 @@ module.exports = {
     description: `我的介绍...`,
     siteUrl: `https://github.com/Chad97`,
     gitalkConfig:{//github api
-      clientID: '672e3a12cf7a8d397d04',
-      clientSecret: 'ef27b0862d6b12e80c3f5c0d44526fd8ed965b2'
+      clientID: 'fad2bb575a7f7c6bd704',
+      clientSecret: '57f5ef5bb1704102ec4474ad83b524c2a4d14462'
     },
     social: {
       github: `https://github.com/Chad97`,
