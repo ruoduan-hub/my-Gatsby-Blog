@@ -3,9 +3,6 @@ import { Row, Col } from 'antd'
 
 
 const MusicPlay = (props) => {
-    const onPlay = () => {
-        console.log('onPlay');
-    }
     return (
         <Row>
         <Col xs={0} md={24}>
