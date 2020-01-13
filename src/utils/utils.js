@@ -1,3 +1,6 @@
+import sha1 from 'js-sha1'
+import md5 from 'js-md5'
+
 // 生成随机颜色
 const randomColor = () => {
     let r = Math.floor(Math.random()*256);
@@ -19,5 +22,24 @@ const openPage = (uri) => {
 	window.open(uri)
 }
 
+const produceMusicListKey = () => {
+	let date = new Date()
+	let Y = date.getFullYear()
+	let M = String(date.getMonth()+ 1).length > 1 ? String(date.getMonth()+ 1): '0' + String(date.getMonth()+ 1)
+	let D = date.getDate()
+	let H = date.getHours()
 
-export { randomColor, randomImg, openPage}
+	const $key = '523077333';
+	const key = md5(md5($key)+ sha1(String(Y + M + D + H)))
+	return key
+}
+
+// https://www.tjit.net/107.html
+const getwyMusicListUrl = () => { 
+	let key = produceMusicListKey()
+	let listID = '2656366432'
+	let address = `https://api88.net/api/netease/?key=${key}&cache=1&type=songlist&id=${listID}`
+	return address
+}
+
+export { randomColor, randomImg, openPage, getwyMusicListUrl}

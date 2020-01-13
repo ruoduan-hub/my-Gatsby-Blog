@@ -78,18 +78,18 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
 }
-
-exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
-  if (stage === "build-html") {
-    actions.setWebpackConfig({
-      module: {
-        rules: [
-          {
-            test: /react-cplayer/,
-            use: loaders.null(),
-          },
-        ],
-      },
-    })
-  }
-}
+// 用到全局 window 等 要在这里声明
+// exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+//   if (stage === "build-html") {
+//     actions.setWebpackConfig({
+//       module: {
+//         rules: [
+//           {
+//             test: /react-cplayer/,
+//             use: loaders.null(),
+//           },
+//         ],
+//       },
+//     })
+//   }
+// }
