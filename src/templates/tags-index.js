@@ -21,7 +21,7 @@ class TagsIndex extends React.Component {
     return (
       <div className="bg">
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="All posts" />
+        <SEO title="Tags posts" />
         <MyNav />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug

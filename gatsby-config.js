@@ -5,6 +5,7 @@ module.exports = {
     author: `Ruoduan`,
     description: `我的介绍...`,
     siteUrl: `https://github.com/Chad97`,
+    keywords: 'react, 前端, python, js, ',
     gitalkConfig:{//github api
       clientID: '0dd4bb9091d53a67d59a',
       clientSecret: '300d27b2a629b6ccfd197abecbf67774f3f9ddbb'

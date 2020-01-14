@@ -1,4 +1,5 @@
 import React, {useState}  from 'react'
+import SEO from '../components/seo'
 import MusicPlay from '../components/music-play'
 import MyNav from '../components/nav'
 import Comment from '../components/comment'
@@ -35,6 +36,7 @@ const About = (props) => {
         position:'relative',
       }}
        >
+         <SEO title="作者信息" description="若端blog，作者信息" />
          {/* 左侧抽屉菜单 */}
         <div className="leftController">
           {/* <Button type="primary" onClick={showDrawer}>

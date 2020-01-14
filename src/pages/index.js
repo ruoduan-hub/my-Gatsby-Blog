@@ -19,7 +19,7 @@ class BlogIndex extends React.Component {
     return (
       <div className="bg">
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="All posts" />
+        <SEO title="所有文章" description="若端blog，所有文章" />
         <MyNav />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug

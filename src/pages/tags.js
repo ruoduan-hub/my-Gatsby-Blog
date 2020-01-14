@@ -1,5 +1,6 @@
 import React  from 'react'
 import { Link } from 'gatsby'
+import SEO from '../components/seo'
 import { Card, Row, Col } from 'antd';
 import { rhythm, scale} from "../utils/typography"
 import { randomColor } from '../utils/utils'
@@ -26,6 +27,7 @@ const Tags = (props) => {
   return (
     <>
     <div className="tagsImg" style={imgStyle}>
+    <SEO title="标签页面" description="若端blog，标签页面" />
       <Img />
       <div style={{
       backgroundColor:'rgba(255,255,255,0.5)',
