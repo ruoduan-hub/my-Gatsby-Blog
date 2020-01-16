@@ -1,8 +1,8 @@
 ---
 title: 我的BLOG_V-2.0发布了
 date: 2020-01-09
-tags: Hello
-categories: 《Hello》
+tags: 记
+categories: 记
 ---
 
 > V1 是hexo 搭建 ，从hexo ==> Gatsby
