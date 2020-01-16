@@ -66,16 +66,17 @@ class BlogPostTemplate extends React.Component {
             }}
           >
             <li>
-              {previous && (
-                <Link className="nextText" to={previous.fields.slug} rel="prev">
-                  <Icon type="double-left" /> {previous.frontmatter.title}
+              {next && (
+                <Link className="nextText" to={next.fields.slug} rel="next">
+                  <Icon type="double-left" />{next.frontmatter.title}
                 </Link>
               )}
             </li>
+
             <li>
-              {next && (
-                <Link className="nextText" to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} <Icon type="double-right" />
+              {previous && (
+                <Link className="nextText" to={previous.fields.slug} rel="prev">
+                   {previous.frontmatter.title} <Icon type="double-right" />
                 </Link>
               )}
             </li>

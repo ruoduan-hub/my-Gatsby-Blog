@@ -37,7 +37,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // 获取md数据
   const posts = result.data.allMarkdownRemark.edges
-  // 创建首页
+  // 创建详情页
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
