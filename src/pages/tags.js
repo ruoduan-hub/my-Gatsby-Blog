@@ -139,7 +139,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "YYYY 年 MM 月 DD 日 HH:MM:SS")
+            date(formatString: "YYYY 年 MM 月 DD 日")
             title
             tags
             categories
