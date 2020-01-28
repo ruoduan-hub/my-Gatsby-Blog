@@ -8,7 +8,7 @@ initializeIcons();
 
 
 const MyNav = (props) => {
-  {
+  
         if (props.small && typeof window !== 'undefined' && true) {
             return (<>
             {/* 导航栏 */}
@@ -70,7 +70,7 @@ const MyNav = (props) => {
             
             </>)
         }
-    }
+    
 }
 
 

@@ -13,7 +13,7 @@ categories: 记
 
 ### README
 
-<img src="./mylogo.jpg" alt="logo" style="zoom:50%;" />
+<img src="./mylogo.png" alt="logo" style="zoom:50%;" />
 
 
 
