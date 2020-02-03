@@ -22,7 +22,7 @@ categories: web-other
 ## Graph
 大致流程是这样的：👇
 
-![webHooks自动化部署](https://user-gold-cdn.xitu.io/2020/1/11/16f95015a03df388?w=776&h=386&f=png&s=39181)
+![webHooks自动化部署](./webhooks自动化部署/img1.jpeg)
 
 
 - 话不多说直接上代码 代码分为三个部分
@@ -102,7 +102,7 @@ echo "build 完成"
 
 放一张图吧
 
-![ithub Settings](https://user-gold-cdn.xitu.io/2020/1/11/16f950dc192b15ff?w=1950&h=1262&f=png&s=239066)
+![github Settings](./webhooks自动化部署/img2.jpeg)
 
 
 ### start 
