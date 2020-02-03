@@ -22,7 +22,7 @@ categories: web-other
 ## Graph
 大致流程是这样的：👇
 
-![webHooks自动化部署](./webhooks自动化部署/img1.jpeg)
+![webHooks自动化部署](./webhooks自动化部署/img1.png)
 
 
 - 话不多说直接上代码 代码分为三个部分
