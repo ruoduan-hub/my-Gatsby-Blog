@@ -1,8 +1,8 @@
 ---
 title: React-router嵌套路由传值(render和children)
 date: 2019-04-16
-tags: 《React》
-categories: 《React》
+tags: React
+categories: React
 ---
 
 

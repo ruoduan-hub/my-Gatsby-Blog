@@ -1,8 +1,8 @@
 ---
 title: React-Native 打包Android.APK
 date: 2019-06-17
-tags: 《React》
-categories: 《React》
+tags: React
+categories: React
 ---
 
 

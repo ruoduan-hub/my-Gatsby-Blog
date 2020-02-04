@@ -1,8 +1,8 @@
 ---
 title: React-Redux
 date: 2019-04-25
-tags: 《React》
-categories: 《React》
+tags: React
+categories: React
 ---
 
 
