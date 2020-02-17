@@ -57,8 +57,6 @@ const About = (props) => {
           </Drawer>
       </div>
 
-      <MusicPlay />
-
       <Row>
       <Col xs={24} sm={24} md={8} lg={8} xl={8}>
         <div className="aboutCard">
@@ -118,7 +116,7 @@ const About = (props) => {
       </Row>
       </div>
       <Divider />
-
+      <MusicPlay />
       <Comment gitalkConfig={gitalkConfig} path={props.path} />
     </>
   )

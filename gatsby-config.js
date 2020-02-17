@@ -27,6 +27,33 @@ module.exports = {
         'Nginx、Linux、当然是部署我的各种blog和项目咯，折腾 Docker + Python 真香（ps:为了抢张春节高铁票～）',
         'switch 塞尔达爆肝 ～, LOL 下水道 ___',
         '噢～， 对了 Gatsby + Graphql 它香爆拉～'
+      ],
+      myMusicList: [
+        {
+          src: '../music/玫瑰.mp3',
+          title: '玫瑰 - ruoduan .cover 贰佰',
+          description: ''
+        },
+        {
+          src: '../music/忽然2.0.mp3',
+          title: '忽然 - ruoduan	.cover 李志',
+          description: ''
+        },
+        {
+          src: '../music/纸短情长.mp3',
+          title: '纸短情长（粗糙版）- ruoduan	.cover 烟把儿',
+          description: ''
+        },
+        {
+          src: '../music/南山南.m4a',
+          title: '南山南 - ruoduan （指弹）   .cover 马頔',
+          description: ''
+        },
+        {
+          src: '../music/告白气球.m4a',
+          title: '告白气球 - ruoduan （指弹）   .cover 周杰伦',
+          description: ''
+        },
       ]
     },
   },
