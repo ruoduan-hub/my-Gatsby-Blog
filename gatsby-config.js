@@ -32,27 +32,27 @@ module.exports = {
         {
           src: '../music/玫瑰.mp3',
           title: '玫瑰 - ruoduan .cover 贰佰',
-          description: ''
+          description: '玫瑰你在哪里，你说你爱过的人都已经离去。'
         },
         {
           src: '../music/忽然2.0.mp3',
           title: '忽然 - ruoduan	.cover 李志',
-          description: ''
+          description: '幻想朝西的生活  幻想着你被害怕定格的角落最后，我一个人就越走越孤单'
         },
         {
           src: '../music/纸短情长.mp3',
           title: '纸短情长（粗糙版）- ruoduan	.cover 烟把儿',
-          description: ''
+          description: '岁月无法停留，流云的等候'
         },
         {
           src: '../music/南山南.m4a',
           title: '南山南 - ruoduan （指弹）   .cover 马頔',
-          description: ''
+          description: '他不再和谁谈论相逢的孤岛，因为心里早已荒无人烟'
         },
         {
           src: '../music/告白气球.m4a',
           title: '告白气球 - ruoduan （指弹）   .cover 周杰伦',
-          description: ''
+          description: '我手一杯，品尝你的美，留下唇印的嘴'
         },
       ]
     },
