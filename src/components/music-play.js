@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 import { List, Card, Icon } from 'antd';
 import { rhythm } from "../utils/typography"
@@ -14,6 +14,18 @@ const MusicPlay = (props) => {
             setShow('none')
         }
     }
+
+    const keyDownClose = () => {
+      document.onkeydown = (e) => {
+        if (Number(e.keyCode) === 27) {
+          setShow('none')
+        }
+      }
+    }
+
+    useEffect(() =>
+      typeof window !== 'undefined' && keyDownClose()
+   , [])
 
     const music = useStaticQuery(graphql`
     query music {
@@ -41,11 +53,12 @@ const MusicPlay = (props) => {
             position:'relative',
           }}
         >
-        <div onClick={actionShow} 
+        {/* eslint-disable */}
+        <div  role="button" onClick={actionShow} 
         style={{fontSize: '3rem',fontFamily: 'Black Ops One', cursor:'pointer', margin:'1rem'}}
          >
             <Icon  type="play-circle" />
-            <span  >My Guitar Song</span>
+            <span>My Guitar Song</span>
         </div>
 
         <div id="player" className="player"
