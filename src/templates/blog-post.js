@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { BackTop } from 'antd';
 
 import Bio from "../components/bio"
 import Comment from '../components/comment'
@@ -16,6 +17,7 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext
     return (
       <>
+      <BackTop visibilityHeight={800} />
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title={post.frontmatter.title}
