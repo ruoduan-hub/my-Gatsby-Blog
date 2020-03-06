@@ -11,13 +11,51 @@ import MyNav from '../components/nav'
 import { Icon } from 'antd'
 
 class BlogPostTemplate extends React.Component {
+  constructor(){
+    super()
+    this.state = {
+      eyeModel :{
+        background: null
+      },
+    }
+  }
+  
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
+
+    // 护眼模式 func
+    const changeEye = () => {
+      if (!this.state.eyeModel.background){
+        this.setState({
+          eyeModel: {background: '#E3EDCD'}
+        })
+      } else {
+        this.setState({
+          eyeModel: {background: false}
+        })
+      }
+    }
+
     return (
       <>
+      <div style={this.state.eyeModel} id="main">
       <BackTop visibilityHeight={800} />
+      <div id="eyeModel" style={{
+        position: 'fixed',
+        right: '3rem',
+        bottom: '10rem',
+        zIndex: 99
+      }} >
+        {
+          this.state.eyeModel.background ? 
+          <Icon onClick={changeEye} style={{fontSize: '3rem'}} type="eye-invisible" /> 
+          :
+          <Icon onClick={changeEye} style={{fontSize: '3rem'}} type="eye" />
+          
+        }
+      </div>
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title={post.frontmatter.title}
@@ -87,8 +125,8 @@ class BlogPostTemplate extends React.Component {
       </Layout>
 
       <Comment gitalkConfig={this.props.data.site.siteMetadata.gitalkConfig} path={this.props.path} />
+      </div>
       </>
-      
     )
   }
 }
