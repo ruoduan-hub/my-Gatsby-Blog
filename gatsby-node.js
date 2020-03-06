@@ -79,17 +79,50 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 // 用到全局 window 等 要在这里声明
-// exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
-//   if (stage === "build-html") {
-//     actions.setWebpackConfig({
-//       module: {
-//         rules: [
-//           {
-//             test: /react-cplayer/,
-//             use: loaders.null(),
-//           },
-//         ],
-//       },
-//     })
-//   }
-// }
+exports.onCreateWebpackConfig = ({ getConfig, stage, actions, plugins, loaders}) => {
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /react-cplayer/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
+
+  if (stage === "build-javascript") {
+    const currentConfig = getConfig()
+
+    // sanity check so we don't access undefined
+    if (
+      currentConfig.optimization &&
+      currentConfig.optimization.minimizer &&
+      currentConfig.optimization.minimizer.length
+    ) {
+      // replace instance of TerserPlugin with new one with custom options
+      currentConfig.optimization.minimizer = currentConfig.optimization.minimizer.map(
+        plugin => {
+          if (plugin.constructor.name !== `TerserPlugin`) {
+            return plugin
+          }
+
+          return plugins.minifyJs({
+            terserOptions: {
+              compress: {
+                // ecma: 5,
+                // pure_funcs: [`console.log`],
+                drop_console: true,
+              },
+            },
+          })
+        }
+      )
+
+      actions.replaceWebpackConfig(currentConfig)
+    }
+  }
+
+}
