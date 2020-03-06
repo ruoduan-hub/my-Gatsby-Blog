@@ -109,6 +109,6 @@ echo "build 完成"
 - typeof window !== 'undefined' && <Cplayer />
 > 组件中使用了 window 全局对象，build 时会报错，处理方式 判断window来渲染组件
 
-- 删除 public 文件后 或者删除又恢复等 差不多等操作 进行`gatsby develop`会出现静态资源报错等现象
+- 删除 public 文件后 或者删除又恢复等 差不多等操作 进行`gatsby develop && build`会出现静态资源404等现象 .
 > 这是因为 Gatsby等构建是基于 .cach 来构建的。public 被删除后会出现构建生产不一致的情况 ，出现这种情况 删除 .cach 重新构建一遍
 
