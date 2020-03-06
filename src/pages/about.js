@@ -4,7 +4,8 @@ import SEO from '../components/seo'
 import MusicPlay from '../components/music-play'
 import MyNav from '../components/nav'
 import Comment from '../components/comment'
-import { Card, Icon, Avatar, Descriptions, Row, Col, Tag, List, Divider, Drawer,  } from 'antd';
+import { GithubOutlined, WeiboOutlined, WindowsFilled, ZhihuOutlined } from '@ant-design/icons';
+import { Card, Avatar, Descriptions, Row, Col, Tag, List, Divider, Drawer } from 'antd';
 // 导入公共样式
 import { rhythm } from "../utils/typography"
 import { openPage, randomColor } from '../utils/utils'
@@ -26,101 +27,99 @@ const About = (props) => {
     setVisible(false)
   };
 
-  return (
-    <>
-      <div className="about"
-       style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(40),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        position:'relative',
-      }}
-       >
-         <SEO title="作者信息" description="若端blog，作者信息" />
-         {/* 左侧抽屉菜单 */}
-        <div className="leftController">
-          {/* <Button type="primary" onClick={showDrawer}>
-            Menu
-          </Button> */}
-          <span style={{padding: '1rem',position: 'relative',top:'-1rem'}}>
-          <Icon style={{fontSize: '2rem'}} onClick={showDrawer} type="windows" theme="filled" />
-          </span>
-          <Drawer
-            placement="left"
-            closable={false}
-            onClose={onClose}
-            visible={visible}
-          >
-            <MyNav small={true} />
-            <p>还没想好要放什么 ...</p>
-            <p> ...</p>
-          </Drawer>
-      </div>
+  return <>
+    <div className="about"
+     style={{
+      marginLeft: `auto`,
+      marginRight: `auto`,
+      maxWidth: rhythm(40),
+      padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+      position:'relative',
+    }}
+     >
+       <SEO title="作者信息" description="若端blog，作者信息" />
+       {/* 左侧抽屉菜单 */}
+      <div className="leftController">
+        {/* <Button type="primary" onClick={showDrawer}>
+          Menu
+        </Button> */}
+        <span style={{padding: '1rem',position: 'relative',top:'-1rem'}}>
+        <WindowsFilled style={{fontSize: '2rem'}} onClick={showDrawer} />
+        </span>
+        <Drawer
+          placement="left"
+          closable={false}
+          onClose={onClose}
+          visible={visible}
+        >
+          <MyNav small={true} />
+          <p>还没想好要放什么 ...</p>
+          <p> ...</p>
+        </Drawer>
+    </div>
 
-      <Row>
-      <Col xs={24} sm={24} md={8} lg={8} xl={8}>
-        <div className="aboutCard">
-          <Card
-            cover={
-              <img
-                alt="me"
-                srcSet={props.data.about.childImageSharp.fixed.srcSet}
-              />
-            }
-            actions={[
-              <Icon onClick={() => openPage(github)} style={{fontSize:'2rem'}} type="github" key="setting" />,
-              <Icon onClick={() => openPage(zhihu)} style={{fontSize:'2rem'}} type="zhihu" key="edit" />,
-              <Icon onClick={() => openPage(weibo)} style={{fontSize:'2rem'}} type="weibo" key="ellipsis" />,
-            ]}
-          >
-            <Meta
-              avatar={<Avatar src={props.data.about.childImageSharp.fixed.src} />}
-              title={author}
-              description={description}
+    <Row>
+    <Col xs={24} sm={24} md={8} lg={8} xl={8}>
+      <div className="aboutCard">
+        <Card
+          cover={
+            <img
+              alt="me"
+              srcSet={props.data.about.childImageSharp.fixed.srcSet}
             />
-          </Card>
-         </div>
-      </Col>
+          }
+          actions={[
+            <GithubOutlined onClick={() => openPage(github)} style={{fontSize:'2rem'}} key="setting" />,
+            <ZhihuOutlined onClick={() => openPage(zhihu)} style={{fontSize:'2rem'}} key="edit" />,
+            <WeiboOutlined onClick={() => openPage(weibo)} style={{fontSize:'2rem'}} key="ellipsis" />,
+          ]}
+        >
+          <Meta
+            avatar={<Avatar src={props.data.about.childImageSharp.fixed.src} />}
+            title={author}
+            description={description}
+          />
+        </Card>
+       </div>
+    </Col>
 
-      <Col xs={24} sm={24} md={15} lg={15} xl={15}>
-        <div className="aboutInfo" style={{margin: '0 2rem'}}>
-          <Descriptions title="关于我">
-          <Descriptions.Item label="About">{author}</Descriptions.Item>
-            <Descriptions.Item label="Live">Hangzhou</Descriptions.Item>
-            <Descriptions.Item label="Job">Develop Web .</Descriptions.Item>
-            <Descriptions.Item label="E-mail">{email}</Descriptions.Item>
-            <Descriptions.Item span={2} label="我中意你啊">
-              {
-                aboutLike.map(item => 
-                <Tag key={item} color={randomColor()}>{item}</Tag>  
-                )
-              }
-            </Descriptions.Item>
+    <Col xs={24} sm={24} md={15} lg={15} xl={15}>
+      <div className="aboutInfo" style={{margin: '0 2rem'}}>
+        <Descriptions title="关于我">
+        <Descriptions.Item label="About">{author}</Descriptions.Item>
+          <Descriptions.Item label="Live">Hangzhou</Descriptions.Item>
+          <Descriptions.Item label="Job">Develop Web .</Descriptions.Item>
+          <Descriptions.Item label="E-mail">{email}</Descriptions.Item>
+          <Descriptions.Item span={2} label="我中意你啊">
+            {
+              aboutLike.map(item => 
+              <Tag key={item} color={randomColor()}>{item}</Tag>  
+              )
+            }
+          </Descriptions.Item>
 
-            <Row>
-              <Col xs={0} md={24}>
-                <Descriptions.Item >
-                  <List
-                    size="small"
-                    bordered
-                    dataSource={skill}
-                    renderItem={item => <List.Item>{item}</List.Item>}
-                  />
-                </Descriptions.Item>
-              </Col>
-            </Row>
-            
-        </Descriptions>
-        </div>
-      </Col>
-      </Row>
+          <Row>
+            <Col xs={0} md={24}>
+              <Descriptions.Item >
+                <List
+                  size="small"
+                  bordered
+                  dataSource={skill}
+                  renderItem={item => <List.Item>{item}</List.Item>}
+                />
+              </Descriptions.Item>
+            </Col>
+          </Row>
+          
+      </Descriptions>
       </div>
-      <Divider />
-      <MusicPlay />
-      <Comment gitalkConfig={gitalkConfig} path={props.path} />
-    </>
-  )
+    </Col>
+    </Row>
+    </div>
+    <Divider />
+    <MusicPlay />
+    <Comment gitalkConfig={gitalkConfig} path={props.path} />
+  </>;
 }
 
 

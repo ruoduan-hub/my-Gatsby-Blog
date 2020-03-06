@@ -1,6 +1,6 @@
 // 导航栏组件
 import React from "react"
-import { Icon } from 'antd'
+import { HomeOutlined, UnorderedListOutlined, UserOutlined } from '@ant-design/icons';
 import { Nav, } from 'office-ui-fabric-react'
 // 引入图标
 import { initializeIcons } from '@uifabric/icons';
@@ -45,30 +45,30 @@ const MyNav = (props) => {
             />
             </>)
         } else {
-            return (<>
+            return <>
             <ul style={{display: 'flex',justifyContent:'space-between', height: '2rem'}}>
                 <li style={{display: 'flex',flexDirection: 'column'}} >
-                    <Icon style={{fontSize: '3rem', marginBottom: '1rem'}} type="home"
-                      onClick={() => window.location.pathname = '/'}
-                    />
+                    <HomeOutlined
+                      style={{fontSize: '3rem', marginBottom: '1rem'}}
+                      onClick={() => window.location.pathname = '/'} />
                 </li>
 
                 <li style={{display: 'flex',flexDirection: 'column'}}>
-                    <Icon style={{fontSize: '3rem', marginBottom: '1rem'}} type="unordered-list"
-                      onClick={() => window.location.pathname = '/tags'}
-                    />
+                    <UnorderedListOutlined
+                      style={{fontSize: '3rem', marginBottom: '1rem'}}
+                      onClick={() => window.location.pathname = '/tags'} />
                 </li>
 
                 <li style={{display: 'flex',flexDirection: 'column'}}>
-                    <Icon style={{fontSize: '3rem', marginBottom: '1rem'}} type="user" 
-                      onClick={() => window.location.pathname = '/about'}
-                    />
+                    <UserOutlined
+                      style={{fontSize: '3rem', marginBottom: '1rem'}}
+                      onClick={() => window.location.pathname = '/about'} />
                 </li>
             </ul>
             <br />
             <hr />
             
-            </>)
+            </>;
         }
     
 }
