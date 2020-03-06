@@ -1,4 +1,5 @@
 import React, {useState}  from 'react'
+import { graphql } from 'gatsby'
 import SEO from '../components/seo'
 import MusicPlay from '../components/music-play'
 import MyNav from '../components/nav'

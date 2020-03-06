@@ -1,5 +1,5 @@
 import React  from 'react'
-import { Link } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import SEO from '../components/seo'
 import { Card, Row, Col } from 'antd';
 import { rhythm, scale} from "../utils/typography"
