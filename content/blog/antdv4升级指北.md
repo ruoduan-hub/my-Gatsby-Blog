@@ -31,18 +31,15 @@ categories: 《记》
 `yarn upgrade-interactive --latest`
 > 空格键选择，a 键切换所有，i 键反选选择
 
-
-- 开始升级
-```shell
+### 开始升级
+``` shell
 # 通过 npx 直接运行
 npx -p @ant-design/codemod-v4 antd4-codemod src
-
 # 或者全局安装
 # 使用 npm
 npm i -g @ant-design/codemod-v4
 # 或者使用 yarn
 yarn global add @ant-design/codemod-v4
-
 # 运行
 antd4-codemod src
 ```
