@@ -201,7 +201,7 @@ const createStore = (reducer) => {
 };
 ```
 
-![redux flow](./react-redux/redux.png)
+![redux flow](react-redux/redux.png)
 
 - 放一个简单的计数器案例
 ```js
