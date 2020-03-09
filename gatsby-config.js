@@ -20,13 +20,12 @@ module.exports = {
         'Coding', '音乐', '吉他', '民谣','游戏'
       ],
       skill: [
-        'web 前端开发工程师，Vue👌React👌Python👌Linux👌',
-        '尝试过 ReactNative 出于兴趣，个人开发的话感觉好累，不过确实能快速迭代开发app',
-        '不会python的前端不是好产品经理，会各种数据库的使用咯～ Nodejs 长时间不用 忘了大半',
-        '代码洁癖 对脏代码 0 容忍, review — 喷子',
-        'Nginx、Linux、当然是部署我的各种blog和项目咯，折腾 Docker + Python 真香（ps:为了抢张春节高铁票～）',
-        'switch 塞尔达爆肝 ～, LOL 下水道 ___',
-        '噢～， 对了 Gatsby + Graphql 它香爆拉～'
+        'Web前端开发工程师，Vue👌React👌Python👌Linux👌',
+        '尝试过 ReactNative 出于兴趣，个人开发的话感觉好累，不过确实能快速迭代开发App',
+        'ES5｜6｜7 |... 、 Typescript 、Nodejs, 关注并实践社区新提案',
+        'Nginx、Linux、当然是部署我的各种项目咯，折腾 Docker + Python 真香（ps:为了抢张春节高铁票～）',
+        '噢～， 对了 Gatsby + Graphql 它香爆啦～',
+        '想了解更多，欢迎发邮件给我吧 =_='
       ],
       myMusicList: [
         {
