@@ -6085,6 +6085,11 @@ gatsby-page-utils@^0.0.39:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
+gatsby-plugin-baidu-analytics@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.npm.taobao.org/gatsby-plugin-baidu-analytics/download/gatsby-plugin-baidu-analytics-2.2.0.tgz#d8b4653d6f1ef9a2243ae0028b2ffdf592ee50e9"
+  integrity sha1-2LRlPW8e+aIkOuACiy/99ZLuUOk=
+
 gatsby-plugin-feed@^2.3.27:
   version "2.3.27"
   resolved "https://registry.npm.taobao.org/gatsby-plugin-feed/download/gatsby-plugin-feed-2.3.27.tgz#c3dd793bb22d62563687350adfd7cedbd84d826b"

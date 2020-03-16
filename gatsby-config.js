@@ -144,6 +144,15 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: `gatsby-plugin-baidu-analytics`,
+      options: {
+        // 百度统计站点ID https://tongji.baidu.com/
+        siteId: "703da8aa602582927b9e3d44ea467963",
+        // 配置统计脚本插入位置，默认值为 false, 表示插入到 body 中, 为 true 时插入脚本到 head 中
+        head: false,
+      }
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
