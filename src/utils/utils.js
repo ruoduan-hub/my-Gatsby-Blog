@@ -42,4 +42,22 @@ const getwyMusicListUrl = () => {
 	return address
 }
 
-export { randomColor, randomImg, openPage, getwyMusicListUrl}
+// 百度自动提交
+const autoBaiduSubmit =  () => {
+
+	if (typeof window === "undefined") {
+		return false
+	}
+	let bp = document.createElement('script');
+    let curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+	s.parentNode.insertBefore(bp, s);
+}
+
+export { randomColor, randomImg, openPage, getwyMusicListUrl, autoBaiduSubmit}

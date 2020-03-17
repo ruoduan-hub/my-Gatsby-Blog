@@ -9,6 +9,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import MyNav from '../components/nav'
+import { autoBaiduSubmit } from "../utils/utils"
 
 class BlogPostTemplate extends React.Component {
   constructor(){
@@ -19,7 +20,9 @@ class BlogPostTemplate extends React.Component {
       },
     }
   }
-  
+  componentDidMount () {
+    autoBaiduSubmit()
+  }
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title

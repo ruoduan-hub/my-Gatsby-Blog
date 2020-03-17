@@ -4,7 +4,7 @@ import { randomColor } from '../utils/utils'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import MyNav from '../components/nav'
-
+import { autoBaiduSubmit } from "../utils/utils"
 
 import { rhythm } from "../utils/typography"
 
@@ -12,12 +12,17 @@ import { rhythm } from "../utils/typography"
 
 
 class TagsIndex extends React.Component {
+
+  componentDidMount() {
+    autoBaiduSubmit()
+  }
+
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
     console.log(this.props)
-    
+
     return (
       <div className="bg">
       <Layout location={this.props.location} title={siteTitle}>

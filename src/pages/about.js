@@ -1,9 +1,10 @@
-import React, {useState}  from 'react'
+import React, {useState, useEffect}  from 'react'
 import { graphql } from 'gatsby'
 import SEO from '../components/seo'
 import MusicPlay from '../components/music-play'
 import MyNav from '../components/nav'
 import Comment from '../components/comment'
+import { autoBaiduSubmit } from "../utils/utils"
 import { GithubOutlined, WeiboOutlined, WindowsFilled, ZhihuOutlined } from '@ant-design/icons';
 import { Card, Avatar, Descriptions, Row, Col, Tag, List, Divider, Drawer } from 'antd';
 // 导入公共样式
@@ -26,6 +27,10 @@ const About = (props) => {
   const onClose = () => {
     setVisible(false)
   };
+
+  useEffect(() => {
+    autoBaiduSubmit()
+  }, [])
 
   return <>
     <div className="about"

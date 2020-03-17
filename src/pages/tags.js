@@ -1,4 +1,4 @@
-import React  from 'react'
+import React, {useEffect}  from 'react'
 import { graphql, Link } from 'gatsby'
 import SEO from '../components/seo'
 import { Card, Row, Col } from 'antd';
@@ -7,6 +7,7 @@ import { randomColor } from '../utils/utils'
 import Img from '../components/img'
 import MyNav from '../components/nav'
 import Comment from '../components/comment'
+import { autoBaiduSubmit } from "../utils/utils"
 import './style/tags.css'
 
 
@@ -24,6 +25,11 @@ const Tags = (props) => {
     overflow: 'hidden'
   }
   console.log(props.data)
+
+  useEffect(() => {
+    autoBaiduSubmit()
+  }, [])
+
   return (
     <>
     <div className="tagsImg" style={imgStyle}>

@@ -3,8 +3,13 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { autoBaiduSubmit } from "../utils/utils"
 
 class NotFoundPage extends React.Component {
+  componentDidMount() {
+    autoBaiduSubmit()
+  }
+
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title

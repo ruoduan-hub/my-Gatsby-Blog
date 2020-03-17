@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import MyNav from '../components/nav'
 import { randomColor } from '../utils/utils'
+import { autoBaiduSubmit } from "../utils/utils"
 
 import { rhythm } from "../utils/typography"
 import './style/index.css'
@@ -11,6 +12,10 @@ import './style/index.css'
 
 
 class BlogIndex extends React.Component {
+  componentDidMount() {
+    autoBaiduSubmit()
+  }
+
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
