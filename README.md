@@ -14,6 +14,10 @@
 - netlify-cms-app // netlify 自动化发布部署
 - gatsby-plugin-baidu-analytics // 百度统计插件
 
+### other
+- 百度云统计: `https://tongji.baidu.com/`
+- 百度链接提交: autoBaiduSubmit,
+
 ### 自动化部署
 > 服务器 Nodejs 利用Github的Webhook功能来完成
 - Nodejs 
