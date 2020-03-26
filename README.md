@@ -17,6 +17,13 @@
 ### other
 - 百度云统计: `https://tongji.baidu.com/`
 - 百度链接提交: autoBaiduSubmit,
+```
+百度链接提交入口 http://zhanzhang.baidu.com/linksubmit/url
+Google网站登录口：https://www.google.com/webmasters/tools/submit-url
+360搜索引擎登录入口：http://info.so.360.cn/site_submit.html
+搜狗网站收录提交入口:http://www.sogou.com/feedback/urlfeedback.php
+必应网站提交登录入口：http://www.bing.com/toolbox/submit-site-url
+```
 
 ### 自动化部署
 > 服务器 Nodejs 利用Github的Webhook功能来完成
