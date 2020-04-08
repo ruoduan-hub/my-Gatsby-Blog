@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { DoubleLeftOutlined, DoubleRightOutlined, EyeInvisibleOutlined, EyeOutlined } from '@ant-design/icons';
+import { DoubleLeftOutlined, DoubleRightOutlined, EyeInvisibleOutlined, EyeOutlined,ProfileFilled } from '@ant-design/icons';
 import { BackTop } from 'antd';
 
 import Bio from "../components/bio"
@@ -10,6 +10,8 @@ import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import MyNav from '../components/nav'
 import { autoBaiduSubmit } from "../utils/utils"
+import WithDrawer from '../components/drawer'
+import Toc from '../components/toc'
 
 class BlogPostTemplate extends React.Component {
   constructor(){
@@ -42,6 +44,11 @@ class BlogPostTemplate extends React.Component {
     }
 
     return <>
+    <WithDrawer 
+    data={<Toc tocHtml={this.props.data.markdownRemark.tableOfContents}/>}
+    button={<ProfileFilled  style={{fontSize: '2rem'}} />}
+    />
+    
     <div style={this.state.eyeModel} id="main">
     <BackTop visibilityHeight={800} />
     <div id="eyeModel" style={{
@@ -77,7 +84,7 @@ class BlogPostTemplate extends React.Component {
           </h1>
           <p
             style={{
-              ...scale(-1 / 5),
+              ...scale(1 / 5),
               display: `block`,
               marginBottom: rhythm(1),
             }}
@@ -149,6 +156,7 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      tableOfContents
       frontmatter {
         date(formatString: "YYYY 年 MM 月 DD 日")
         title

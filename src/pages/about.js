@@ -1,12 +1,13 @@
-import React, {useState, useEffect}  from 'react'
+import React, {useEffect}  from 'react'
 import { graphql } from 'gatsby'
 import SEO from '../components/seo'
 import MusicPlay from '../components/music-play'
 import MyNav from '../components/nav'
 import Comment from '../components/comment'
+import WithDrawer from '../components/drawer'
 import { autoBaiduSubmit } from "../utils/utils"
-import { GithubOutlined, WeiboOutlined, WindowsFilled, ZhihuOutlined } from '@ant-design/icons';
-import { Card, Avatar, Descriptions, Row, Col, Tag, List, Divider, Drawer } from 'antd';
+import { GithubOutlined, WeiboOutlined, ZhihuOutlined } from '@ant-design/icons';
+import { Card, Avatar, Descriptions, Row, Col, Tag, List, Divider } from 'antd';
 // 导入公共样式
 import { rhythm } from "../utils/typography"
 import { openPage, randomColor } from '../utils/utils'
@@ -17,16 +18,7 @@ const About = (props) => {
   const {author, description} = props.data.site.siteMetadata
   const { github, zhihu, weibo, email, aboutLike, skill } = props.data.site.siteMetadata.social
   const { gitalkConfig } = props.data.site.siteMetadata
-  // 抽屉状态
-  let [visible, setVisible] = useState(false)
-
-  const showDrawer = () => {
-    setVisible(true)
-  };
-
-  const onClose = () => {
-    setVisible(false)
-  };
+  
 
   useEffect(() => {
     autoBaiduSubmit()
@@ -38,32 +30,21 @@ const About = (props) => {
       marginLeft: `auto`,
       marginRight: `auto`,
       maxWidth: rhythm(40),
-      padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+      padding: `${rhythm(3)} ${rhythm(3 / 4)}`,
       position:'relative',
     }}
      >
        <SEO title="作者信息" description="若端blog，作者信息" />
        {/* 左侧抽屉菜单 */}
-      <div className="leftController">
-        {/* <Button type="primary" onClick={showDrawer}>
-          Menu
-        </Button> */}
-        <span style={{padding: '1rem',position: 'relative',top:'-1rem'}}>
-        <WindowsFilled style={{fontSize: '2rem'}} onClick={showDrawer} />
-        </span>
-        <Drawer
-          placement="left"
-          closable={false}
-          onClose={onClose}
-          visible={visible}
-        >
+       <WithDrawer data={
+        <>
           <MyNav small={true} />
           <p>还没想好要放什么 ...</p>
           <p> ...</p>
-        </Drawer>
-    </div>
-
-    <Row>
+        </>
+       } />
+    
+       <Row>
     <Col xs={24} sm={24} md={8} lg={8} xl={8}>
       <div className="aboutCard">
         <Card
