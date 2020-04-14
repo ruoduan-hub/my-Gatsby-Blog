@@ -29,13 +29,9 @@ const WithDrawer = (props) => {
           closable={true}
           mask={false}
         >
-          {/*<MyNav small={true} />
-          <p>还没想好要放什么 ...</p>
-    <p> ...</p>*/}
-        
+    
         {props.data}
-        
-            
+                
         </Drawer>
     </div>
         </>)
