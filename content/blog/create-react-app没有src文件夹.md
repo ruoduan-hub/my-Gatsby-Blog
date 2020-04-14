@@ -12,9 +12,11 @@ categories: 记
 然后顺势检查来一下 `nodejs` `npm` `yarn` 什么的都是正常的, 非常疑惑，然后去`github` 翻了翻
 
 ## 问题原因
+
 是因为官方已经弃用了独立安装包 `create-react-app` 这个 cli 脚手架，如果没有及时卸载 就会出现这个问题。
 
 ## 解决
+
 卸载全局安装包
 
 ```
@@ -34,7 +36,8 @@ yarn global remove create-react-app
 ojbk ～
 
 ## ps
-还有一种解决方案 带上参数忽略本地的cli
+
+还有一种解决方案 带上参数忽略本地的 cli
 
 ```
 npx --ignore-existing create-react-app my-app

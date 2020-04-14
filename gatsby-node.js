@@ -63,7 +63,6 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
-
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -79,7 +78,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 // 用到全局 window 等 要在这里声明
-exports.onCreateWebpackConfig = ({ getConfig, stage, actions, plugins, loaders}) => {
+exports.onCreateWebpackConfig = ({
+  getConfig,
+  stage,
+  actions,
+  plugins,
+  loaders,
+}) => {
   if (stage === "build-html") {
     actions.setWebpackConfig({
       module: {
@@ -124,5 +129,4 @@ exports.onCreateWebpackConfig = ({ getConfig, stage, actions, plugins, loaders})
       actions.replaceWebpackConfig(currentConfig)
     }
   }
-
 }

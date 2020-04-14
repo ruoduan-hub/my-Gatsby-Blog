@@ -11,7 +11,7 @@ class Layout extends React.Component {
     if (location.pathname === rootPath) {
       header = (
         <h1
-        className="blogName"
+          className="blogName"
           style={{
             ...scale(2),
             marginBottom: rhythm(1.5),
@@ -37,7 +37,7 @@ class Layout extends React.Component {
           style={{
             marginTop: 0,
             padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-            fontSize: '2.5rem'
+            fontSize: "2.5rem",
           }}
         >
           <Link
@@ -64,9 +64,9 @@ class Layout extends React.Component {
       >
         <header>{header}</header>
         <main>{children}</main>
-        <footer style={{color:'#333'}}>
-          {/* TODO 授权文字 */}
-          © {new Date().getFullYear()}, 滇ICP备19003866号 本网站版权归本站作者Ruoduan所有
+        <footer style={{ color: "#333" }}>
+          {/* TODO 授权文字 */}© {new Date().getFullYear()}, 滇ICP备19003866号
+          本网站版权归本站作者Ruoduan所有
           {` `}
         </footer>
       </div>

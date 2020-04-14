@@ -1,25 +1,40 @@
-import React, {useState}  from 'react'
-import { Drawer } from 'antd';
-import { WindowsFilled } from '@ant-design/icons';
+import React, { useState } from "react"
+import { Drawer } from "antd"
+import { WindowsFilled } from "@ant-design/icons"
 
-const WithDrawer = (props) => {
-    console.log(props)
-    // 抽屉状态
-    let [visible, setVisible] = useState(false)
+const WithDrawer = props => {
+  console.log(props)
+  // 抽屉状态
+  let [visible, setVisible] = useState(false)
 
-    const showDrawer = () => {
-        setVisible(true)
-    };
+  const showDrawer = () => {
+    setVisible(true)
+  }
 
-    const onClose = () => {
-        setVisible(false)
-    };
+  const onClose = () => {
+    setVisible(false)
+  }
 
-    return (<>
-    <div className="leftController">
+  return (
+    <>
+      <div className="leftController">
         {/* eslint-disable */}
-        <span role="button" tabIndex="0"   onClick={showDrawer} style={{position: 'fixed',top:'1rem',left:'2rem', cursor: 'pointer'}}>
-        {props.button ? props.button : <WindowsFilled style={{fontSize: '2rem'}} /> }
+        <span
+          role="button"
+          tabIndex="0"
+          onClick={showDrawer}
+          style={{
+            position: "fixed",
+            top: "1rem",
+            left: "2rem",
+            cursor: "pointer",
+          }}
+        >
+          {props.button ? (
+            props.button
+          ) : (
+            <WindowsFilled style={{ fontSize: "2rem" }} />
+          )}
         </span>
         <Drawer
           placement="left"
@@ -27,12 +42,11 @@ const WithDrawer = (props) => {
           visible={visible}
           mask={false}
         >
-    
-        {props.data}
-                
+          {props.data}
         </Drawer>
-    </div>
-        </>)
+      </div>
+    </>
+  )
 }
 
 export default WithDrawer
