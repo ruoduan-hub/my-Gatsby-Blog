@@ -2,7 +2,7 @@
 title: React中使用Mockjs进行接口数据模拟
 date: 2019-06-17
 tags: Code-Tools
-categories: 《Code-Tools》
+categories: Code-Tools
 ---
 
 ## React 中使用 Mockjs 进行接口数据模拟
