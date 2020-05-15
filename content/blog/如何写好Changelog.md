@@ -3,7 +3,7 @@ title: "如何写好 Changelog"
 date: 2020-05-14
 tags: 记
 comments: true
-categories: 《记》
+categories: 记
 ---
 
 
