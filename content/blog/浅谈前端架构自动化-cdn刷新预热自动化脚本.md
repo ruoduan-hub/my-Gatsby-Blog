@@ -256,8 +256,8 @@ https://xx.xxxxx.xx/
 
 ```shell
  #!/bin/bash\
-AccessKey="LTAI4G9ZsqotfEhfzWMS6UPm"
-AccessKeySecret="UOBlMcMU7V6OSmCxlzM8mBcO9778VL"
+AccessKey="<***AccessKey***>"
+AccessKeySecret="***AccessKeySecret***"
 # clear | push
 action="clear"
 
