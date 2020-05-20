@@ -108,7 +108,7 @@ echo "pulling source code..."
 git pull
 echo "changing permissions..."
 #chown -R $WEB_USER:$WEB_USERGROUP $WEB_PATH
-echo " git pull 完成. 开始 build"
+echo "git pull 完成. 开始 build"
 yarn run gatsby build
 echo "刷新nginx"
 nginx -s reload
