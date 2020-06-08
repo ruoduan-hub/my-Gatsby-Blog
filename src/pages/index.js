@@ -8,7 +8,7 @@ import { autoBaiduSubmit } from "../utils/utils"
 
 import { rhythm } from "../utils/typography"
 import "./style/index.css"
-
+import QueueAnim from 'rc-queue-anim';
 class BlogIndex extends React.Component {
   componentDidMount() {
     autoBaiduSubmit()
@@ -24,6 +24,7 @@ class BlogIndex extends React.Component {
         <Layout location={this.props.location} title={siteTitle}>
           <SEO title="所有文章" description="若端blog，所有文章" />
           <MyNav />
+          <QueueAnim delay={300} type={['scaleY']} className="queue-simple">
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
@@ -57,6 +58,7 @@ class BlogIndex extends React.Component {
               </article>
             )
           })}
+          </QueueAnim>
         </Layout>
       </div>
     )
