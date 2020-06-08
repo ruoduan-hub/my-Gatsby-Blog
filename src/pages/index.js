@@ -24,7 +24,7 @@ class BlogIndex extends React.Component {
         <Layout location={this.props.location} title={siteTitle}>
           <SEO title="所有文章" description="若端blog，所有文章" />
           <MyNav />
-          <QueueAnim delay={300} type={['scaleY']} className="queue-simple">
+          <QueueAnim delay={300} type={['scaleY']} ease={['easeOutQuart', 'easeInOutQuart']} className="queue-simple">
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (

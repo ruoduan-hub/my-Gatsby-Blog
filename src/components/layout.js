@@ -2,6 +2,11 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
+
+import Texty from 'rc-texty';
+import 'rc-texty/assets/index.css';
+import TweenOne from 'rc-tween-one';
+
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
@@ -26,7 +31,46 @@ class Layout extends React.Component {
             }}
             to={`/`}
           >
-            {title}
+          <Texty
+              className="title"
+              type="mask-top"
+              delay={400}
+              enter={this.getEnter}
+              interval={this.geInterval}
+              component={TweenOne}
+              componentProps={{
+                animation: [
+                  { x: 130, type: 'set' },
+                  { x: 100, delay: 500, duration: 450 },
+                  {
+                    ease: 'easeOutQuart',
+                    duration: 300,
+                    x: 0,
+                  },
+                  {
+                    letterSpacing: 0,
+                    delay: -300,
+                    scale: 0.9,
+                    ease: 'easeInOutQuint',
+                    duration: 1000,
+                  },
+                  { scale: 1, width: '100%', delay: -300, duration: 1000, ease: 'easeInOutQuint' },
+                ],
+              }}
+            >
+              { title }
+            </Texty>
+            <Texty
+              className="title-bottom"
+              style={{fontSize: '1rem'}}
+              type="bottom"
+              split={this.getSplit}
+              delay={2200}
+              interval={30}
+              mode="sync"
+            >
+            Welcome to Ruoduan.com
+            </Texty>
           </Link>
         </h1>
       )
@@ -48,7 +92,7 @@ class Layout extends React.Component {
             }}
             to={`/`}
           >
-            {title}
+            <Texty>{title}</Texty>
           </Link>
         </h3>
       )

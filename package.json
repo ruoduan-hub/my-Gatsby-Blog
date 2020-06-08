@@ -37,6 +37,7 @@
     "office-ui-fabric-react": "^7.99.0",
     "prismjs": "^1.19.0",
     "rc-queue-anim": "^1.8.5",
+    "rc-tween-one": "^2.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-helmet": "^5.2.1",
@@ -64,7 +65,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop --port 8888 ",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "format": "prettier --write \"**/*.{js,jsx,json}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",

@@ -7,6 +7,7 @@ import MyNav from "../components/nav"
 import { autoBaiduSubmit } from "../utils/utils"
 
 import { rhythm } from "../utils/typography"
+import QueueAnim from 'rc-queue-anim';
 
 class TagsIndex extends React.Component {
   componentDidMount() {
@@ -24,6 +25,7 @@ class TagsIndex extends React.Component {
         <Layout location={this.props.location} title={siteTitle}>
           <SEO title="Tags posts" />
           <MyNav />
+          <QueueAnim delay={300} type={['top', 'left']} ease={['easeOutQuart', 'easeInOutQuart']} className="queue-simple">
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
@@ -57,6 +59,7 @@ class TagsIndex extends React.Component {
               </article>
             )
           })}
+          </QueueAnim>
         </Layout>
       </div>
     )
