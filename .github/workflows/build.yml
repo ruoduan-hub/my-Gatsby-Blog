@@ -35,3 +35,8 @@ jobs:
           REMOTE_PORT: "22"
           REMOTE_USER: root
           TARGET: ${{ secrets.REMOTE_TARGET }}
+    
+    - name: reload nginx
+      with: 
+        script: |
+            nginx -s reload

@@ -12,7 +12,7 @@ const Layout = ({ location, children }) => {
         opacity: 1,
         transform: "translate3d(50vh,0vh,0) scale3d(1, 1, 1) rotate(0deg)",
         config: {
-            duration: 700
+          duration: 600
           }
       }}
       // 正常
