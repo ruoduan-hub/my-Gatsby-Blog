@@ -36,7 +36,8 @@ jobs:
           REMOTE_USER: root
           TARGET: ${{ secrets.REMOTE_TARGET }}
     
-    - name: reload nginx
+    - name: Restart Server Nginx
+      uses: appleboy/ssh-action@master
       with: 
         script: |
             nginx -s reload
