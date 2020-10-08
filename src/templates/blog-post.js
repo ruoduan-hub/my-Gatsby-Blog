@@ -74,8 +74,8 @@ class BlogPostTemplate extends React.Component {
                 {/* portals 挂载到外层 */}
                 <div style={this.state.eyeModel} id="main">
 
-                    {
-                        ReactDOM.createPortal(
+                {
+                typeof window !== 'undefined' && ReactDOM.createPortal(
                             <div
                                 id="eyeModel"
                                 style={{
