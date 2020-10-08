@@ -1,0 +1,38 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Blog CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # 构建运行环境
+    steps:
+    - name: Checkout  # 获取源码，使用actions/checkout@v2
+      uses: actions/checkout@v2
+
+    - name: Install Node.js # 安装指定Node版本，使用actions/setup-node@v1
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+
+    - name: Install & Build # 安装依赖打包静态资源
+      run: |
+        yarn config set registry https://registry.npm.taobao.org 
+        yarn install
+        yarn build
+
+    - name: Deploy to Server # 部署到云服务器，使用easingthemes/ssh-deploy@v2.1.1，通过ssh的方式连接
+      uses: easingthemes/ssh-deploy@v2.1.1
+      env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}  # 私钥，公钥拷贝到服务器在/root/.ssh/authorized_keys中中
+
+          ARGS: ${{ secrets.ARGS }} # 对于任何初始/必需的rsync标志，默认-avzr --delete，如果目录下有其他不可删除文件或文件夹可以用--exclude忽略，如--exclude /uploads/   
+          SOURCE: "build/" # 源目录
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }} # 服务器地址
+          REMOTE_PORT: ${{ secrets.REMOTE_PORT }} # ssh连接端口号
+          REMOTE_USER: root # 连接用户名
+          TARGET: ${{ secrets.REMOTE_TARGET }} # 目标部署目录
