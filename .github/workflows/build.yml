@@ -25,13 +25,13 @@ jobs:
         # yarn install
         # yarn build
 
-    - name: Deploy to Server # 部署到云服务器，使用easingthemes/ssh-deploy@v2.1.1，通过ssh的方式连接
+    - name: Deploy to Server
       uses: easingthemes/ssh-deploy@v2.1.1
       env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           ARGS: "-avz --delete"
-          SOURCE: "public/" # 源目录
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }} # 服务器地址
+          SOURCE: "public/"
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_PORT: "22"
           REMOTE_USER: root
-          TARGET: ${{ secrets.REMOTE_TARGET }} # 目标部署目录
+          TARGET: ${{ secrets.REMOTE_TARGET }}
