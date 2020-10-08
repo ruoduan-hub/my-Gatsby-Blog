@@ -28,11 +28,9 @@ jobs:
     - name: Deploy to Server # 部署到云服务器，使用easingthemes/ssh-deploy@v2.1.1，通过ssh的方式连接
       uses: easingthemes/ssh-deploy@v2.1.1
       env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}  # 私钥，公钥拷贝到服务器在/root/.ssh/authorized_keys中中
-
-          
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}  # 私钥，公钥拷贝到服务器在/root/.ssh/authorized_keys中
+          ARGS: "-avz --delete"
           SOURCE: "public/" # 源目录
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }} # 服务器地址
-          REMOTE_PORT: ${{ secrets.REMOTE_PORT }} # ssh连接端口号
           REMOTE_USER: root # 连接用户名
           TARGET: ${{ secrets.REMOTE_TARGET }} # 目标部署目录
