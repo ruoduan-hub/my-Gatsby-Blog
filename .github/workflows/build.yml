@@ -31,6 +31,6 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           ARGS: "-avz --delete"
           SOURCE: "public/" # 源目录
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }} # 服务器地址
+          REMOTE_HOST: 114.115.221.87 # 服务器地址
           REMOTE_USER: root # 连接用户名
           TARGET: ${{ secrets.REMOTE_TARGET }} # 目标部署目录
