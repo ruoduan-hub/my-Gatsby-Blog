@@ -78,3 +78,34 @@ echo "0 0,12 * * * root python -c 'import random; import time; time.sleep(random
 之后你就该配置nginx的配置nginx就好了
 
 直接以 `https` 访问你的网站就可以了。
+
+
+
+---
+
+
+
+> 更新内容：
+
+
+
+### 更新续签
+
+```shell
+certbot certonly --cert-name xxx.com
+```
+
+> 忘了证书名的话
+
+> `certbot certificates` // 查看已安装的证书
+
+
+
+### 证书增加新域名
+
+```shell
+certbot --cert-name xxx.com -d aa.xx.com,bb.xxx.com,www.xxx.com
+```
+
+
+
