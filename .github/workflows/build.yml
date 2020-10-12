@@ -24,7 +24,7 @@ jobs:
       with:
         path: ~/.npm # npm cache files are stored in `~/.npm` on Linux/macOS
         key: ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}
-
+        
     - name: Install & Build # 安装依赖打包静态资源
       run: |
         yarn config set registry https://registry.npm.taobao.org 
@@ -43,6 +43,7 @@ jobs:
           TARGET: ${{ secrets.REMOTE_TARGET }}
     
     - name: Restart Server Nginx
+      uses: appleboy/ssh-action@master
       with: 
         script: |
             nginx -s reload
