@@ -34,9 +34,11 @@ class BlogIndex extends React.Component {
                 style={{ margin: "2rem 0" }}
               >
                 <header>
-                  <h3
+                  <hgroup
                     style={{
                       marginBottom: rhythm(1 / 4),
+                      fontSize: '1.5rem',
+                      fontFamily: 'Black Ops One'
                     }}
                   >
                     <Link
@@ -45,7 +47,7 @@ class BlogIndex extends React.Component {
                     >
                       {title}
                     </Link>
-                  </h3>
+                  </hgroup>
                   <small>{node.frontmatter.date}</small>
                 </header>
                 <section>
