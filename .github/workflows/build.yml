@@ -32,7 +32,7 @@ jobs:
           ${{ runner.os }}-
 
     - name: Install Dependencies
-      run: yarn install
+      run: yarn config set registry https://registry.npm.taobao.org | yarn install
 
     - name: Build
       run: yarn build
