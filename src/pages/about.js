@@ -30,7 +30,7 @@ const About = props => {
   }, [])
 
   return (
-    <>
+    <div className="about_bg"> 
       <div
         className="about"
         style={{
@@ -127,7 +127,7 @@ const About = props => {
       <Divider />
       <MusicPlay />
       <Comment gitalkConfig={gitalkConfig} path={props.path} />
-    </>
+    </div>
   )
 }
 

@@ -34,3 +34,15 @@
     font-size: 1rem;
     font-family: 'Black Ops One', cursive;
 }
+
+/* post 页面背景图 */
+#main{
+  background: url(https://tva1.sinaimg.cn/large/0081Kckwly1gkfe7s63y2j31hc0u0hdt.jpg) repeat;
+  background-attachment: fixed;
+}
+
+.about_bg {
+  background: url(https://tva1.sinaimg.cn/large/0081Kckwly1gkfe7s63y2j31hc0u0hdt.jpg) repeat;
+  background-attachment: fixed;
+  z-index: -999;
+}
