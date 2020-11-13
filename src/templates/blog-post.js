@@ -19,8 +19,7 @@ import MyNav from "../components/nav"
 import { autoBaiduSubmit } from "../utils/utils"
 import WithDrawer from "../components/drawer"
 import Toc from "../components/toc"
-import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
-deckDeckGoHighlightElement();
+
 // portals 插槽 插到到DOM元素
 const PortalsRoot = typeof document!== 'undefined' ? document.getElementById('___gatsby'): null
 

@@ -81,8 +81,8 @@ module.exports = {
             options: {
               terminal: 'carbon',
               theme: 'vscode',
-              editable: true,
-              lineNumbers: false,
+              editable: false,
+              lineNumbers: true,
             },
           },
           {
