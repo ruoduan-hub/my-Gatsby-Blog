@@ -8,7 +8,7 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
-    "@deckdeckgo/highlight-code": "^2.1.0",
+    "@deckdeckgo/highlight-code": "^2.1.1",
     "antd": "^4.0.1",
     "gatsby": "^2.20.15",
     "gatsby-image": "^2.2.42",
@@ -32,7 +32,7 @@
     "gatsby-remark-smartypants": "^2.1.21",
     "gatsby-remark-vscode": "^2.0.3",
     "gatsby-source-filesystem": "^2.1.40",
-    "gatsby-transformer-remark": "^2.8.41",
+    "gatsby-transformer-remark": "^2.10.0",
     "gatsby-transformer-sharp": "^2.3.16",
     "gitalk": "^1.6.2",
     "js-md5": "^0.7.3",

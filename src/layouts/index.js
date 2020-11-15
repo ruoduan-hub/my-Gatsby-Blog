@@ -1,7 +1,5 @@
 import React from "react";
 import { TransitionProvider, TransitionViews } from "gatsby-plugin-transitions";
-import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
-deckDeckGoHighlightElement();
 
 const Layout = ({ location, children }) => {
   return (
