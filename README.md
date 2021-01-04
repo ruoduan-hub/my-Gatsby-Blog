@@ -27,7 +27,7 @@ Google网站登录口：https://www.google.com/webmasters/tools/submit-url
 必应网站提交登录入口：http://www.bing.com/toolbox/submit-site-url
 ```
 
-### 自动化部署
+### 自动化部署(弃用) - 目前已用 CI -- Actions
 
 > 服务器 Nodejs 利用 Github 的 Webhook 功能来完成
 
