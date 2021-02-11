@@ -7,6 +7,8 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
   const tagsIndex = path.resolve(`./src/templates/tags-index.js`)
+  const homeIndex = path.resolve(`./src/templates/blog-index.js`)
+
 
   const result = await graphql(
     `
@@ -49,6 +51,23 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: post.node.fields.slug,
         previous,
         next,
+      },
+    })
+  })
+
+  // Create blog post list pages
+  const postsPerPage = 8
+  const numPages = Math.ceil(posts.length / postsPerPage)
+
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/` : `/${i + 1}`,
+      component: homeIndex,
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
       },
     })
   })
