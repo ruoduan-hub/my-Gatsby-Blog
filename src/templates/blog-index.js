@@ -65,50 +65,52 @@ class BlogIndex extends React.Component {
                 </article>
               )
             })}
-          </QueueAnim>
-          <div>
-            <ul
-              style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                listStyle: 'none',
-                padding: 0,
-              }}
-            >
-              {!isFirst && (
-                <Link to={`/${prevPage}`} rel="prev">
-                  ← 上一页
-                </Link>
-              )}
-              {Array.from({ length: numPages }, (_, i) => (
-                <li
-                  key={`pagination-number${i + 1}`}
-                  style={{
-                    margin: 0,
-                  }}
-                >
-                  <Link
-                    to={`/${i === 0 ? '' : i + 1}`}
+
+            <div>
+              <ul
+                style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  listStyle: 'none',
+                  padding: 0,
+                }}
+              >
+                {!isFirst && (
+                  <Link to={`/${prevPage}`} rel="prev">
+                    ← 上一页
+                  </Link>
+                )}
+                {Array.from({ length: numPages }, (_, i) => (
+                  <li
+                    key={`pagination-number${i + 1}`}
                     style={{
-                      padding: rhythm(1 / 4),
-                      textDecoration: 'none',
-                      color: i + 1 === currentPage ? '#ffffff' : '',
-                      background: i + 1 === currentPage ? '#007acc' : '',
+                      margin: 0,
                     }}
                   >
-                    {i + 1}
+                    <Link
+                      to={`/${i === 0 ? '' : i + 1}`}
+                      style={{
+                        padding: rhythm(1 / 4),
+                        textDecoration: 'none',
+                        color: i + 1 === currentPage ? '#ffffff' : '',
+                        background: i + 1 === currentPage ? '#007acc' : '',
+                      }}
+                    >
+                      {i + 1}
+                    </Link>
+                  </li>
+                ))}
+                {!isLast && (
+                  <Link to={`/${nextPage}`} rel="next">
+                    下一页 →
                   </Link>
-                </li>
-              ))}
-              {!isLast && (
-                <Link to={`/${nextPage}`} rel="next">
-                  下一页 →
-                </Link>
-              )}
-            </ul>
-          </div>
+                )}
+              </ul>
+            </div>
+          </QueueAnim>
+
         </Layout>
       </div>
     )
