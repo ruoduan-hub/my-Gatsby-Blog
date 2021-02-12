@@ -8,7 +8,7 @@ import Img from '../components/img'
 import MyNav from '../components/nav'
 import Comment from '../components/comment'
 import { autoBaiduSubmit } from '../utils/utils'
-import './style/tags.css'
+import './style/tags.scss'
 
 const Tags = props => {
   let urlData = {}

@@ -7,7 +7,7 @@ import { randomColor } from '../utils/utils'
 import { autoBaiduSubmit } from '../utils/utils'
 
 import { rhythm } from '../utils/typography'
-import './styles/index.css'
+import './styles/index.scss'
 import QueueAnim from 'rc-queue-anim'
 class BlogIndex extends React.Component {
   componentDidMount() {
