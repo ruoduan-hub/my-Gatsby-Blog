@@ -1,5 +1,5 @@
-import React from "react";
-import { TransitionProvider, TransitionViews } from "gatsby-plugin-transitions";
+import React from 'react'
+import { TransitionProvider, TransitionViews } from 'gatsby-plugin-transitions'
 
 const Layout = ({ location, children }) => {
   return (
@@ -9,15 +9,15 @@ const Layout = ({ location, children }) => {
       // 进入
       enter={{
         opacity: 1,
-        transform: "translate3d(50vh,0vh,0) scale3d(1, 1, 1) rotate(0deg)",
+        transform: 'translate3d(50vh,0vh,0) scale3d(1, 1, 1) rotate(0deg)',
         config: {
-          duration: 600
-          }
+          duration: 600,
+        },
       }}
       // 正常
       usual={{
         opacity: 1,
-        transform: "translate3d(0vh,0vh,0) scale3d(1, 1, 1) rotate(0deg)"
+        transform: 'translate3d(0vh,0vh,0) scale3d(1, 1, 1) rotate(0deg)',
       }}
       // 切出
       // leave={{
@@ -28,11 +28,9 @@ const Layout = ({ location, children }) => {
       //     }
       // }}
     >
-      <TransitionViews>
-        {children}
-      </TransitionViews>
+      <TransitionViews>{children}</TransitionViews>
     </TransitionProvider>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

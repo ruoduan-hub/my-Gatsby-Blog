@@ -1,16 +1,16 @@
-import React, { useEffect } from "react"
-import { graphql } from "gatsby"
-import SEO from "../components/seo"
-import MusicPlay from "../components/music-play"
-import MyNav from "../components/nav"
-import Comment from "../components/comment"
-import WithDrawer from "../components/drawer"
-import { autoBaiduSubmit } from "../utils/utils"
-import { GithubOutlined, WeiboOutlined, ZhihuOutlined } from "@ant-design/icons"
-import { Card, Avatar, Descriptions, Row, Col, Tag, List, Divider } from "antd"
+import React, { useEffect } from 'react'
+import { graphql } from 'gatsby'
+import SEO from '../components/seo'
+import MusicPlay from '../components/music-play'
+import MyNav from '../components/nav'
+import Comment from '../components/comment'
+import WithDrawer from '../components/drawer'
+import { autoBaiduSubmit } from '../utils/utils'
+import { GithubOutlined, WeiboOutlined, ZhihuOutlined } from '@ant-design/icons'
+import { Card, Avatar, Descriptions, Row, Col, Tag, List, Divider } from 'antd'
 // 导入公共样式
-import { rhythm } from "../utils/typography"
-import { openPage, randomColor } from "../utils/utils"
+import { rhythm } from '../utils/typography'
+import { openPage, randomColor } from '../utils/utils'
 const { Meta } = Card
 
 const About = props => {
@@ -30,7 +30,7 @@ const About = props => {
   }, [])
 
   return (
-    <div className="about_bg"> 
+    <div className="about_bg">
       <div
         className="about"
         style={{
@@ -38,7 +38,7 @@ const About = props => {
           marginRight: `auto`,
           maxWidth: rhythm(40),
           padding: `${rhythm(3)} ${rhythm(3 / 4)}`,
-          position: "relative",
+          position: 'relative',
         }}
       >
         <SEO title="作者信息" description="若端blog，作者信息" />
@@ -66,17 +66,17 @@ const About = props => {
                 actions={[
                   <GithubOutlined
                     onClick={() => openPage(github)}
-                    style={{ fontSize: "2rem" }}
+                    style={{ fontSize: '2rem' }}
                     key="setting"
                   />,
                   <ZhihuOutlined
                     onClick={() => openPage(zhihu)}
-                    style={{ fontSize: "2rem" }}
+                    style={{ fontSize: '2rem' }}
                     key="edit"
                   />,
                   <WeiboOutlined
                     onClick={() => openPage(weibo)}
-                    style={{ fontSize: "2rem" }}
+                    style={{ fontSize: '2rem' }}
                     key="ellipsis"
                   />,
                 ]}
@@ -93,7 +93,7 @@ const About = props => {
           </Col>
 
           <Col xs={24} sm={24} md={15} lg={15} xl={15}>
-            <div className="aboutInfo" style={{ margin: "0 2rem" }}>
+            <div className="aboutInfo" style={{ margin: '0 2rem' }}>
               <Descriptions title="关于我">
                 <Descriptions.Item label="About">{author}</Descriptions.Item>
                 <Descriptions.Item label="Live">Hangzhou</Descriptions.Item>

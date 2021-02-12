@@ -56,10 +56,13 @@
     "typography-theme-wordpress-kubrick": "^0.16.19"
   },
   "devDependencies": {
+    "eslint-config-react-app": "^6.0.0",
     "prettier": "^1.19.1"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
+    "ruoduan's blog",
+    "若端的博客",
     "gatsby"
   ],
   "license": "MIT",
@@ -71,7 +74,8 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop --port 8888 ",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",

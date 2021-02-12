@@ -1,5 +1,5 @@
-import Typography from "typography"
-import Wordpress2016 from "typography-theme-wordpress-2016"
+import Typography from 'typography'
+import Wordpress2016 from 'typography-theme-wordpress-2016'
 // import githubTheme from "typography-theme-github"
 // import wordpressKubrickTheme from 'typography-theme-wordpress-kubrick'
 
@@ -8,7 +8,6 @@ Wordpress2016.baseFontSize = '14px'
 // Wordpress2016.baseScaleRatio = '2.00'
 // Wordpress2016.baseParagraphSpacing = '1.00'
 // wikipediaTheme.baseParagraphSpacing = '1.00'
-
 
 Wordpress2016.overrideThemeStyles = ({ rhythm }, options) => ({
   'section h1,h2,h3,h4,h5': {
@@ -25,9 +24,8 @@ Wordpress2016.overrideThemeStyles = ({ rhythm }, options) => ({
     height: '1px',
     margin: `${rhythm(2)} auto`,
     width: rhythm(20),
-  }
+  },
 })
-
 
 const typography = new Typography(Wordpress2016)
 

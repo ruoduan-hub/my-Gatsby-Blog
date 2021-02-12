@@ -1,14 +1,14 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import MyNav from "../components/nav"
-import { randomColor } from "../utils/utils"
-import { autoBaiduSubmit } from "../utils/utils"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import MyNav from '../components/nav'
+import { randomColor } from '../utils/utils'
+import { autoBaiduSubmit } from '../utils/utils'
 
-import { rhythm } from "../utils/typography"
-import "./styles/index.css"
-import QueueAnim from 'rc-queue-anim';
+import { rhythm } from '../utils/typography'
+import './styles/index.css'
+import QueueAnim from 'rc-queue-anim'
 class BlogIndex extends React.Component {
   componentDidMount() {
     autoBaiduSubmit()
@@ -29,21 +29,26 @@ class BlogIndex extends React.Component {
         <Layout location={this.props.location} title={siteTitle}>
           <SEO title="所有文章" description="若端blog，所有文章" />
           <MyNav />
-          <QueueAnim delay={300} type={['scaleY']} ease={['easeOutQuart', 'easeInOutQuart']} className="queue-simple">
+          <QueueAnim
+            delay={300}
+            type={['scaleY']}
+            ease={['easeOutQuart', 'easeInOutQuart']}
+            className="queue-simple"
+          >
             {posts.map(({ node }) => {
               const title = node.frontmatter.title || node.fields.slug
               return (
                 <article
                   className="postArticle"
                   key={node.fields.slug}
-                  style={{ margin: "2rem 0" }}
+                  style={{ margin: '2rem 0' }}
                 >
                   <header>
                     <hgroup
                       style={{
                         marginBottom: rhythm(1 / 4),
                         fontSize: '1.5rem',
-                        fontFamily: 'Black Ops One'
+                        fontFamily: 'Black Ops One',
                       }}
                     >
                       <Link
@@ -110,7 +115,6 @@ class BlogIndex extends React.Component {
               </ul>
             </div>
           </QueueAnim>
-
         </Layout>
       </div>
     )
@@ -127,10 +131,10 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC}
+      sort: { fields: [frontmatter___date], order: DESC }
       limit: $limit
       skip: $skip
-      ) {
+    ) {
       edges {
         node {
           excerpt

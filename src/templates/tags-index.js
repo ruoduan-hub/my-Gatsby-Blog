@@ -1,13 +1,13 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import { randomColor } from "../utils/utils"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import MyNav from "../components/nav"
-import { autoBaiduSubmit } from "../utils/utils"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import { randomColor } from '../utils/utils'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import MyNav from '../components/nav'
+import { autoBaiduSubmit } from '../utils/utils'
 
-import { rhythm } from "../utils/typography"
-import QueueAnim from 'rc-queue-anim';
+import { rhythm } from '../utils/typography'
+import QueueAnim from 'rc-queue-anim'
 
 class TagsIndex extends React.Component {
   componentDidMount() {
@@ -25,40 +25,45 @@ class TagsIndex extends React.Component {
         <Layout location={this.props.location} title={siteTitle}>
           <SEO title="Tags posts" />
           <MyNav />
-          <QueueAnim delay={300} type={['top', 'left']} ease={['easeOutQuart', 'easeInOutQuart']} className="queue-simple">
-          {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug
-            return (
-              <article
-                className="postArticle"
-                key={node.fields.slug}
-                style={{ margin: "2rem 0" }}
-              >
-                <header>
-                  <h3
-                    style={{
-                      marginBottom: rhythm(1 / 4),
-                    }}
-                  >
-                    <Link
-                      style={{ boxShadow: `none`, color: randomColor() }}
-                      to={node.fields.slug}
+          <QueueAnim
+            delay={300}
+            type={['top', 'left']}
+            ease={['easeOutQuart', 'easeInOutQuart']}
+            className="queue-simple"
+          >
+            {posts.map(({ node }) => {
+              const title = node.frontmatter.title || node.fields.slug
+              return (
+                <article
+                  className="postArticle"
+                  key={node.fields.slug}
+                  style={{ margin: '2rem 0' }}
+                >
+                  <header>
+                    <h3
+                      style={{
+                        marginBottom: rhythm(1 / 4),
+                      }}
                     >
-                      {title}
-                    </Link>
-                  </h3>
-                  <small>{node.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: node.frontmatter.description || node.excerpt,
-                    }}
-                  />
-                </section>
-              </article>
-            )
-          })}
+                      <Link
+                        style={{ boxShadow: `none`, color: randomColor() }}
+                        to={node.fields.slug}
+                      >
+                        {title}
+                      </Link>
+                    </h3>
+                    <small>{node.frontmatter.date}</small>
+                  </header>
+                  <section>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: node.frontmatter.description || node.excerpt,
+                      }}
+                    />
+                  </section>
+                </article>
+              )
+            })}
           </QueueAnim>
         </Layout>
       </div>

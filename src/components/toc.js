@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 const Toc = props => {
   const html = { __html: String(props.tocHtml) }

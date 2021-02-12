@@ -1,6 +1,6 @@
-import React, { useState } from "react"
-import { Drawer } from "antd"
-import { WindowsFilled } from "@ant-design/icons"
+import React, { useState } from 'react'
+import { Drawer } from 'antd'
+import { WindowsFilled } from '@ant-design/icons'
 
 const WithDrawer = props => {
   console.log(props)
@@ -24,16 +24,16 @@ const WithDrawer = props => {
           tabIndex="0"
           onClick={showDrawer}
           style={{
-            position: "fixed",
-            top: "1rem",
-            left: "2rem",
-            cursor: "pointer",
+            position: 'fixed',
+            top: '1rem',
+            left: '2rem',
+            cursor: 'pointer',
           }}
         >
           {props.button ? (
             props.button
           ) : (
-            <WindowsFilled style={{ fontSize: "2rem" }} />
+            <WindowsFilled style={{ fontSize: '2rem' }} />
           )}
         </span>
         <Drawer

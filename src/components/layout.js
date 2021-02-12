@@ -1,11 +1,11 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react'
+import { Link } from 'gatsby'
 
-import { rhythm, scale } from "../utils/typography"
+import { rhythm, scale } from '../utils/typography'
 
-import Texty from 'rc-texty';
-import 'rc-texty/assets/index.css';
-import TweenOne from 'rc-tween-one';
+import Texty from 'rc-texty'
+import 'rc-texty/assets/index.css'
+import TweenOne from 'rc-tween-one'
 
 class Layout extends React.Component {
   render() {
@@ -31,7 +31,7 @@ class Layout extends React.Component {
             }}
             to={`/`}
           >
-          <Texty
+            <Texty
               className="title"
               type="mask-top"
               delay={400}
@@ -54,22 +54,28 @@ class Layout extends React.Component {
                     ease: 'easeInOutQuint',
                     duration: 1000,
                   },
-                  { scale: 1, width: '100%', delay: -300, duration: 1000, ease: 'easeInOutQuint' },
+                  {
+                    scale: 1,
+                    width: '100%',
+                    delay: -300,
+                    duration: 1000,
+                    ease: 'easeInOutQuint',
+                  },
                 ],
               }}
             >
-              { title }
+              {title}
             </Texty>
             <Texty
               className="title-bottom"
-              style={{fontSize: '1rem'}}
+              style={{ fontSize: '1rem' }}
               type="bottom"
               split={this.getSplit}
               delay={2200}
               interval={30}
               mode="sync"
             >
-            Welcome to Ruoduan.com
+              Welcome to Ruoduan.com
             </Texty>
           </Link>
         </h1>
@@ -81,7 +87,7 @@ class Layout extends React.Component {
           style={{
             marginTop: 0,
             padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-            fontSize: "2.5rem",
+            fontSize: '2.5rem',
           }}
         >
           <Link
@@ -108,7 +114,7 @@ class Layout extends React.Component {
       >
         <header>{header}</header>
         <main style={{ overflow: 'hidden' }}>{children}</main>
-        <footer style={{ color: "#333" }}>
+        <footer style={{ color: '#333' }}>
           {/* TODO 授权文字 */}© {new Date().getFullYear()}, 滇ICP备19003866号
           本网站版权归本站作者Ruoduan所有
           {` `}

@@ -1,9 +1,9 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from 'react'
+import { graphql } from 'gatsby'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { autoBaiduSubmit } from "../utils/utils"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import { autoBaiduSubmit } from '../utils/utils'
 
 class NotFoundPage extends React.Component {
   componentDidMount() {

@@ -5,15 +5,15 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useState } from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+import React, { useState } from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import Image from 'gatsby-image'
 import {
   AlipayOutlined,
   QrcodeOutlined,
   WechatOutlined,
-} from "@ant-design/icons"
-import { Button } from "antd"
+} from '@ant-design/icons'
+import { Button } from 'antd'
 const ButtonGroup = Button.Group
 
 const Bio = () => {
@@ -53,28 +53,28 @@ const Bio = () => {
 
       <div
         style={{
-          margin: "2rem 0",
-          display: "flex",
+          margin: '2rem 0',
+          display: 'flex',
         }}
       >
         {isShow ? (
           <div
             style={{
-              display: "flex",
-              justifyContent: "center",
-              flexDirection: "column",
+              display: 'flex',
+              justifyContent: 'center',
+              flexDirection: 'column',
             }}
           >
             <p
-              style={{ fontFamily: "Ma Shan Zheng,cursive", fontSize: "1rem" }}
+              style={{ fontFamily: 'Ma Shan Zheng,cursive', fontSize: '1rem' }}
             >
-              {" "}
-              如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!{" "}
+              {' '}
+              如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!{' '}
             </p>
-            <ButtonGroup style={{ margin: "2rem 0" }}>
+            <ButtonGroup style={{ margin: '2rem 0' }}>
               <Button
                 onClick={() => setQrcode(data.wechat.childImageSharp.fixed)}
-                style={{ backgroundColor: "#24AA39", borderColor: "#24AA39" }}
+                style={{ backgroundColor: '#24AA39', borderColor: '#24AA39' }}
                 color="red"
                 type="primary"
               >
@@ -83,7 +83,7 @@ const Bio = () => {
               </Button>
               <Button
                 onClick={() => setQrcode(data.alipay.childImageSharp.fixed)}
-                style={{ backgroundColor: "#039AE3", borderColor: "#039AE3" }}
+                style={{ backgroundColor: '#039AE3', borderColor: '#039AE3' }}
                 type="primary"
               >
                 支付宝
@@ -95,7 +95,7 @@ const Bio = () => {
               <Image
                 fixed={qrcode}
                 style={{
-                  maxHeight: "30rem",
+                  maxHeight: '30rem',
                 }}
               />
             </div>

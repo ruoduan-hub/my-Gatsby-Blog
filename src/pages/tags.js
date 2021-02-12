@@ -1,14 +1,14 @@
-import React, { useEffect } from "react"
-import { graphql, Link } from "gatsby"
-import SEO from "../components/seo"
-import { Card, Row, Col } from "antd"
-import { rhythm, scale } from "../utils/typography"
-import { randomColor } from "../utils/utils"
-import Img from "../components/img"
-import MyNav from "../components/nav"
-import Comment from "../components/comment"
-import { autoBaiduSubmit } from "../utils/utils"
-import "./style/tags.css"
+import React, { useEffect } from 'react'
+import { graphql, Link } from 'gatsby'
+import SEO from '../components/seo'
+import { Card, Row, Col } from 'antd'
+import { rhythm, scale } from '../utils/typography'
+import { randomColor } from '../utils/utils'
+import Img from '../components/img'
+import MyNav from '../components/nav'
+import Comment from '../components/comment'
+import { autoBaiduSubmit } from '../utils/utils'
+import './style/tags.css'
 
 const Tags = props => {
   let urlData = {}
@@ -17,9 +17,9 @@ const Tags = props => {
     urlData[item.node.frontmatter.tags] = item.node.frontmatter.tags
   })
   const imgStyle = {
-    position: "relative",
-    minHeight: "30rem",
-    overflow: "hidden",
+    position: 'relative',
+    minHeight: '30rem',
+    overflow: 'hidden',
   }
   console.log(props.data)
 
@@ -34,11 +34,11 @@ const Tags = props => {
         <Img />
         <div
           style={{
-            backgroundColor: "rgba(255,255,255,0.5)",
-            position: "absolute",
-            bottom: "0rem",
-            width: " 100%",
-            height: "auto",
+            backgroundColor: 'rgba(255,255,255,0.5)',
+            position: 'absolute',
+            bottom: '0rem',
+            width: ' 100%',
+            height: 'auto',
           }}
         >
           <div
@@ -46,7 +46,7 @@ const Tags = props => {
               marginLeft: `auto`,
               marginRight: `auto`,
               maxWidth: rhythm(30),
-              padding: "1rem 0",
+              padding: '1rem 0',
             }}
           >
             <MyNav />
@@ -59,10 +59,10 @@ const Tags = props => {
             ...scale(2),
             marginBottom: rhythm(1.5),
             marginTop: 0,
-            position: "absolute",
-            top: "30%",
-            left: "10%",
-            fontSize: "5rem",
+            position: 'absolute',
+            top: '30%',
+            left: '10%',
+            fontSize: '5rem',
           }}
         >
           <Link
@@ -94,17 +94,17 @@ const Tags = props => {
                 <Card.Grid
                   key={key}
                   style={{
-                    width: "25%",
-                    minHeight: "3em",
-                    textAlign: "center",
-                    fontSize: "20px",
+                    width: '25%',
+                    minHeight: '3em',
+                    textAlign: 'center',
+                    fontSize: '20px',
                   }}
                 >
                   <Link
                     style={{
                       color: randomColor(),
-                      width: "%100",
-                      height: "100%",
+                      width: '%100',
+                      height: '100%',
                     }}
                     to={`/tags/${key}`}
                   >
@@ -118,17 +118,17 @@ const Tags = props => {
                 <Card.Grid
                   key={key}
                   style={{
-                    width: "50%",
-                    minHeight: "3em",
-                    textAlign: "center",
-                    fontSize: "20px",
+                    width: '50%',
+                    minHeight: '3em',
+                    textAlign: 'center',
+                    fontSize: '20px',
                   }}
                 >
                   <Link
                     style={{
                       color: randomColor(),
-                      width: "%100",
-                      height: "100%",
+                      width: '%100',
+                      height: '100%',
                     }}
                     to={`/tags/${key}`}
                   >
