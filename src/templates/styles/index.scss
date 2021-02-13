@@ -10,9 +10,12 @@
     padding: 1rem;
     border-radius: 10px;
     background: rgba(234, 234, 234, .5);
+    transition: border 0.3s ease ;
 }
 .postArticle:hover {
-    box-shadow: -10px 11px 12px 6px #3333;
+  background-clip: padding-box;
+  box-sizing: border-box;
+  border: 1.5rem solid rgba(148, 148, 148, 0.3);
 }
 
 .bg {
@@ -35,11 +38,6 @@
     font-family: 'Black Ops One', cursive;
 }
 
-/* post 页面背景图 */
-#main{
-  background: url(https://tva1.sinaimg.cn/large/0081Kckwly1gkfe7s63y2j31hc0u0hdt.jpg) repeat;
-  background-attachment: fixed;
-}
 
 .about_bg {
   background: url(https://tva1.sinaimg.cn/large/0081Kckwly1gkfe7s63y2j31hc0u0hdt.jpg) repeat;

@@ -108,13 +108,13 @@ class Layout extends React.Component {
         style={{
           marginLeft: `auto`,
           marginRight: `auto`,
-          maxWidth: rhythm(30),
+          maxWidth: rhythm(35),
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
         <header>{header}</header>
-        <main style={{ overflow: 'hidden' }}>{children}</main>
-        <footer style={{ color: '#333' }}>
+        <main>{children}</main>
+        <footer style={{ color: '#ccc', textAlign: 'center' }}>
           {/* TODO 授权文字 */}© {new Date().getFullYear()}, 滇ICP备19003866号
           本网站版权归本站作者Ruoduan所有
           {` `}

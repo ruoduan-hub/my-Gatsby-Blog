@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { Link, graphql, navigate } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import MyNav from '../components/nav'
@@ -9,6 +9,10 @@ import { autoBaiduSubmit } from '../utils/utils'
 import { rhythm } from '../utils/typography'
 import './styles/index.scss'
 import QueueAnim from 'rc-queue-anim'
+
+import S from './styles/post.module.scss'
+import { Pagination } from 'antd';
+
 class BlogIndex extends React.Component {
   componentDidMount() {
     autoBaiduSubmit()
@@ -19,11 +23,11 @@ class BlogIndex extends React.Component {
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
     console.log(this.props)
-    const { currentPage, numPages } = this.props.pageContext
-    const isFirst = currentPage === 1
-    const isLast = currentPage === numPages
-    const prevPage = currentPage - 1 === 1 ? '/' : (currentPage - 1).toString()
-    const nextPage = (currentPage + 1).toString()
+    const { currentPage, numPages, limit } = this.props.pageContext
+    // const isFirst = currentPage === 1
+    // const isLast = currentPage === numPages
+    // const prevPage = currentPage - 1 === 1 ? '/' : (currentPage - 1).toString()
+    // const nextPage = (currentPage + 1).toString()
     return (
       <div className="bg">
         <Layout location={this.props.location} title={siteTitle}>
@@ -70,50 +74,11 @@ class BlogIndex extends React.Component {
                 </article>
               )
             })}
-
-            <div>
-              <ul
-                style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  listStyle: 'none',
-                  padding: 0,
-                }}
-              >
-                {!isFirst && (
-                  <Link to={`/${prevPage}`} rel="prev">
-                    ← 上一页
-                  </Link>
-                )}
-                {Array.from({ length: numPages }, (_, i) => (
-                  <li
-                    key={`pagination-number${i + 1}`}
-                    style={{
-                      margin: 0,
-                    }}
-                  >
-                    <Link
-                      to={`/${i === 0 ? '' : i + 1}`}
-                      style={{
-                        padding: rhythm(1 / 4),
-                        textDecoration: 'none',
-                        color: i + 1 === currentPage ? '#ffffff' : '',
-                        background: i + 1 === currentPage ? '#007acc' : '',
-                      }}
-                    >
-                      {i + 1}
-                    </Link>
-                  </li>
-                ))}
-                {!isLast && (
-                  <Link to={`/${nextPage}`} rel="next">
-                    下一页 →
-                  </Link>
-                )}
-              </ul>
+            
+            <div className={S.PaginationDv}>            
+            <Pagination onChange={(c) => {c === 1 ? navigate(`/`) : navigate(`/${c}`)}} defaultPageSize={limit} current={currentPage} total={numPages * limit } />
             </div>
+
           </QueueAnim>
         </Layout>
       </div>
