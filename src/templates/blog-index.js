@@ -21,6 +21,7 @@ class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
+
     const posts = data.allMarkdownRemark.edges
     console.log(this.props)
     const { currentPage, numPages, limit } = this.props.pageContext
@@ -29,10 +30,10 @@ class BlogIndex extends React.Component {
     // const prevPage = currentPage - 1 === 1 ? '/' : (currentPage - 1).toString()
     // const nextPage = (currentPage + 1).toString()
     return (
-      <div className="bg">
-        <Layout location={this.props.location} title={siteTitle}>
+      <div>
+        <Layout location={this.props.location} isHome={true} title={siteTitle}>
           <SEO title="所有文章" description="若端blog，所有文章" />
-          <MyNav />
+          {/* <MyNav /> */}
           <QueueAnim
             delay={300}
             type={['scaleY']}
@@ -43,9 +44,8 @@ class BlogIndex extends React.Component {
               const title = node.frontmatter.title || node.fields.slug
               return (
                 <article
-                  className="postArticle"
+                  className={S.postArticle}
                   key={node.fields.slug}
-                  style={{ margin: '2rem 0' }}
                 >
                   <header>
                     <hgroup
@@ -56,16 +56,23 @@ class BlogIndex extends React.Component {
                       }}
                     >
                       <Link
-                        style={{ boxShadow: `none`, color: randomColor() }}
+                        style={{
+                          boxShadow: `none`,
+                          textDecoration: `none`,
+                          color: `inherit`,
+                        }}
                         to={node.fields.slug}
                       >
                         {title}
                       </Link>
                     </hgroup>
-                    <small>{node.frontmatter.date}</small>
+
+                    <small style={{ color: 'rgb(107, 107, 107)' }}>{node.frontmatter.date}</small>
+
                   </header>
-                  <section>
+                  <section style={{ maxWidth: '50rem' }}>
                     <p
+                      style={{ color: 'rgb(107, 107, 107)' }}
                       dangerouslySetInnerHTML={{
                         __html: node.frontmatter.description || node.excerpt,
                       }}
@@ -74,9 +81,9 @@ class BlogIndex extends React.Component {
                 </article>
               )
             })}
-            
-            <div className={S.PaginationDv}>            
-            <Pagination onChange={(c) => {c === 1 ? navigate(`/`) : navigate(`/${c}`)}} defaultPageSize={limit} current={currentPage} total={numPages * limit } />
+
+            <div className={S.PaginationDv}>
+              <Pagination onChange={(c) => { c === 1 ? navigate(`/`) : navigate(`/${c}`) }} defaultPageSize={limit} current={currentPage} total={numPages * limit} />
             </div>
 
           </QueueAnim>

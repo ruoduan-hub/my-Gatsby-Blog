@@ -1,0 +1,88 @@
+.title {
+  font-family: 'Black Ops One', cursive;
+}
+
+.dv {
+  height: 40rem;
+  @media (max-width: 40.625em) {
+    height: 30rem;
+  }
+}
+
+$pd: 0 10rem;
+
+@mixin pad {
+  padding: $pd;
+  @media (max-width: 40.625em) {
+    padding: 0px 6%;
+  }
+}
+
+.isDk{
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  height: 20rem;
+  max-height: 20rem;
+  background: rgb(33, 33, 41);
+  @include pad;
+
+
+  .headerBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    h1{
+      color: rgb(254, 254, 254);
+      font-weight: 900;
+      font-size: 5rem;
+      margin-top: 0px;
+    }
+  }
+}
+
+.isWh {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  height: 20rem;
+  max-height: 20rem;
+  background: rgb(254, 254, 254);
+  @include pad;
+
+  .headerBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    h1{
+      color: rgb(33, 33, 41);
+      font-weight: 900;
+      font-size: 5rem;
+      margin-top: 0px;
+    }
+  }
+}
+
+
+.isMainDk {
+  background: rgb(254, 254, 254);
+  @include pad;
+}
+
+.isMainWh {
+  background: rgb(33, 33, 41);
+  @include pad;
+}
+
+.img {
+  width: 600px;
+  height: 400px;
+  background-color: rgb(254, 254, 254, 0.3);
+  @media (max-width: 40.625em) {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+

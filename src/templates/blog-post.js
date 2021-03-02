@@ -48,7 +48,6 @@ class BlogPostTemplate extends React.Component {
 
   render() {
     const post = this.props.data.markdownRemark
-    const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
 
     // 护眼模式 func
@@ -106,23 +105,14 @@ class BlogPostTemplate extends React.Component {
               </div>,
               this.el
             )}
-          <Layout location={this.props.location} title={siteTitle}>
+          <Layout location={this.props.location} title={post.frontmatter.title} isHome={false}>
             <SEO
               title={post.frontmatter.title}
               tags={post.frontmatter.title || post.frontmatter.title}
               description={post.frontmatter.description || post.excerpt}
             />
             <article>
-              <MyNav small={true} />
               <header>
-                <h1
-                  style={{
-                    marginTop: rhythm(1),
-                    marginBottom: rhythm(1),
-                  }}
-                >
-                  {post.frontmatter.title}
-                </h1>
                 <p
                   style={{
                     ...scale(1 / 5),
