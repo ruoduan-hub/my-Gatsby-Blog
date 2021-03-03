@@ -5,4 +5,14 @@
 }
 .postArticle {
   margin: 2rem 0px;
+  // background-color: indianred;
+  width: 60rem;
+  @media (max-width: 40.625em) {
+    width: 100%
+  }
+  padding: 1em;
+  transition: all 1s ease;
+  &:hover {
+    box-shadow: 3px 2px 15px #ccc;
+  }
 }

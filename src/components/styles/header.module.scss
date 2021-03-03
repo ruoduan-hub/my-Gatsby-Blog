@@ -13,6 +13,8 @@ $pd: 0 10rem;
 
 @mixin pad {
   padding: $pd;
+  width: 100%;
+
   @media (max-width: 40.625em) {
     padding: 0px 6%;
   }
