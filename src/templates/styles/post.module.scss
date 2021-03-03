@@ -17,5 +17,8 @@
   display: none;
   @media (max-width: 40.625em) {
     display: block;
+    position: fixed;
+    top: 1rem;
+    z-index: 99;
   }
 }

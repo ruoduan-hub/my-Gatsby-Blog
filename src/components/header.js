@@ -102,6 +102,7 @@ const Header = ({ isHome, title, theme }) => {
                 color: `inherit`,
                 fontSize: '3rem'
               }}
+              onClick={(e) => e.stopPropagation()}
               to={`/`}
             >
               <Texty

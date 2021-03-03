@@ -46,15 +46,7 @@ class BlogPostTemplate extends React.Component {
         <div>
           {typeof window !== 'undefined' &&
             ReactDOM.createPortal(
-              <div
-                id="eyeModel"
-                style={{
-                  position: 'fixed',
-                  right: '3rem',
-                  top: '1rem',
-                  zIndex: 99,
-                }}
-              >
+              <div>
                 <BackTop visibilityHeight={800} />
                 <WithDrawer
                   data={

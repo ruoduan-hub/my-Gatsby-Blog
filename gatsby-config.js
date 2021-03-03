@@ -166,6 +166,14 @@ module.exports = {
         head: false,
       },
     },
+    {
+      resolve: `gatsby-plugin-valine`,
+      options: {
+        appId: `WTg3L6oMYj1NLwMmf3jYaIFi-9Nh9j0Va`,
+        appKey: `5foU1DAr39RdhEfjYAjA99yi`,
+        avatar: `wavatar`,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
