@@ -1,8 +1,21 @@
-.PaginationDv {
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
+.article {
+  .leftToc {
+    display: flex;
+    position: sticky;
+    top: 0;
+    flex-direction: column;
+    align-items: center;
+    > h3 {
+      font-size: 2rem;
+    }
+    
+  }
 }
-.postArticle {
-  margin: 2rem 0px;
+
+.BtnToc {
+  font-size: 2rem;
+  display: none;
+  @media (max-width: 40.625em) {
+    display: block;
+  }
 }

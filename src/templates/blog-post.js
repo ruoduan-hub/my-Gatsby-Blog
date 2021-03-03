@@ -4,40 +4,30 @@ import { Link, graphql } from 'gatsby'
 import {
   DoubleLeftOutlined,
   DoubleRightOutlined,
-  EyeInvisibleOutlined,
-  EyeOutlined,
   ProfileFilled,
 } from '@ant-design/icons'
-import { BackTop } from 'antd'
+import { BackTop, Row, Col } from 'antd'
 
 import Bio from '../components/bio'
 import Comment from '../components/comment'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { rhythm, scale } from '../utils/typography'
-import MyNav from '../components/nav'
-import { autoBaiduSubmit } from '../utils/utils'
+
 import WithDrawer from '../components/drawer'
 import Toc from '../components/toc'
+
+import S from './styles/post.module.scss'
 
 // portals 插槽 插到到DOM元素
 const PortalsRoot =
   typeof document !== 'undefined' ? document.getElementById('___gatsby') : null
 
 class BlogPostTemplate extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      eyeModel: {
-        background: null,
-      },
-    }
-    // 创建一个dom元素容器
-    this.el =
-      typeof document !== `undefined` ? document.createElement('div') : null
-  }
+
+  el = typeof document !== `undefined` ? document.createElement('div') : null
+
   componentDidMount() {
-    autoBaiduSubmit()
     // 挂载到dom元素上
     PortalsRoot.appendChild(this.el)
   }
@@ -50,30 +40,10 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const { previous, next } = this.props.pageContext
 
-    // 护眼模式 func
-    const changeEye = () => {
-      if (!this.state.eyeModel.background) {
-        this.setState({
-          eyeModel: { background: '#E3EDCD' },
-        })
-      } else {
-        this.setState({
-          eyeModel: { background: false },
-        })
-      }
-    }
-
     return (
       <>
-        <WithDrawer
-          data={
-            <Toc tocHtml={this.props.data.markdownRemark.tableOfContents} />
-          }
-          button={<ProfileFilled style={{ fontSize: '2rem' }} />}
-        />
-
         {/* portals 挂载到外层 */}
-        <div style={this.state.eyeModel} id="main">
+        <div>
           {typeof window !== 'undefined' &&
             ReactDOM.createPortal(
               <div
@@ -85,23 +55,13 @@ class BlogPostTemplate extends React.Component {
                   zIndex: 99,
                 }}
               >
-                {this.state.eyeModel.background ? (
-                  <div>
-                    <EyeInvisibleOutlined
-                      onClick={changeEye}
-                      style={{ fontSize: '3rem' }}
-                    />
-                    <BackTop visibilityHeight={800} />
-                  </div>
-                ) : (
-                  <div>
-                    <EyeOutlined
-                      onClick={changeEye}
-                      style={{ fontSize: '3rem' }}
-                    />
-                    <BackTop visibilityHeight={800} />
-                  </div>
-                )}
+                <BackTop visibilityHeight={800} />
+                <WithDrawer
+                  data={
+                    <Toc tocHtml={this.props.data.markdownRemark.tableOfContents} />
+                  }
+                  button={<ProfileFilled className={S.BtnToc} />}
+                />
               </div>,
               this.el
             )}
@@ -111,28 +71,43 @@ class BlogPostTemplate extends React.Component {
               tags={post.frontmatter.title || post.frontmatter.title}
               description={post.frontmatter.description || post.excerpt}
             />
-            <article>
-              <header>
-                <p
-                  style={{
-                    ...scale(1 / 5),
-                    display: `block`,
-                    marginBottom: rhythm(1),
-                  }}
-                >
-                  {post.frontmatter.date}
-                </p>
-              </header>
-              <section dangerouslySetInnerHTML={{ __html: post.html }} />
-              <hr
-                style={{
-                  marginBottom: rhythm(1),
-                }}
-              />
-              <footer>
-                <Bio />
-              </footer>
-            </article>
+
+            <div className={S.article}>
+              <Row>
+                <Col xs={24} md={16}>
+                  <article>
+                    <header>
+                      <p
+                        style={{
+                          ...scale(1 / 5),
+                          display: `block`,
+                          marginBottom: rhythm(1),
+                        }}
+                      >
+                        {post.frontmatter.date}
+                      </p>
+                    </header>
+                    <section dangerouslySetInnerHTML={{ __html: post.html }} />
+                    <hr
+                      style={{
+                        marginBottom: rhythm(1),
+                      }}
+                    />
+                    <footer>
+                      <Bio />
+                    </footer>
+                  </article>
+                </Col>
+
+                <Col xs={0} md={8}>
+                  <div className={S.leftToc}>
+                    <h3>Toc</h3>
+                    <div dangerouslySetInnerHTML={{ __html: String(this.props.data.markdownRemark.tableOfContents) }}></div>
+                  </div>
+                </Col>
+
+              </Row>
+            </div>
 
             <nav>
               <ul
@@ -167,12 +142,12 @@ class BlogPostTemplate extends React.Component {
                 </li>
               </ul>
             </nav>
+            
+            <Comment
+              gitalkConfig={this.props.data.site.siteMetadata.gitalkConfig}
+              path={this.props.path}
+            />
           </Layout>
-
-          <Comment
-            gitalkConfig={this.props.data.site.siteMetadata.gitalkConfig}
-            path={this.props.path}
-          />
         </div>
       </>
     )

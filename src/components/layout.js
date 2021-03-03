@@ -175,12 +175,8 @@ const Layout = ({ children, title, isHome }) => {
 
               <Header theme={theme} isHome={isHome} title={title} />
 
-              <main className={theme.dark ? S.isMainDk : S.isMainWh}>
-                <div
-                  style={{
-                    // marginLeft: `${rhythm(10)}`,
-                  }}
-                >
+              <main className={theme.dark ? S.isMainDk : isHome ? S.isMainWh : S.isMainWhPost}>
+                <div>
                   {children}
                 </div>
               </main>

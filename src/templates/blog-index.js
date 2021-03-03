@@ -2,28 +2,21 @@ import React from 'react'
 import { Link, graphql, navigate } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import MyNav from '../components/nav'
-import { randomColor } from '../utils/utils'
-import { autoBaiduSubmit } from '../utils/utils'
 
 import { rhythm } from '../utils/typography'
 import './styles/index.scss'
 import QueueAnim from 'rc-queue-anim'
 
-import S from './styles/post.module.scss'
+import S from './styles/index.module.scss'
 import { Pagination } from 'antd';
 
 class BlogIndex extends React.Component {
-  componentDidMount() {
-    autoBaiduSubmit()
-  }
 
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
 
     const posts = data.allMarkdownRemark.edges
-    console.log(this.props)
     const { currentPage, numPages, limit } = this.props.pageContext
     // const isFirst = currentPage === 1
     // const isLast = currentPage === numPages
@@ -33,7 +26,7 @@ class BlogIndex extends React.Component {
       <div>
         <Layout location={this.props.location} isHome={true} title={siteTitle}>
           <SEO title="所有文章" description="若端blog，所有文章" />
-          {/* <MyNav /> */}
+
           <QueueAnim
             delay={300}
             type={['scaleY']}

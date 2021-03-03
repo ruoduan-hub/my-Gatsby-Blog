@@ -18,52 +18,49 @@ $pd: 0 10rem;
   }
 }
 
-.isDk{
+// header 公共样式
+@mixin publicHeader($bgC, $h1bgC) {
   display: flex;
   -webkit-box-pack: center;
   justify-content: center;
   height: 20rem;
   max-height: 20rem;
-  background: rgb(33, 33, 41);
+  background: $bgC;
   @include pad;
-
 
   .headerBox {
     width: 100%;
     display: flex;
     flex-direction: column;
     h1{
-      color: rgb(254, 254, 254);
+      color: $h1bgC;
       font-weight: 900;
       font-size: 5rem;
-      margin-top: 0px;
+      margin-top: 5rem;
     }
   }
+}
+
+// 首页配色
+.isDk{
+  @include publicHeader(rgba(33, 33, 41), rgba(254, 254, 254))
 }
 
 .isWh {
-  display: flex;
-  -webkit-box-pack: center;
-  justify-content: center;
-  height: 20rem;
-  max-height: 20rem;
-  background: rgb(254, 254, 254);
-  @include pad;
+  @include publicHeader(rgba(254, 254, 254), rgba(33, 33, 41))
+}
 
-  .headerBox {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    h1{
-      color: rgb(33, 33, 41);
-      font-weight: 900;
-      font-size: 5rem;
-      margin-top: 0px;
-    }
-  }
+// post 页配色
+.isDkPost{
+  @include publicHeader(rgba(33, 33, 41), rgba(254, 254, 254))
+}
+
+.isWhPost {
+  @include publicHeader(rgba(252,232,216,1), rgba(33, 33, 41))
 }
 
 
+// main 主体样式
 .isMainDk {
   background: rgb(254, 254, 254);
   @include pad;
@@ -74,6 +71,12 @@ $pd: 0 10rem;
   @include pad;
 }
 
+// post 页 main 主体配色
+.isMainWhPost {
+  background: rgba(224,224,206,1);
+  @include pad;
+}
+
 .img {
   width: 600px;
   height: 400px;
@@ -81,6 +84,10 @@ $pd: 0 10rem;
   @media (max-width: 40.625em) {
     width: 100%;
     height: auto;
+  }
+  img {
+    width: 100%;
+    height: 100%;
   }
 }
 

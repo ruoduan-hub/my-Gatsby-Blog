@@ -84,21 +84,17 @@ const Header = ({ isHome, title, theme }) => {
   }
 
   return (
-    <div className={S.dv}>
+    <div style={{ background: dark ? '' : 'rgba(224,224,206,1)' }} className={S.dv}>
       <div
-        className={dark ? S.isDk : S.isWh}
+        className={dark ? S.isDkPost : S.isWhPost}
       >
         <div style={{
           // marginLeft: `${rhythm(10)}`,
         }}
           className={S.headerBox}
-        // onClick={() => toggleDark()}
+          onClick={() => toggleDark()}
         >
-          <h1
-            style={{
-            marginTop: '5rem'
-          }}
-          >
+          <h1>
             <Link
               style={{
                 boxShadow: `none`,
