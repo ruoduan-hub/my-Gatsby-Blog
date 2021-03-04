@@ -1,7 +1,48 @@
+@import './markdown.module.scss';
 
-@import '../styles//header.module.scss';
+$pd: 0 10rem;
+
+
+@mixin pad {
+  padding: $pd;
+  width: 100%;
+
+  @media (max-width: 40.625em) {
+    padding: 1rem 6%;
+  }
+}
 
 .main {
-  margin-top: 3rem;
   @include pad;
+  // 在main 中混入 Markdown 格式化样式
+  @include mkFormat;
+
+  width: 95rem;
+  padding-top: 1rem;
+  @media (max-width: 40.625em) {
+    width: 100%;
+  }
+  .mid {
+    box-shadow: 2px 5px 10px 2px #ccc;
+    padding: 1rem 3rem;
+    @media (max-width: 40.625em) {
+      padding: 1rem;
+    }
+
+    .info{
+      width: 600px;
+      display: flex;
+      height: 3rem;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-bottom: 1rem;
+      @media (max-width: 40.625em) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.isMainWhPost {
+  background-color: rgb(224, 224, 206);
 }
