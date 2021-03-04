@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Link, graphql } from 'gatsby'
+import { Link, graphql, navigate } from 'gatsby'
 import {
   DoubleLeftOutlined,
   DoubleRightOutlined,
@@ -25,11 +25,28 @@ const PortalsRoot =
 
 class BlogPostTemplate extends React.Component {
 
+  state = {
+    tabs: {}
+  }
+
+
+
   el = typeof document !== `undefined` ? document.createElement('div') : null
 
   componentDidMount() {
     // 挂载到dom元素上
     PortalsRoot.appendChild(this.el)
+
+    // 生成标签
+    const edges = this.props.data.allMarkdownRemark.edges
+    let _t = {}
+    edges.forEach(item => {
+      _t[item.node.frontmatter.tags] = item.node.frontmatter.tags
+    })
+    console.log(this.props.data.allMarkdownRemark, 1)
+    this.setState({
+      tabs: _t
+    })
   }
   componentWillUnmount() {
     // 清除元素
@@ -93,11 +110,22 @@ class BlogPostTemplate extends React.Component {
 
                 <Col xs={0} md={8}>
                   <div className={S.leftToc}>
+                    <h3>Tags</h3>
+                    <div className={S.tabs}>
+                      {
+                        Object?.keys(this.state.tabs).map(key => (
+                          <nav onClick={() => navigate(`/tags/${key}`)}>
+                            {key}
+                          </nav>
+                        ))
+                      }
+                    </div>
+
                     <h3>Toc</h3>
                     <div dangerouslySetInnerHTML={{ __html: String(this.props.data.markdownRemark.tableOfContents) }}></div>
+
                   </div>
                 </Col>
-
               </Row>
             </div>
 
@@ -134,7 +162,7 @@ class BlogPostTemplate extends React.Component {
                 </li>
               </ul>
             </nav>
-            
+
             <Comment
               gitalkConfig={this.props.data.site.siteMetadata.gitalkConfig}
               path={this.props.path}
@@ -156,6 +184,22 @@ export const pageQuery = graphql`
         gitalkConfig {
           clientID
           clientSecret
+        }
+      }
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "YYYY 年 MM 月 DD 日")
+            title
+            tags
+            categories
+          }
         }
       }
     }

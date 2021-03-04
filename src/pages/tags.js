@@ -16,6 +16,7 @@ const Tags = props => {
   props.data.allMarkdownRemark.edges.forEach(item => {
     urlData[item.node.frontmatter.tags] = item.node.frontmatter.tags
   })
+
   const imgStyle = {
     position: 'relative',
     minHeight: '30rem',
