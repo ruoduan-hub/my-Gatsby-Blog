@@ -174,6 +174,31 @@ module.exports = {
         avatar: `wavatar`,
       },
     },
+
+    // 配置mdx
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/pagex/`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-page-creator",
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/pagex`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          // posts: require.resolve("./src/components/layout.js"),
+          default: require.resolve("./src/components/mdx-layout/pageLayout.js"),
+        },
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

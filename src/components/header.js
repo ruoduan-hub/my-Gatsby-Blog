@@ -8,7 +8,7 @@ import 'rc-texty/assets/index.css'
 import TweenOne from 'rc-tween-one'
 import S from './styles/header.module.scss'
 
-const Header = ({ isHome, title, theme }) => {
+const Header = ({ isHome, title, theme, imgSrc }) => {
 
   const { dark, toggleDark } = theme
 
@@ -142,7 +142,9 @@ const Header = ({ isHome, title, theme }) => {
             </Link>
           </h1>
           <div className={S.img}>
-            <img src="https://source.unsplash.com/random/600x400" alt="img" />
+            {
+              typeof imgSrc === 'string' ? <img src={imgSrc} alt="img" /> : <img src='https://source.unsplash.com/random/600x400' alt="img" />
+            }
           </div>
         </div>
       </div>
@@ -152,9 +154,14 @@ const Header = ({ isHome, title, theme }) => {
 }
 
 Header.defaultProps = {
+  /** 显示文字 */
   title: String,
+  /** Context  */
   theme: Boolean,
-  isHome: Boolean
+  /** 是否使用主页样式 */
+  isHome: Boolean,
+  /** 图片链接 ，不是主页才有；默认 unsplash 随机图片 */
+  imgSrc: String,
 }
 
 export default Header

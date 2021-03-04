@@ -114,7 +114,7 @@ class BlogPostTemplate extends React.Component {
                     <div className={S.tabs}>
                       {
                         Object?.keys(this.state.tabs).map(key => (
-                          <nav onClick={() => navigate(`/tags/${key}`)}>
+                          <nav key={key} onClick={() => navigate(`/tags/${key}`)}>
                             {key}
                           </nav>
                         ))

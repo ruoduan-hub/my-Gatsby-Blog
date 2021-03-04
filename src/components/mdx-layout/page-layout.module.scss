@@ -1,0 +1,7 @@
+
+@import '../styles//header.module.scss';
+
+.main {
+  margin-top: 3rem;
+  @include pad;
+}
