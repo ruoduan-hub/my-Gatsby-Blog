@@ -16,7 +16,7 @@ const PageLayout = ({ children, path }) => {
     <ThemeContext.Consumer>
       {(theme) => (
         <div>
-          <Header theme={theme} isHome={false} title={'About'} imgSrc='https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.0513.org%2Fforum%2F201211%2F15%2F105130m7sluwslwm7uvvvv.jpg&refer=http%3A%2F%2Fpic.0513.org&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1617431500&t=ae4cd6fc35cee8db0eaf816e84bc9d4e' />
+          <Header theme={theme} isHome={false} title={'About'} imgSrc='https://tva1.sinaimg.cn/large/008eGmZEly1go7wupjosrj30zk0qo43e.jpg' />
 
           <main className={S.main}>
             <MDXProvider components={shortcodes}>{children}</MDXProvider>
