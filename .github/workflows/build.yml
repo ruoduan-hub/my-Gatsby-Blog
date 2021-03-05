@@ -10,6 +10,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest # 构建运行环境
+
+    setps:
+      - name: set valine appid & appkey
+        env:
+          VALINE_APPID: ${{ secrets.VALINE_APPID }}
+          VALINE_APPKEY: ${{ secrets.VALINE_APPKEY }}
+
+
     steps:
     - name: Checkout  # 获取源码，使用actions/checkout@v2
       uses: actions/checkout@v2
