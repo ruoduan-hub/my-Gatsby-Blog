@@ -1,10 +1,10 @@
 import React from "react"
 import { MDXProvider } from "@mdx-js/react"
 import { StaticQuery, graphql } from 'gatsby'
-import Header from '../header'
+import Header from '../Header'
 import { Link } from "gatsby"
 import ThemeContext from '../../context/ThemeContext'
-import Comment from '../comment'
+import Comment from '../Comment'
 import { Divider } from 'antd'
 
 import S from './def-layout.module.scss'

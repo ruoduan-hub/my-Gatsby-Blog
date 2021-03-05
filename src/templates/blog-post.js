@@ -8,14 +8,14 @@ import {
 } from '@ant-design/icons'
 import { BackTop, Row, Col } from 'antd'
 
-import Bio from '../components/bio'
-import Comment from '../components/comment'
+import Bio from '../components/Boi'
+import Comment from '../components/Comment'
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import SEO from '../components/SEO'
 import { rhythm, scale } from '../utils/typography'
 
-import WithDrawer from '../components/drawer'
-import Toc from '../components/toc'
+import WithDrawer from '../components/WithDrawer'
+import Toc from '../components/Toc'
 
 import S from './styles/post.module.scss'
 

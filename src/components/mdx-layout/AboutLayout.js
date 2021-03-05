@@ -1,15 +1,15 @@
 import React from "react"
 import { MDXProvider } from "@mdx-js/react"
 import { StaticQuery, graphql } from 'gatsby'
-import { MDXRenderer } from "gatsby-plugin-mdx"
-import Header from '../header'
+// import { MDXRenderer } from "gatsby-plugin-mdx"
+import Header from '../Header'
 import { Link } from "gatsby"
 import ThemeContext from '../../context/ThemeContext'
-import Comment from '../comment'
+import Comment from '../Comment'
 import { GithubOutlined, WeiboOutlined, ZhihuOutlined, MailOutlined } from '@ant-design/icons'
 import { Divider } from 'antd'
 import { openPage } from '../../utils/utils'
-import MusicPlay from '../music-play'
+import MusicPlay from '../MusicPlay'
 
 import S from './about-layout.module.scss'
 

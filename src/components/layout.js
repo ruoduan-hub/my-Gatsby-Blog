@@ -3,7 +3,7 @@ import S from './styles/header.module.scss'
 import ThemeContext from '../context/ThemeContext'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
-import Header from './header'
+import Header from './Header'
 
 const Layout = ({ children, title, isHome }) => {
 

@@ -1,6 +1,11 @@
 /* 全局样式 */
 @import url('https://fonts.googleapis.com/css?family=Black+Ops+One|Bowlby+One+SC|Ma+Shan+Zheng|Press+Start+2P&display=swap');
 
+
+.title{
+  font-family: 'Black Ops One', cursive;
+}
+
 .dark {
   transition: all 0.6s ease;
   color: rgb(33, 33, 41);
