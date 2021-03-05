@@ -9,7 +9,6 @@ import QueueAnim from 'rc-queue-anim'
 
 import S from './styles/index.module.scss'
 class TagsIndex extends React.Component {
-
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
@@ -17,7 +16,11 @@ class TagsIndex extends React.Component {
 
     return (
       <div>
-        <Layout location={this.props.location} isHome={true} title={`${siteTitle} - Tags`}>
+        <Layout
+          location={this.props.location}
+          isHome={true}
+          title={`${siteTitle} - Tags`}
+        >
           <SEO title="所有文章" description="若端blog‘ Tags 文章" />
 
           <QueueAnim
@@ -29,10 +32,7 @@ class TagsIndex extends React.Component {
             {posts.map(({ node }) => {
               const title = node.frontmatter.title || node.fields.slug
               return (
-                <article
-                  className={S.postArticle}
-                  key={node.fields.slug}
-                >
+                <article className={S.postArticle} key={node.fields.slug}>
                   <header>
                     <hgroup
                       style={{
@@ -53,8 +53,9 @@ class TagsIndex extends React.Component {
                       </Link>
                     </hgroup>
 
-                    <small style={{ color: 'rgb(107, 107, 107)' }}>{node.frontmatter.date}</small>
-
+                    <small style={{ color: 'rgb(107, 107, 107)' }}>
+                      {node.frontmatter.date}
+                    </small>
                   </header>
                   <section style={{ maxWidth: '50rem' }}>
                     <p

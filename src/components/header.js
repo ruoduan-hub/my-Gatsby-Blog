@@ -11,7 +11,6 @@ import HeaderNav from './HeaderNav'
 import S from './styles/header.module.scss'
 
 const Header = ({ isHome, title, theme, imgSrc }) => {
-
   const { dark, toggleDark } = theme
 
   const [show, setShow] = useState(false)
@@ -19,33 +18,39 @@ const Header = ({ isHome, title, theme, imgSrc }) => {
   if (isHome) {
     return (
       <div
-        onMouseOver={(e) => { e.stopPropagation(); setShow(true) }}
-        onMouseOut={(e) => { e.stopPropagation(); setShow(false) }}
+        onMouseOver={e => {
+          e.stopPropagation()
+          setShow(true)
+        }}
+        onMouseOut={e => {
+          e.stopPropagation()
+          setShow(false)
+        }}
       >
-        <div
-          className={dark ? S.isDk : S.isWh}
-        >
-          <div style={{
-            // marginLeft: `${rhythm(10)}`,
-          }}
+        <div className={dark ? S.isDk : S.isWh}>
+          <div
+            style={
+              {
+                // marginLeft: `${rhythm(10)}`,
+              }
+            }
             className={S.headerBox}
             onClick={() => toggleDark()}
           >
-            <h1 >
+            <h1>
               <Link
                 style={{
                   boxShadow: `none`,
                   textDecoration: `none`,
                   color: `inherit`,
                 }}
-                onClick={(e) => e.stopPropagation()}
+                onClick={e => e.stopPropagation()}
                 to={`/`}
               >
                 <Texty
                   className={S.title}
                   type="mask-top"
                   delay={400}
-
                   component={TweenOne}
                   componentProps={{
                     animation: [
@@ -84,7 +89,7 @@ const Header = ({ isHome, title, theme, imgSrc }) => {
                   mode="sync"
                 >
                   Welcome to Ruoduan.com
-              </Texty>
+                </Texty>
               </Link>
             </h1>
           </div>
@@ -96,13 +101,17 @@ const Header = ({ isHome, title, theme, imgSrc }) => {
   }
 
   return (
-    <div style={{ background: dark ? '' : 'rgba(224,224,206,1)' }} className={S.dv}>
-      <div
-        className={dark ? S.isDkPost : S.isWhPost}
-      >
-        <div style={{
-          // marginLeft: `${rhythm(10)}`,
-        }}
+    <div
+      style={{ background: dark ? '' : 'rgba(224,224,206,1)' }}
+      className={S.dv}
+    >
+      <div className={dark ? S.isDkPost : S.isWhPost}>
+        <div
+          style={
+            {
+              // marginLeft: `${rhythm(10)}`,
+            }
+          }
           className={S.headerBox}
           onClick={() => toggleDark()}
         >
@@ -112,16 +121,15 @@ const Header = ({ isHome, title, theme, imgSrc }) => {
                 boxShadow: `none`,
                 textDecoration: `none`,
                 color: `inherit`,
-                fontSize: '3rem'
+                fontSize: '3rem',
               }}
-              onClick={(e) => e.stopPropagation()}
+              onClick={e => e.stopPropagation()}
               to={`/`}
             >
               <Texty
                 className={S.title}
                 type="mask-top"
                 delay={400}
-
                 component={TweenOne}
                 componentProps={{
                   animation: [
@@ -154,16 +162,16 @@ const Header = ({ isHome, title, theme, imgSrc }) => {
             </Link>
           </h1>
           <div className={S.img}>
-            {
-              typeof imgSrc === 'string' ? <img src={imgSrc} alt="img" /> : <img src='https://source.unsplash.com/random/600x400' alt="img" />
-            }
+            {typeof imgSrc === 'string' ? (
+              <img src={imgSrc} alt="img" />
+            ) : (
+              <img src="https://source.unsplash.com/random/600x400" alt="img" />
+            )}
           </div>
         </div>
       </div>
     </div>
   )
-
 }
-
 
 export default Header

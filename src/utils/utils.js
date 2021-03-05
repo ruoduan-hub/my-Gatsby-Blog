@@ -1,4 +1,3 @@
-
 // 生成随机颜色
 const randomColor = () => {
   let r = Math.floor(Math.random() * 256)

@@ -6,7 +6,6 @@ import { StaticQuery, graphql } from 'gatsby'
 import Header from './Header'
 
 const Layout = ({ children, title, isHome }) => {
-
   // const rootPath = `${__PATH_PREFIX__}/`
   console.log(isHome, 'isHome')
   return (
@@ -24,15 +23,15 @@ const Layout = ({ children, title, isHome }) => {
         <ThemeContext.Consumer>
           {theme => (
             <div className={theme.dark ? 'dark' : 'light'}>
-
               <Header theme={theme} isHome={isHome} title={title} />
 
-              <main className={theme.dark ? S.isMainDk : isHome ? S.isMainWh : S.isMainWhPost}>
-                <div>
-                  {children}
-                </div>
+              <main
+                className={
+                  theme.dark ? S.isMainDk : isHome ? S.isMainWh : S.isMainWhPost
+                }
+              >
+                <div>{children}</div>
               </main>
-
             </div>
           )}
         </ThemeContext.Consumer>

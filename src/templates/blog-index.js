@@ -8,10 +8,9 @@ import './styles/index.scss'
 import QueueAnim from 'rc-queue-anim'
 
 import S from './styles/index.module.scss'
-import { Pagination } from 'antd';
+import { Pagination } from 'antd'
 
 class BlogIndex extends React.Component {
-
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
@@ -36,10 +35,7 @@ class BlogIndex extends React.Component {
             {posts.map(({ node }) => {
               const title = node.frontmatter.title || node.fields.slug
               return (
-                <article
-                  className={S.postArticle}
-                  key={node.fields.slug}
-                >
+                <article className={S.postArticle} key={node.fields.slug}>
                   <header>
                     <hgroup
                       style={{
@@ -60,8 +56,9 @@ class BlogIndex extends React.Component {
                       </Link>
                     </hgroup>
 
-                    <small style={{ color: 'rgb(107, 107, 107)' }}>{node.frontmatter.date}</small>
-
+                    <small style={{ color: 'rgb(107, 107, 107)' }}>
+                      {node.frontmatter.date}
+                    </small>
                   </header>
                   <section style={{ maxWidth: '50rem' }}>
                     <p
@@ -76,9 +73,15 @@ class BlogIndex extends React.Component {
             })}
 
             <div className={S.PaginationDv}>
-              <Pagination onChange={(c) => { c === 1 ? navigate(`/`) : navigate(`/${c}`) }} defaultPageSize={limit} current={currentPage} total={numPages * limit} />
+              <Pagination
+                onChange={c => {
+                  c === 1 ? navigate(`/`) : navigate(`/${c}`)
+                }}
+                defaultPageSize={limit}
+                current={currentPage}
+                total={numPages * limit}
+              />
             </div>
-
           </QueueAnim>
         </Layout>
       </div>

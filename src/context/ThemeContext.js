@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 const defaultState = {
   dark: false,
@@ -8,8 +8,7 @@ const ThemeContext = React.createContext(defaultState)
 // Getting dark mode information from OS!
 // You need macOS Mojave + Safari Technology Preview Release 68 to test this currently.
 const supportsDarkMode = () =>
-  window.matchMedia("(prefers-color-scheme: dark)").matches === true
-
+  window.matchMedia('(prefers-color-scheme: dark)').matches === true
 
 class ThemeProvider extends React.Component {
   state = {
@@ -17,13 +16,13 @@ class ThemeProvider extends React.Component {
   }
   toggleDark = () => {
     let dark = !this.state.dark
-    localStorage.setItem("dark", JSON.stringify(dark))
+    localStorage.setItem('dark', JSON.stringify(dark))
     this.setState({ dark })
   }
   componentDidMount() {
     console.log('当前系统是否为深色模式', supportsDarkMode())
     // Getting dark mode value from localStorage!
-    const lsDark = JSON.parse(localStorage.getItem("dark"))
+    const lsDark = JSON.parse(localStorage.getItem('dark'))
     if (lsDark) {
       this.setState({ dark: lsDark })
     } else if (supportsDarkMode()) {

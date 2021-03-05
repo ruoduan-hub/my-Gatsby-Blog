@@ -24,12 +24,9 @@ const PortalsRoot =
   typeof document !== 'undefined' ? document.getElementById('___gatsby') : null
 
 class BlogPostTemplate extends React.Component {
-
   state = {
-    tabs: {}
+    tabs: {},
   }
-
-
 
   el = typeof document !== `undefined` ? document.createElement('div') : null
 
@@ -45,7 +42,7 @@ class BlogPostTemplate extends React.Component {
     })
     console.log(this.props.data.allMarkdownRemark, 1)
     this.setState({
-      tabs: _t
+      tabs: _t,
     })
   }
   componentWillUnmount() {
@@ -67,14 +64,20 @@ class BlogPostTemplate extends React.Component {
                 <BackTop visibilityHeight={800} />
                 <WithDrawer
                   data={
-                    <Toc tocHtml={this.props.data.markdownRemark.tableOfContents} />
+                    <Toc
+                      tocHtml={this.props.data.markdownRemark.tableOfContents}
+                    />
                   }
                   button={<ProfileFilled className={S.BtnToc} />}
                 />
               </div>,
               this.el
             )}
-          <Layout location={this.props.location} title={post.frontmatter.title} isHome={false}>
+          <Layout
+            location={this.props.location}
+            title={post.frontmatter.title}
+            isHome={false}
+          >
             <SEO
               title={post.frontmatter.title}
               tags={post.frontmatter.title || post.frontmatter.title}
@@ -112,18 +115,21 @@ class BlogPostTemplate extends React.Component {
                   <div className={S.leftToc}>
                     <h3>Tags</h3>
                     <div className={S.tabs}>
-                      {
-                        Object?.keys(this.state.tabs).map(key => (
-                          <nav key={key} onClick={() => navigate(`/tags/${key}`)}>
-                            {key}
-                          </nav>
-                        ))
-                      }
+                      {Object?.keys(this.state.tabs).map(key => (
+                        <nav key={key} onClick={() => navigate(`/tags/${key}`)}>
+                          {key}
+                        </nav>
+                      ))}
                     </div>
 
                     <h3>Toc</h3>
-                    <div dangerouslySetInnerHTML={{ __html: String(this.props.data.markdownRemark.tableOfContents) }}></div>
-
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: String(
+                          this.props.data.markdownRemark.tableOfContents
+                        ),
+                      }}
+                    ></div>
                   </div>
                 </Col>
               </Row>
