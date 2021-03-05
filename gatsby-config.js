@@ -169,8 +169,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-valine`,
       options: {
-        appId: `WTg3L6oMYj1NLwMmf3jYaIFi-9Nh9j0Va`,
-        appKey: `5foU1DAr39RdhEfjYAjA99yi`,
+        appId: process.env.VALINE_APPID,
+        appKey: process.env.VALINE_APPKEY,
         avatar: `wavatar`,
       },
     },
