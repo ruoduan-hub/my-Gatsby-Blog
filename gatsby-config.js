@@ -166,15 +166,7 @@ module.exports = {
         head: false,
       },
     },
-    {
-      resolve: `gatsby-plugin-valine`,
-      options: {
-        appId: process.env.VALINE_APPID,
-        appKey: process.env.VALINE_APPKEY,
-        avatar: `wavatar`,
-      },
-    },
-
+    `gatsby-plugin-valine`,
     // 配置mdx
     {
       resolve: `gatsby-source-filesystem`,
