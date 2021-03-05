@@ -1,0 +1,31 @@
+@import "./markdown.module.scss";
+
+$pd: 0 10rem;
+
+@mixin pad {
+  padding: $pd;
+  width: 100%;
+
+  @media (max-width: 40.625em) {
+    padding: 1rem 6%;
+  }
+}
+
+// main 主体样式
+.main {
+  // 在main 中混入 Markdown 格式化样式
+  @include mkFormat;
+  @include pad;
+  height: 100vh;
+}
+
+.isMainDk {
+  background: rgb(254, 254, 254);
+  padding-top: 3rem;
+}
+
+.isMainWh {
+  background: rgba(224, 224, 206, 1);
+  padding-top: 3rem;
+
+}

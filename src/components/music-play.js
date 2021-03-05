@@ -94,7 +94,7 @@ const MusicPlay = props => {
               <Card title={item.title}>
                 <div key={item.title}>
                   <p>{item.description}</p>
-                  <audio controls>
+                  <audio style={{ width: '100%' }} controls>
                     <source src={item.src} />
                     <source src={item.src} />
                     <track label={item.title} kind="captions"></track>

@@ -9,14 +9,15 @@ import Comment from '../comment'
 import { GithubOutlined, WeiboOutlined, ZhihuOutlined, MailOutlined } from '@ant-design/icons'
 import { Divider } from 'antd'
 import { openPage } from '../../utils/utils'
+import MusicPlay from '../music-play'
 
-import S from './page-layout.module.scss'
+import S from './about-layout.module.scss'
 
 
 const shortcodes = { Link }
 
 
-const PageLayout = ({ children, path }) => {
+const AboutLayout = ({ children, path }) => {
   // console.log(props)
 
   return (
@@ -96,6 +97,10 @@ const PageLayout = ({ children, path }) => {
                       <div >
                         <MDXProvider components={shortcodes}>{children}</MDXProvider>
                       </div>
+
+                      <div>
+                        <MusicPlay />
+                      </div>
                       
                       <Divider>留言</Divider>
 
@@ -120,4 +125,4 @@ const PageLayout = ({ children, path }) => {
   )
 }
 
-export default PageLayout
+export default AboutLayout

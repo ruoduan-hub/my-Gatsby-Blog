@@ -6,6 +6,8 @@ import { rhythm, scale } from '../utils/typography'
 import Texty from 'rc-texty'
 import 'rc-texty/assets/index.css'
 import TweenOne from 'rc-tween-one'
+import HeaderNav from './HeaderNav'
+
 import S from './styles/header.module.scss'
 
 const Header = ({ isHome, title, theme, imgSrc }) => {
@@ -14,6 +16,7 @@ const Header = ({ isHome, title, theme, imgSrc }) => {
 
   if (isHome) {
     return (
+      <>
       <div
         className={dark ? S.isDk : S.isWh}
       >
@@ -30,6 +33,7 @@ const Header = ({ isHome, title, theme, imgSrc }) => {
                 textDecoration: `none`,
                 color: `inherit`,
               }}
+              onClick={(e) => e.stopPropagation()}
               to={`/`}
             >
               <Texty
@@ -80,6 +84,8 @@ const Header = ({ isHome, title, theme, imgSrc }) => {
           </h1>
         </div>
       </div>
+      <HeaderNav />
+      </>
     )
   }
 

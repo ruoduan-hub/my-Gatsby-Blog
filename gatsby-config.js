@@ -179,31 +179,61 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `posts`,
-        path: `${__dirname}/src/pagex/`,
+        name: `about`,
+        path: `${__dirname}/src/pagex/about`,
       },
     },
     {
       resolve: "gatsby-plugin-page-creator",
       options: {
-        name: `posts`,
-        path: `${__dirname}/src/pagex`,
+        name: `about`,
+        path: `${__dirname}/src/pagex/about`,
+      },
+    },
+    // 默认魔板
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `default`,
+        path: `${__dirname}/src/pagex/default`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-page-creator",
+      options: {
+        name: `default`,
+        path: `${__dirname}/src/pagex/default`,
       },
     },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          // posts: require.resolve("./src/components/layout.js"),
-          default: require.resolve("./src/components/mdx-layout/pageLayout.js"),
+          default: require.resolve("./src/components/mdx-layout/DefLayout.js"),
+          about: require.resolve("./src/components/mdx-layout/AboutLayout.js"),
         },
       },
+    },
+    // antd 按需
+    {
+      resolve: 'gatsby-plugin-antd',
+      options: {
+        style: true
+      }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     `gatsby-plugin-layout`,
     `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-less`,
+      options: {
+        lessOptions: {
+          javascriptEnabled: true
+        },
+      }
+    },
     `gatsby-plugin-sass`,
   ],
 }

@@ -1,0 +1,33 @@
+.navSticky {
+  width: 100%;
+  height: 4rem;
+  padding-left: 10rem;
+  background-color: rgba(250, 250, 250, 1);
+  color: #666;
+  box-shadow: 0 2px 5px -5px rgb(0 0 0 / 60%), 0 5px 15px 0 rgb(122 86 82 / 20%);
+  position: sticky;
+  top: 0;
+
+  @media (max-width: 40.625em) {
+    padding-left: 0;
+  }
+
+  .menu {
+    width: 50rem;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    @media (max-width: 40.625em) {
+      width: 100%;
+    }
+    > span {
+      display: flex;
+      flex-direction: column;
+      > i {
+        font-style: normal;
+        font-weight: 700;
+      }
+    }
+  }
+}
