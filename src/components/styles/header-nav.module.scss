@@ -5,9 +5,10 @@
   background-color: rgba(250, 250, 250, 1);
   color: #666;
   box-shadow: 0 2px 5px -5px rgb(0 0 0 / 60%), 0 5px 15px 0 rgb(122 86 82 / 20%);
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
-
+  transition: all  1s ease-out;
   @media (max-width: 40.625em) {
     padding-left: 0;
   }

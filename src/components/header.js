@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import { Link } from 'gatsby'
 
 import { rhythm, scale } from '../utils/typography'
@@ -14,78 +14,84 @@ const Header = ({ isHome, title, theme, imgSrc }) => {
 
   const { dark, toggleDark } = theme
 
+  const [show, setShow] = useState(false)
+
   if (isHome) {
     return (
-      <>
       <div
-        className={dark ? S.isDk : S.isWh}
+        onMouseOver={(e) => { e.stopPropagation(); setShow(true) }}
+        onMouseOut={(e) => { e.stopPropagation(); setShow(false) }}
       >
-        <div style={{
-          // marginLeft: `${rhythm(10)}`,
-        }}
-          className={S.headerBox}
-          onClick={() => toggleDark()}
+        <div
+          className={dark ? S.isDk : S.isWh}
         >
-          <h1 >
-            <Link
-              style={{
-                boxShadow: `none`,
-                textDecoration: `none`,
-                color: `inherit`,
-              }}
-              onClick={(e) => e.stopPropagation()}
-              to={`/`}
-            >
-              <Texty
-                className={S.title}
-                type="mask-top"
-                delay={400}
-
-                component={TweenOne}
-                componentProps={{
-                  animation: [
-                    { x: 130, type: 'set' },
-                    { x: 100, delay: 500, duration: 450 },
-                    {
-                      ease: 'easeOutQuart',
-                      duration: 300,
-                      x: 0,
-                    },
-                    {
-                      letterSpacing: 0,
-                      delay: -300,
-                      scale: 0.9,
-                      ease: 'easeInOutQuint',
-                      duration: 1000,
-                    },
-                    {
-                      scale: 1,
-                      width: '100%',
-                      delay: -300,
-                      duration: 1000,
-                      ease: 'easeInOutQuint',
-                    },
-                  ],
+          <div style={{
+            // marginLeft: `${rhythm(10)}`,
+          }}
+            className={S.headerBox}
+            onClick={() => toggleDark()}
+          >
+            <h1 >
+              <Link
+                style={{
+                  boxShadow: `none`,
+                  textDecoration: `none`,
+                  color: `inherit`,
                 }}
+                onClick={(e) => e.stopPropagation()}
+                to={`/`}
               >
-                {title}
+                <Texty
+                  className={S.title}
+                  type="mask-top"
+                  delay={400}
+
+                  component={TweenOne}
+                  componentProps={{
+                    animation: [
+                      { x: 130, type: 'set' },
+                      { x: 100, delay: 500, duration: 450 },
+                      {
+                        ease: 'easeOutQuart',
+                        duration: 300,
+                        x: 0,
+                      },
+                      {
+                        letterSpacing: 0,
+                        delay: -300,
+                        scale: 0.9,
+                        ease: 'easeInOutQuint',
+                        duration: 1000,
+                      },
+                      {
+                        scale: 1,
+                        width: '100%',
+                        delay: -300,
+                        duration: 1000,
+                        ease: 'easeInOutQuint',
+                      },
+                    ],
+                  }}
+                >
+                  {title}
+                </Texty>
+                <Texty
+                  className={S.title}
+                  style={{ fontSize: '1.5rem', fontWeight: 700 }}
+                  type="bottom"
+                  delay={2200}
+                  interval={30}
+                  mode="sync"
+                >
+                  Welcome to Ruoduan.com
               </Texty>
-              <Texty
-                className={S.title}
-                style={{ fontSize: '1.5rem', fontWeight: 700 }}
-                type="bottom"
-                delay={2200}
-                interval={30}
-                mode="sync"
-              >
-                Welcome to Ruoduan.com
-              </Texty>
-            </Link>
-          </h1>
+              </Link>
+            </h1>
+          </div>
         </div>
+
+        <HeaderNav isShow={show} />
       </div>
-      <HeaderNav />
-      </>
     )
   }
 
@@ -159,15 +165,5 @@ const Header = ({ isHome, title, theme, imgSrc }) => {
 
 }
 
-Header.defaultProps = {
-  /** 显示文字 */
-  title: String,
-  /** Context  */
-  theme: Boolean,
-  /** 是否使用主页样式 */
-  isHome: Boolean,
-  /** 图片链接 ，不是主页才有；默认 unsplash 随机图片 */
-  imgSrc: String,
-}
 
 export default Header
