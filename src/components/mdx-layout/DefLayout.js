@@ -6,6 +6,7 @@ import { Link } from 'gatsby'
 import ThemeContext from '../../context/ThemeContext'
 import Comment from '../Comment'
 import { Divider } from 'antd'
+import Footer from '../Footer'
 
 import S from './def-layout.module.scss'
 
@@ -71,6 +72,7 @@ const DefLayout = ({ children, path }) => {
                       <Comment path={path} />
                     </main>
                   </div>
+                  <Footer theme={theme} />
                 </div>
               )
             }}

@@ -4,6 +4,7 @@ import ThemeContext from '../context/ThemeContext'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import Header from './Header'
+import Footer from './Footer'
 
 const Layout = ({ children, title, isHome }) => {
   // const rootPath = `${__PATH_PREFIX__}/`
@@ -32,6 +33,8 @@ const Layout = ({ children, title, isHome }) => {
               >
                 <div>{children}</div>
               </main>
+
+              <Footer theme={theme} />
             </div>
           )}
         </ThemeContext.Consumer>

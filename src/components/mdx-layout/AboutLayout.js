@@ -15,6 +15,7 @@ import {
 import { Divider } from 'antd'
 import { openPage } from '../../utils/utils'
 import MusicPlay from '../MusicPlay'
+import Footer from '../Footer'
 
 import S from './about-layout.module.scss'
 
@@ -111,6 +112,9 @@ const AboutLayout = ({ children, path }) => {
                     </div>
                   </main>
                 </div>
+                
+                <Footer theme={theme} />
+
               </div>
             )}
           </ThemeContext.Consumer>

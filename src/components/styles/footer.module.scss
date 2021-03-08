@@ -1,0 +1,25 @@
+
+@mixin footerMX {
+  width: 100%;
+  margin-top: 3rem;
+  height: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  > span {
+    margin: 5px 0
+  }
+}
+
+.footerDk{
+  @include footerMX;
+  color: rgba(162,169,175,1);
+  background: rgba(57,62,70,1);
+}
+
+.footerWh{
+  @include footerMX;
+  color: rgba(162,169,175,1);
+  background: rgba(34,40,49,1);
+}

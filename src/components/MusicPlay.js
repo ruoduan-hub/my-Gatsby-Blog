@@ -42,24 +42,16 @@ const MusicPlay = props => {
   `)
 
   return (
-    <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(40),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        position: 'relative',
-      }}
-    >
+    <div>
       {/* eslint-disable */}
       <div
         role="button"
         onClick={actionShow}
         style={{
-          fontSize: '3rem',
+          fontSize: '2rem',
           fontFamily: 'Black Ops One',
           cursor: 'pointer',
-          margin: '1rem',
+          margin: '2rem 0',
         }}
       >
         <PlayCircleOutlined />
