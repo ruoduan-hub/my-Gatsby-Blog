@@ -98,9 +98,7 @@ const AboutLayout = ({ children, path }) => {
 
                       <div>
                         <MDXProvider components={shortcodes}>
-                            <body>
-                              {children}
-                            </body>
+                          <body>{children}</body>
                         </MDXProvider>
                       </div>
 
@@ -116,7 +114,6 @@ const AboutLayout = ({ children, path }) => {
                 </div>
 
                 <Footer theme={theme} />
-
               </div>
             )}
           </ThemeContext.Consumer>

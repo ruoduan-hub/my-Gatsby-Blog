@@ -8,8 +8,8 @@ const CONFIG = {
 }
 
 const Comment = props => {
-  console.log(process.env.VALINE_APPID, 'evn')
-  console.log(process.env.VALINE_APPKEY, 'evn')
+  // console.log(process.env.VALINE_APPID, 'evn')
+  // console.log(process.env.VALINE_APPKEY, 'evn')
 
   return (
     /* Page contents */
