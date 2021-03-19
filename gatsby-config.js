@@ -182,7 +182,7 @@ module.exports = {
         path: `${__dirname}/src/pagex/about`,
       },
     },
-    // 默认魔板
+    // 默认模板
     {
       resolve: `gatsby-source-filesystem`,
       options: {
