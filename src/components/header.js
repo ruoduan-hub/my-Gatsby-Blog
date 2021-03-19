@@ -1,7 +1,5 @@
-import React, { useState, useCallback, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
-
-import { rhythm, scale } from '../utils/typography'
 
 import Texty from 'rc-texty'
 import 'rc-texty/assets/index.css'
