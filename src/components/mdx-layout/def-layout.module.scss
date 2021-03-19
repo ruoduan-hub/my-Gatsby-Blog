@@ -17,6 +17,9 @@ $pd: 0 10rem;
   @include mkFormat;
   @include pad;
   height: 100vh;
+  main {
+    max-width: 1024px;
+  }
 }
 
 .isMainDk {

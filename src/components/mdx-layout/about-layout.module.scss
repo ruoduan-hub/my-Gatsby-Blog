@@ -24,6 +24,7 @@ $pd: 0 10rem;
   .mid {
     box-shadow: 2px 5px 10px 2px #ccc;
     padding: 1rem 3rem;
+    max-width: 1024px;
     @media (max-width: 40.625em) {
       padding: 1rem;
     }
