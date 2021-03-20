@@ -46,3 +46,10 @@ $pd: 0 10rem;
 .isMainWhPost {
   background-color: rgb(224, 224, 206);
 }
+
+.isMainDk {
+  // pre code 标签样式覆盖
+  body pre {
+        background-color: #f6f8fa;
+  }
+}

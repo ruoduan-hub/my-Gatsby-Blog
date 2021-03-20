@@ -58,13 +58,12 @@ const DefLayout = ({ children, path }) => {
                   <Header theme={theme} isHome={true} title={'Other'} />
 
                   <div
-                    className={`${S.main} ${
-                      theme.dark ? S.isMainDk : S.isMainWh
-                    }`}
+                    className={`${S.main} ${theme.dark ? S.isMainDk : S.isMainWh
+                      }`}
                   >
                     <main>
                       <MDXProvider components={shortcodes}>
-                        <body>{children}</body>
+                        <body style={{ backgroundColor: 'inherit' }}>{children}</body>
                       </MDXProvider>
 
                       <Divider>留言</Divider>

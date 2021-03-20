@@ -825,7 +825,9 @@
     overflow: auto;
     font-size: 85%;
     line-height: 1.45;
-    background-color: #f6f8fa;
+    background-color: initial;
+    // pre code 标签样式覆盖 采用继承
+    // background-color: #f6f8fa;
     border-radius: 3px;
   }
   

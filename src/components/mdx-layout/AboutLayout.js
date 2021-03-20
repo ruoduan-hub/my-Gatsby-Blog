@@ -70,7 +70,7 @@ const AboutLayout = ({ children, path }) => {
                   imgSrc="https://tva1.sinaimg.cn/large/008eGmZEly1go7wupjosrj30zk0qo43e.jpg"
                 />
 
-                <div className={theme.dark ? '' : S.isMainWhPost}>
+                <div className={theme.dark ? S.isMainDk : S.isMainWhPost}>
                   <main className={S.main}>
                     <div className={S.mid}>
                       <div className={S.info}>
@@ -98,7 +98,7 @@ const AboutLayout = ({ children, path }) => {
 
                       <div>
                         <MDXProvider components={shortcodes}>
-                          <body>{children}</body>
+                          <body style={{ backgroundColor: 'inherit' }}>{children}</body>
                         </MDXProvider>
                       </div>
 
