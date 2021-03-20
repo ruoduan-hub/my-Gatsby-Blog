@@ -18,6 +18,7 @@ $pd: 0 10rem;
   @include mkFormat;
 
   padding-top: 1rem;
+  padding-bottom: 3rem;
   @media (max-width: 40.625em) {
     width: 100%;
   }

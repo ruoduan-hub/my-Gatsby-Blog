@@ -111,7 +111,11 @@ class BlogPostTemplate extends React.Component {
                   </article>
                 </Col>
 
-                <Col xs={0} md={8}>
+                <Col xs={0} md={2}>
+                      
+                </Col>  
+                  
+                <Col xs={0} md={6}>
                   <div className={S.leftToc}>
                     <h3>Tags</h3>
                     <div className={S.tabs}>
