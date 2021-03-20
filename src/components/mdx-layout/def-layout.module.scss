@@ -25,6 +25,10 @@ $pd: 0 10rem;
 .isMainDk {
   background: rgb(254, 254, 254);
   padding-top: 1rem;
+    // pre code 标签样式覆盖
+    body pre {
+      background-color: #f6f8fa;
+}
 }
 
 .isMainWh {
