@@ -9,6 +9,9 @@ categories: 记
 ## This Vite
 > Vite 以 原生 ESM 方式服务源码。这实际上是让浏览器接管了打包程序的部分工作：Vite 只需要在浏览器请求源码时进行转换并按需提供源码。根据情景动态导入的代码，即只在当前屏幕上实际使用时才会被处理。
 
+[原文链接](https://www.ruoduan.cn/vite-react-demo/)
+
+[参考文档](https://cn.vitejs.dev/)
 
 ## 老规矩脚手架
 
@@ -103,6 +106,44 @@ plugins: [
       }
     }
   },
+
+```
+
+### alias 别名设置
+
+```js
+import path from 'path
+```
+
+```js
+resolve: {
+    alias: [
+      {
+        find: /^~/,
+        replacement: path.resolve(__dirname, "src"),
+      },
+    ],
+  },
+```
+
+### ts alias 设置
+
+> 配置 baseUrl & paths
+
+```json
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "~/*": ["src/*"]
+    },
+    
+   ...
+   
+  },
+  "include": ["./src"]
+}
+
 
 ```
 
