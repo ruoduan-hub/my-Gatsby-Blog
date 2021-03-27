@@ -19,6 +19,7 @@ class TagsIndex extends React.Component {
           location={this.props.location}
           isHome={true}
           title={`Article Tags`}
+          count={posts?.length}
         >
           <SEO title="所有文章" description="若端blog‘ Tags 文章" />
 

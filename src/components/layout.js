@@ -13,7 +13,7 @@ const STYLE = {
   minHeight: '100vh'
 }
 
-const Layout = ({ children, title, isHome }) => {
+const Layout = ({ children, title, isHome, count }) => {
   // const rootPath = `${__PATH_PREFIX__}/`
   console.log(isHome, 'isHome')
   return (
@@ -41,7 +41,7 @@ const Layout = ({ children, title, isHome }) => {
                 <div>{children}</div>
               </main>
 
-              <Footer theme={theme} />
+              <Footer count={count} theme={theme} />
             </div>
           )}
         </ThemeContext.Consumer>
@@ -52,6 +52,12 @@ const Layout = ({ children, title, isHome }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  // 头部文字
+  title: PropTypes.string,
+  // 是否是首页
+  isHome: PropTypes.bool,
+  // 文章数量
+  count: PropTypes.number
 }
 
 export default Layout
