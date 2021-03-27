@@ -77,22 +77,18 @@ const AboutLayout = ({ children, path }) => {
                         <MailOutlined
                           onClick={() => openPage(`mailto:${email}`)}
                           style={{ fontSize: '2rem' }}
-                          key="setting"
                         />
                         <GithubOutlined
                           onClick={() => openPage(github)}
                           style={{ fontSize: '2rem' }}
-                          key="setting"
                         />
                         <ZhihuOutlined
                           onClick={() => openPage(zhihu)}
                           style={{ fontSize: '2rem' }}
-                          key="edit"
                         />
                         <WeiboOutlined
                           onClick={() => openPage(weibo)}
                           style={{ fontSize: '2rem' }}
-                          key="ellipsis"
                         />
                       </div>
 

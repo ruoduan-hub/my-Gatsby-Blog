@@ -19,14 +19,14 @@ const Layout = ({ location, children }) => {
         opacity: 1,
         transform: 'translate3d(0vh,0vh,0) scale3d(1, 1, 1) rotate(0deg)',
       }}
-      // 切出
-      // leave={{
-      //   opacity: 0,
-      //   transform: "translate3d(0vh,0vh,0vh) scale3d(0.5, 0.5, 0.5) rotate(0deg)",
-      //   config: {
-      //       duration: 1000
-      //     }
-      // }}
+    // 切出
+    // leave={{
+    //   opacity: 0,
+    //   transform: "translate3d(0vh,0vh,0vh) scale3d(0.5, 0.5, 0.5) rotate(0deg)",
+    //   config: {
+    //       duration: 1000
+    //     }
+    // }}
     >
       <TransitionViews>{children}</TransitionViews>
     </TransitionProvider>

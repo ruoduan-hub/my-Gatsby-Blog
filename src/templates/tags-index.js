@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, graphql, navigate } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/SEO'
 
@@ -11,7 +11,6 @@ import S from './styles/index.module.scss'
 class TagsIndex extends React.Component {
   render() {
     const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
 
     return (
@@ -19,7 +18,7 @@ class TagsIndex extends React.Component {
         <Layout
           location={this.props.location}
           isHome={true}
-          title={`${siteTitle} - Tags`}
+          title={`Article Tags`}
         >
           <SEO title="所有文章" description="若端blog‘ Tags 文章" />
 

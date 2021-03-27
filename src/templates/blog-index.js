@@ -80,6 +80,7 @@ class BlogIndex extends React.Component {
                 defaultPageSize={limit}
                 current={currentPage}
                 total={numPages * limit}
+                showSizeChanger={false}
               />
             </div>
           </QueueAnim>

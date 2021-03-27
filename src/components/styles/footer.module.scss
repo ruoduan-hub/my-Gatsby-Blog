@@ -1,4 +1,3 @@
-
 @mixin footerMX {
   width: 100%;
   height: 8rem;
@@ -7,18 +6,18 @@
   justify-content: center;
   align-items: center;
   > span {
-    margin: 5px 0
+    margin: 5px 0;
   }
 }
 
-.footerDk{
+.footerDk {
   @include footerMX;
-  color: rgba(162,169,175,1);
-  background: rgba(57,62,70,1);
+  color: rgba(162, 169, 175, 1);
+  background: rgba(57, 62, 70, 1);
 }
 
-.footerWh{
+.footerWh {
   @include footerMX;
-  color: rgba(162,169,175,1);
-  background: rgba(34,40,49,1);
+  color: rgba(162, 169, 175, 1);
+  background: rgba(34, 40, 49, 1);
 }
