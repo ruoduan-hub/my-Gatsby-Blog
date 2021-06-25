@@ -15,7 +15,6 @@ const STYLE = {
 
 const Layout = ({ children, title, isHome, count }) => {
   // const rootPath = `${__PATH_PREFIX__}/`
-  console.log(isHome, 'isHome')
   return (
     <StaticQuery
       query={graphql`
