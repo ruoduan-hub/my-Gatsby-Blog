@@ -9947,6 +9947,11 @@ hosted-git-info@^3.0.6:
   dependencies:
     lru-cache "^6.0.0"
 
+hotkeys-js@^3.8.1:
+  version "3.8.7"
+  resolved "https://registry.nlark.com/hotkeys-js/download/hotkeys-js-3.8.7.tgz#c16cab978b53d7242f860ca3932e976b92399981"
+  integrity sha1-wWyrl4tT1yQvhgyjky6Xa5I5mYE=
+
 hpack.js@^2.1.6:
   version "2.1.6"
   resolved "https://registry.yarnpkg.com/hpack.js/-/hpack.js-2.1.6.tgz#87774c0949e513f42e84575b3c45681fade2a0b2"
@@ -15931,6 +15936,14 @@ react-helmet@^5.2.1:
     prop-types "^15.5.4"
     react-fast-compare "^2.0.2"
     react-side-effect "^1.1.0"
+
+react-hot-keys@^2.6.2:
+  version "2.6.2"
+  resolved "https://registry.npm.taobao.org/react-hot-keys/download/react-hot-keys-2.6.2.tgz#32fba45d9bf854a12f75994f421cb7047e5a3338"
+  integrity sha1-MvukXZv4VKEvdZlPQhy3BH5aMzg=
+  dependencies:
+    hotkeys-js "^3.8.1"
+    prop-types "^15.7.2"
 
 react-hot-loader@^4.12.21:
   version "4.13.0"

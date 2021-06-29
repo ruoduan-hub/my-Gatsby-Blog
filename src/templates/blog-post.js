@@ -16,6 +16,8 @@ import { rhythm, scale } from '../utils/typography'
 
 import WithDrawer from '../components/WithDrawer'
 import Toc from '../components/Toc'
+import StateSearch from '../components/StateSearch'
+
 
 import S from './styles/post.module.scss'
 
@@ -83,6 +85,8 @@ class BlogPostTemplate extends React.Component {
               tags={post.frontmatter.title || post.frontmatter.title}
               description={post.frontmatter.description || post.excerpt}
             />
+            
+            <StateSearch />
 
             <div className={S.article}>
               <Row>

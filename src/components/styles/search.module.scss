@@ -1,0 +1,52 @@
+.searchContent {
+    padding: 0.5rem 1rem;
+
+    .hits {
+        padding: 0 1rem;
+
+        .hitTitle {
+            font-size: 0.2rem;
+        }
+
+        .excerpt {
+            margin-top: 1rem;
+
+            @media (max-width: 40.625em) {
+                display: none;
+            }
+        }
+
+        >ul>li {
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        >ul>li:hover {
+            box-shadow: 3px 2px 15px #ccc;
+        }
+    }
+
+    .list {
+        max-height: 20rem;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &::-webkit-scrollbar {
+            display: block;
+        }
+    }
+
+}
+
+.hitTitle {
+    font-size: 0.28rem;
+    font-weight: 700;
+}
+
+.Highlight {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 0.5em;
+}

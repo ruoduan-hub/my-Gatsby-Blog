@@ -5,7 +5,7 @@ import Texty from 'rc-texty'
 import 'rc-texty/assets/index.css'
 import TweenOne from 'rc-tween-one'
 import HeaderNav from './HeaderNav'
-import Search from './Search'
+
 
 import S from './styles/header.module.scss'
 
@@ -26,7 +26,6 @@ const Header = ({ isHome, title, theme, imgSrc }) => {
           setShow(false)
         }}
       >
-      <Search />
         <div className={dark ? S.isDk : S.isWh}>
           <div
             style={
