@@ -1,44 +1,5 @@
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-});
+const queries = require('./config/algolia-config')
 
-
-const myQuery = `{
-  pages: allMarkdownRemark {
-    edges {
-      objectID: node {
-				id
-      }
-      node {
-        fields {
-          slug
-        }
-        frontmatter {
-          title
-        }
-        excerpt
-        rawMarkdownBody
-      }
-    }
-  }
-}`;
-
-const queries = [
-  {
-    query: myQuery,
-    transformer: ({ data }) => {
-      const list = [...data.pages.edges]
-      list.map(item => item.objectID = item.objectID.id)
-      return list
-    }, // optional
-    indexName: 'blog', // overrides main index name, optional
-    settings: {
-      // optional, any index settings
-      // Note: by supplying settings, you will overwrite all existing settings on the index
-    },
-    matchFields: ['slug', 'modified'], // Array<String> overrides main match fields, optional
-  },
-];
 
 module.exports = {
   // 设置个人信息
@@ -250,10 +211,10 @@ module.exports = {
     },
     // antd 按需
     {
-      resolve: 'gatsby-plugin-antd',
+      resolve: "gatsby-plugin-antd",
       options: {
-        style: true
-      }
+        style: true,
+      },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
@@ -264,9 +225,9 @@ module.exports = {
       resolve: `gatsby-plugin-less`,
       options: {
         lessOptions: {
-          javascriptEnabled: true
+          javascriptEnabled: true,
         },
-      }
+      },
     },
     `gatsby-plugin-sass`,
     {
@@ -285,10 +246,21 @@ module.exports = {
           // Note: by supplying settings, you will overwrite all existing settings on the index
         },
         enablePartialUpdates: true, // default: false
-        matchFields: ['slug', 'modified'], // Array<String> default: ['modified']
+        matchFields: ["slug", "modified"], // Array<String> default: ['modified']
         concurrentQueries: false, // default: true
         skipIndexing: false, // default: false, useful for e.g. preview deploys or local development
-        continueOnFailure: false // default: false, don't fail the build if algolia indexing fails
+        continueOnFailure: false, // default: false, don't fail the build if algolia indexing fails
+      },
+    },
+    // 配置 sentry 监控错误
+    {
+      resolve: "gatsby-plugin-sentry",
+      options: {
+        dsn: "https://4fbce79e87204965940cc53ec287c210@o394392.ingest.sentry.io/5852479",
+        // Optional settings, see https://docs.sentry.io/clients/node/config/#optional-settings
+        environment: process.env.NODE_ENV,
+        // enabled: (() =>
+        //   ["production", "stage"].indexOf(process.env.NODE_ENV) !== -1)(),
       },
     },
   ],

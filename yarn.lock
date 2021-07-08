@@ -2403,6 +2403,58 @@
     prop-types "^15.6.1"
     react-lifecycles-compat "^3.0.4"
 
+"@sentry/browser@latest":
+  version "6.8.0"
+  resolved "https://registry.nlark.com/@sentry/browser/download/@sentry/browser-6.8.0.tgz?cache=0&sync_timestamp=1624876063546&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40sentry%2Fbrowser%2Fdownload%2F%40sentry%2Fbrowser-6.8.0.tgz#023707cd2302f6818014e9a7e124856b2d064178"
+  integrity sha1-AjcHzSMC9oGAFOmn4SSFay0GQXg=
+  dependencies:
+    "@sentry/core" "6.8.0"
+    "@sentry/types" "6.8.0"
+    "@sentry/utils" "6.8.0"
+    tslib "^1.9.3"
+
+"@sentry/core@6.8.0":
+  version "6.8.0"
+  resolved "https://registry.nlark.com/@sentry/core/download/@sentry/core-6.8.0.tgz#bfac76844deee9126460c18dc6166015992efdc3"
+  integrity sha1-v6x2hE3u6RJkYMGNxhZgFZku/cM=
+  dependencies:
+    "@sentry/hub" "6.8.0"
+    "@sentry/minimal" "6.8.0"
+    "@sentry/types" "6.8.0"
+    "@sentry/utils" "6.8.0"
+    tslib "^1.9.3"
+
+"@sentry/hub@6.8.0":
+  version "6.8.0"
+  resolved "https://registry.nlark.com/@sentry/hub/download/@sentry/hub-6.8.0.tgz?cache=0&sync_timestamp=1624876060202&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40sentry%2Fhub%2Fdownload%2F%40sentry%2Fhub-6.8.0.tgz#cb0f8509093919ed3c1ef98ef8cf63dc102a6524"
+  integrity sha1-yw+FCQk5Ge08HvmO+M9j3BAqZSQ=
+  dependencies:
+    "@sentry/types" "6.8.0"
+    "@sentry/utils" "6.8.0"
+    tslib "^1.9.3"
+
+"@sentry/minimal@6.8.0":
+  version "6.8.0"
+  resolved "https://registry.nlark.com/@sentry/minimal/download/@sentry/minimal-6.8.0.tgz?cache=0&sync_timestamp=1624876061493&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40sentry%2Fminimal%2Fdownload%2F%40sentry%2Fminimal-6.8.0.tgz#d6c3e4c96f231367aeb2b8a87a83b53d28e7c6db"
+  integrity sha1-1sPkyW8jE2eusrioeoO1PSjnxts=
+  dependencies:
+    "@sentry/hub" "6.8.0"
+    "@sentry/types" "6.8.0"
+    tslib "^1.9.3"
+
+"@sentry/types@6.8.0":
+  version "6.8.0"
+  resolved "https://registry.nlark.com/@sentry/types/download/@sentry/types-6.8.0.tgz?cache=0&sync_timestamp=1624876213638&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40sentry%2Ftypes%2Fdownload%2F%40sentry%2Ftypes-6.8.0.tgz#97fd531a0ed1e75e65b4a24b26509fb7c15eb7b8"
+  integrity sha1-l/1TGg7R515ltKJLJlCft8Fet7g=
+
+"@sentry/utils@6.8.0":
+  version "6.8.0"
+  resolved "https://registry.nlark.com/@sentry/utils/download/@sentry/utils-6.8.0.tgz#0ffafa5b69fe0cdeabad5c4a6cc68a426eaa6b37"
+  integrity sha1-D/r6W2n+DN6rrVxKbMaKQm6qazc=
+  dependencies:
+    "@sentry/types" "6.8.0"
+    tslib "^1.9.3"
+
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
@@ -8478,6 +8530,13 @@ gatsby-plugin-sass@^3.2.0:
   dependencies:
     "@babel/runtime" "^7.12.5"
     sass-loader "^10.1.0"
+
+gatsby-plugin-sentry@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.nlark.com/gatsby-plugin-sentry/download/gatsby-plugin-sentry-1.0.1.tgz#d146e3851488c9545f2c0689cad62bf6e7d1c653"
+  integrity sha1-0UbjhRSIyVRfLAaJytYr9ufRxlM=
+  dependencies:
+    "@sentry/browser" latest
 
 gatsby-plugin-sharp@^2.4.5:
   version "2.4.5"
