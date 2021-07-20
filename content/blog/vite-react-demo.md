@@ -22,7 +22,7 @@ yarn create @vitejs/app
 - 根据提示操作 我这边选择的是 `react-ts` 模板
 
 
-```
+```js
 支持的模板预设包括：
 
 vanilla
@@ -59,7 +59,7 @@ yarn add antd
 
 - 在app.tsx 中放一个 按钮看看效果
 
-```
+```js
 import { DatePicker } from ‘antd’;
 
 ```
@@ -69,7 +69,7 @@ import { DatePicker } from ‘antd’;
 
 - 安装 less
 
-```
+```js
 yarn add -D less
 ```
 
@@ -231,5 +231,4 @@ export default Layout;
 
 
 > [demo-源码](https://github.com/Chad97/vite-react-demo)
-
 

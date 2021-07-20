@@ -16,7 +16,7 @@ categories: web-other
 
 - 配置Nginx开启http 2.0特别简单，只要在Nginx配置文件中找到你要开启http2.0的域名server模块，然后将 listen 443 ssl;改成 listen 443 ssl http2; 即可。
 
-```nginx
+```js
   server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
