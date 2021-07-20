@@ -18,7 +18,6 @@ import WithDrawer from '../components/WithDrawer'
 import Toc from '../components/Toc'
 import StateSearch from '../components/StateSearch'
 
-
 import S from './styles/post.module.scss'
 
 // portals 插槽 插到到DOM元素
@@ -85,7 +84,7 @@ class BlogPostTemplate extends React.Component {
               tags={post.frontmatter.title || post.frontmatter.title}
               description={post.frontmatter.description || post.excerpt}
             />
-            
+
             <StateSearch />
 
             <div className={S.article}>
@@ -115,10 +114,8 @@ class BlogPostTemplate extends React.Component {
                   </article>
                 </Col>
 
-                <Col xs={0} md={2}>
-                      
-                </Col>  
-                  
+                <Col xs={0} md={2}></Col>
+
                 <Col xs={0} md={6}>
                   <div className={S.leftToc}>
                     <h3>Tags</h3>

@@ -1,10 +1,10 @@
-import React from "react"
-import Valine from "gatsby-plugin-valine"
+import React from 'react'
+import Valine from 'gatsby-plugin-valine'
 
 const CONFIG = {
   appId: process.env.VALINE_APPID,
   appKey: process.env.VALINE_APPKEY,
-  avatar: "wavatar",
+  avatar: 'wavatar',
 }
 
 const Comment = props => {
@@ -14,7 +14,7 @@ const Comment = props => {
   return (
     /* Page contents */
     <Valine
-      requiredFields={["nick", "mail"]}
+      requiredFields={['nick', 'mail']}
       enableQQ={true}
       {...CONFIG}
       path={props.path}

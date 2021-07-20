@@ -7,9 +7,11 @@ const STYLE = {
 }
 
 const Footer = ({ theme, count = 3 }) => {
-
   return (
-    <footer style={count > 2 ? {} : STYLE} className={theme.dark ? S.footerDk : S.footerWh}>
+    <footer
+      style={count > 2 ? {} : STYLE}
+      className={theme.dark ? S.footerDk : S.footerWh}
+    >
       <span>{`© ${new Date().getFullYear()}, 滇ICP备19003866号`}</span>
       <span>本网站版权归本站作者Ruoduan所有</span>
       <span>
@@ -21,7 +23,6 @@ const Footer = ({ theme, count = 3 }) => {
       </span>
     </footer>
   )
-
 }
 
 export default Footer

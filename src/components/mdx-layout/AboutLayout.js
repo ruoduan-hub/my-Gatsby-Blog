@@ -18,7 +18,6 @@ import MusicPlay from '../MusicPlay'
 import Footer from '../Footer'
 import StateSearch from '../StateSearch'
 
-
 import S from './about-layout.module.scss'
 
 const shortcodes = { Link }
@@ -71,7 +70,7 @@ const AboutLayout = ({ children, path }) => {
                   title={'About'}
                   imgSrc="https://tva1.sinaimg.cn/large/008eGmZEly1go7wupjosrj30zk0qo43e.jpg"
                 />
-                
+
                 <StateSearch />
 
                 <div className={theme.dark ? S.isMainDk : S.isMainWhPost}>
@@ -98,7 +97,9 @@ const AboutLayout = ({ children, path }) => {
 
                       <div>
                         <MDXProvider components={shortcodes}>
-                          <body style={{ backgroundColor: 'inherit' }}>{children}</body>
+                          <body style={{ backgroundColor: 'inherit' }}>
+                            {children}
+                          </body>
                         </MDXProvider>
                       </div>
 

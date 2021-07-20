@@ -6,7 +6,7 @@ import {
   HomeOutlined,
   UnorderedListOutlined,
   UserOutlined,
-  FileSearchOutlined
+  FileSearchOutlined,
 } from '@ant-design/icons'
 
 import StateSearch from './StateSearch'
@@ -19,7 +19,7 @@ const IconStyle = {
 
 const HeaderNav = ({ isShow }) => {
   const [show, setShow] = useState(isShow)
-  const searchdRef = useRef(); 
+  const searchdRef = useRef()
 
   const toggleShow = useCallback(() => {
     setShow(!show)
@@ -34,29 +34,29 @@ const HeaderNav = ({ isShow }) => {
     setShow(isShow)
   }, [isShow])
 
-  const handleV = (set) => {
+  const handleV = set => {
     console.log(set)
   }
 
   return (
     <>
-      {" "}
-      <div style={{ height: "5rem" }}>
+      {' '}
+      <div style={{ height: '5rem' }}>
         <div
-          style={{ opacity: Number(show), height: show ? "5rem" : "0" }}
+          style={{ opacity: Number(show), height: show ? '5rem' : '0' }}
           onClick={toggleShow}
           className={S.navSticky}
         >
           <div className={S.menu}>
-            <span onClick={e => handleNavigateTo(e, "/")}>
+            <span onClick={e => handleNavigateTo(e, '/')}>
               <HomeOutlined {...IconStyle} />
               <i>Home</i>
             </span>
-            <span onClick={e => handleNavigateTo(e, "/other")}>
+            <span onClick={e => handleNavigateTo(e, '/other')}>
               <UnorderedListOutlined {...IconStyle} />
               <i>Other</i>
             </span>
-            <span onClick={e => handleNavigateTo(e, "/about")}>
+            <span onClick={e => handleNavigateTo(e, '/about')}>
               <UserOutlined {...IconStyle} />
               <i>About</i>
             </span>
@@ -67,7 +67,6 @@ const HeaderNav = ({ isShow }) => {
           </div>
         </div>
       </div>
-
       <StateSearch handleVisible={handleV} ref={searchdRef} />
     </>
   )

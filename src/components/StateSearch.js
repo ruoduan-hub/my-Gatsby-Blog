@@ -1,8 +1,8 @@
-import React, { useState, useImperativeHandle, forwardRef } from "react"
+import React, { useState, useImperativeHandle, forwardRef } from 'react'
 
-import Modal from "./Modal"
-import Search from "./Search"
-import Hotkeys from "react-hot-keys"
+import Modal from './Modal'
+import Search from './Search'
+import Hotkeys from 'react-hot-keys'
 
 const StateSearch = (props, ref) => {
   const [visible, setVisible] = useState(false)

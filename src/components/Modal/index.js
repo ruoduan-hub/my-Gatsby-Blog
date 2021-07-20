@@ -1,12 +1,10 @@
-import React, { useCallback } from "react"
-import S from "./index.module.scss"
+import React, { useCallback } from 'react'
+import S from './index.module.scss'
 
 const Modal = ({ visible, setVisible, children }) => {
-
   const handleClose = useCallback(() => {
     setVisible(false)
   }, [setVisible])
-
 
   return (
     <div hidden={!visible} class={S.modalRoot}>

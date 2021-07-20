@@ -6,11 +6,9 @@ import { StaticQuery, graphql } from 'gatsby'
 import Header from './Header'
 import Footer from './Footer'
 
-
-
 const STYLE = {
   height: '100%',
-  minHeight: '100vh'
+  minHeight: '100vh',
 }
 
 const Layout = ({ children, title, isHome, count }) => {
@@ -56,7 +54,7 @@ Layout.propTypes = {
   // 是否是首页
   isHome: PropTypes.bool,
   // 文章数量
-  count: PropTypes.number
+  count: PropTypes.number,
 }
 
 export default Layout
