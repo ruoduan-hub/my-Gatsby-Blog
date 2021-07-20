@@ -15,7 +15,7 @@ categories: React
 
 2. 看完你可能有点懵，没关系我有个简单直接的`涨工资`的 dom，跟着做一遍你就懂了
 
-**先 download 莞式教程 https://github.com/Chad97/My-notes/tree/master/react-redux%E4%B9%8B%E6%B6%A8%E5%B7%A5%E8%B5%84**
+**先 download 莞式教程 https://github.com/ruoduan-hub/My-notes/tree/master/react-redux%E4%B9%8B%E6%B6%A8%E5%B7%A5%E8%B5%84**
 —— 看了它你就一目了然了
 
 ## 一、

@@ -9,7 +9,7 @@ categories: web-other
 
 > 最近用 Gatsby 写了一个个人 blog，link => http://new.ruoduan.cn/
 
-[Github](https://github.com/Chad97/my-Gatsby-Blog) 🙏🙏🙏 Star
+[Github](https://github.com/ruoduan-hub/my-Gatsby-Blog) 🙏🙏🙏 Star
 
 发现 `build` 后体积太大，FTP 发文件 都要 10 几分钟，挑选来下自动化部署工具 🔧，本打算用`jenkins` 感觉有点重，而且学习成本较高。
 看了一下觉得 使用 github 的 webHooks 是最合适的

@@ -237,7 +237,7 @@ b % a : 0
 a 不等于 b
 ```
 
-其他的运算符 就不给出实例了详情 [源码](https://github.com/Chad97/My-notes/tree/master/shell)
+其他的运算符 就不给出实例了详情 [源码](https://github.com/ruoduan-hub/My-notes/tree/master/shell)
 
 ### shell echo
 
@@ -528,7 +528,7 @@ echo $file_name
 
 ---
 
-到这里 shell 的基本知识也差不多了[本指南源码](https://github.com/Chad97/My-notes/tree/master/shell)
+到这里 shell 的基本知识也差不多了[本指南源码](https://github.com/ruoduan-hub/My-notes/tree/master/shell)
 
 码字不易 求点个 star ⭐️
 

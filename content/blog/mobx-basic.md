@@ -8,11 +8,11 @@ categories: 《React》
 
 ## Mobx-basic(快速上手)莞式教程
 
-之前写过一篇 redux 的教程 可以参考[redux 的教程](https://blog.csdn.net/Chad97/article/details/89522403)
+之前写过一篇 redux 的教程 可以参考[redux 的教程](https://blog.csdn.net/ruoduan-hub/article/details/89522403)
 
 本篇讲通过通俗易懂的方式让你快速上手 mobx 的基本使用，虽然已经可以满足大部分开发中的需求但是详细 请参考[中文官方文档](https://cn.mobx.js.org/)
 
-本篇配[教程代码](https://github.com/Chad97/mobx-basic) https://github.com/Chad97/mobx-basic
+本篇配[教程代码](https://github.com/ruoduan-hub/mobx-basic) https://github.com/Chad97/mobx-basic
 
 > 如果对想要快速入门的你有所帮助请给点个小小的 start 吧~
 
@@ -201,8 +201,8 @@ export default Main
 可以发现 对比 redux mobx 的方式人更容易理解是使用
 面向对象的方式也让人用起来 不用写许多许多 render 感觉恶心
 
-redux 教程链接 https://blog.csdn.net/Chad97/article/details/89522403
+redux 教程链接 https://blog.csdn.net/ruoduan-hub/article/details/89522403
 
 最后 大家可以 clone 我的 deom 教程作为参考哦~
-https://github.com/Chad97/mobx-basic
+https://github.com/ruoduan-hub/mobx-basic
 喜欢的 大爷点个 star 哦~

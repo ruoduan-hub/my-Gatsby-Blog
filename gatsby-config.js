@@ -15,7 +15,7 @@ module.exports = {
       clientSecret: "300d27b2a629b6ccfd197abecbf67774f3f9ddbb",
     },
     social: {
-      github: `https://github.com/Chad97`,
+      github: `https://github.com/ruoduan-hub`,
       zhihu: `https://www.zhihu.com/people/ruoduan/activities`,
       weibo: `https://weibo.com/p/1005055024868417`,
       email: "z.ruoduan@gmail.com",

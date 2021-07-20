@@ -28,8 +28,8 @@ categories: Code-Tools
 
 - 话不多说直接开始
 - 我这里有一个通俗易懂的 Demo 小伙伴们可以 download 一下
-- [通俗易懂的小 Demo](https://github.com/Chad97/React-Mock-Demo.git)
-- https://github.com/Chad97/React-Mock-Demo.git
+- [通俗易懂的小 Demo](https://github.com/ruoduan-hub/React-Mock-Demo.git)
+- https://github.com/ruoduan-hub/React-Mock-Demo.git
 
 ### Start
 
