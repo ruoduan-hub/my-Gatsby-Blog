@@ -27,9 +27,11 @@ const queries = [
   {
     query: myQuery,
     transformer: ({ data }) => {
-      const list = [...data.pages.edges]
-      list.map(item => item.objectID = item.objectID.id)
-      return list
+      return data.pages.edges.map((item) => ({
+        objectID: item.objectID.id,
+        // alternatively read each one of the fields you want to use manually
+        ...item.node.fields,
+      }));
     }, // optional
     indexName: 'blog', // overrides main index name, optional
     settings: {
