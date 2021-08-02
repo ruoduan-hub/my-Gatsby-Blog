@@ -17,7 +17,7 @@ module.exports = {
     social: {
       github: `https://github.com/ruoduan-hub`,
       zhihu: `https://www.zhihu.com/people/ruoduan/activities`,
-      weibo: `https://weibo.com/p/1005055024868417`,
+      juejin: `https://juejin.cn/user/2559318800733111/posts`,
       email: "z.ruoduan@gmail.com",
       twitter: `xxx`,
       aboutLike: ["Coding", "音乐", "吉他", "民谣", "游戏"],

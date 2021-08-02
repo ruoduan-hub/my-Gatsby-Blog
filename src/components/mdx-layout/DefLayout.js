@@ -31,7 +31,7 @@ const DefLayout = ({ children, path }) => {
               social {
                 github
                 zhihu
-                weibo
+                juejin
                 email
                 aboutLike
                 skill
@@ -44,7 +44,7 @@ const DefLayout = ({ children, path }) => {
         const {
           github,
           zhihu,
-          weibo,
+          juejin,
           email,
           aboutLike,
           skill,

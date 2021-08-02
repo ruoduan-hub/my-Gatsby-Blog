@@ -8,9 +8,9 @@ import ThemeContext from '../../context/ThemeContext'
 import Comment from '../Comment'
 import {
   GithubOutlined,
-  WeiboOutlined,
   ZhihuOutlined,
   MailOutlined,
+  createFromIconfontCN,
 } from '@ant-design/icons'
 import { Divider } from 'antd'
 import { openPage } from '../../utils/utils'
@@ -21,6 +21,10 @@ import StateSearch from '../StateSearch'
 import S from './about-layout.module.scss'
 
 const shortcodes = { Link }
+
+const MyIcon = createFromIconfontCN({
+  scriptUrl: '//at.alicdn.com/t/font_2715701_n2qt9yg9v4b.js', // 在 iconfont.cn 上生成
+})
 
 const AboutLayout = ({ children, path }) => {
   // console.log(props)
@@ -41,7 +45,7 @@ const AboutLayout = ({ children, path }) => {
               social {
                 github
                 zhihu
-                weibo
+                juejin
                 email
                 aboutLike
                 skill
@@ -54,7 +58,7 @@ const AboutLayout = ({ children, path }) => {
         const {
           github,
           zhihu,
-          weibo,
+          juejin,
           email,
           aboutLike,
           skill,
@@ -89,8 +93,9 @@ const AboutLayout = ({ children, path }) => {
                           onClick={() => openPage(zhihu)}
                           style={{ fontSize: '2rem' }}
                         />
-                        <WeiboOutlined
-                          onClick={() => openPage(weibo)}
+                        <MyIcon
+                          type="icon-juejin"
+                          onClick={() => openPage(juejin)}
                           style={{ fontSize: '2rem' }}
                         />
                       </div>
