@@ -245,9 +245,9 @@ module.exports = {
           // optional, any index settings
           // Note: by supplying settings, you will overwrite all existing settings on the index
         },
-        enablePartialUpdates: true, // default: false
+        enablePartialUpdates: false, // default: false
         matchFields: ["slug", "modified"], // Array<String> default: ['modified']
-        concurrentQueries: false, // default: true
+        concurrentQueries: true, // default: true
         skipIndexing: false, // default: false, useful for e.g. preview deploys or local development
         continueOnFailure: false, // default: false, don't fail the build if algolia indexing fails
       },

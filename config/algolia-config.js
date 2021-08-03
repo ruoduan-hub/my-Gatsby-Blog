@@ -15,6 +15,7 @@ const myQuery = `{
         }
         frontmatter {
           title
+          date(formatString: "YYYY-MM-DD")
         }
         excerpt
         rawMarkdownBody
@@ -31,6 +32,9 @@ const queries = [
         objectID: item.objectID.id,
         // alternatively read each one of the fields you want to use manually
         ...item.node.fields,
+        ...item.node.frontmatter,
+        excerpt: item.node.excerpt,
+        rawMarkdownBody: item.node.rawMarkdownBody,
       }));
     }, // optional
     indexName: 'blog', // overrides main index name, optional

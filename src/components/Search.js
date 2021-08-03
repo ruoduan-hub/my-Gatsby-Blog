@@ -16,24 +16,18 @@ const searchClient = algoliasearch(
 )
 
 function Hit({ hit }) {
-  const { node } = hit
 
-  const { fields, frontmatter, excerpt } = node
   return (
-    <div>
+    <div
+      onClick={() => {
+        navigate(hit.slug)
+      }}
+    >
       <div className={S.Highlight}>
         <Highlight attribute="title" hit={hit} />
       </div>
-      <div
-        onClick={() => {
-          console.log(fields.slug)
-          navigate(fields.slug)
-        }}
-        className={S.hitTitle}
-      >
-        {frontmatter.title}
-      </div>
-      <div className={S.excerpt}>{excerpt}</div>
+      <div className={S.hitTitle}>{hit.title}</div>
+      <div className={S.excerpt}>{hit.excerpt}</div>
     </div>
   )
 }
