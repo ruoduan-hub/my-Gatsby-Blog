@@ -58,7 +58,7 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-helmet": "^5.2.1",
-    "react-hot-keys": "^2.6.2",
+    "react-hotkeys-hook": "^3.4.0",
     "react-instantsearch-dom": "^6.11.1",
     "react-spring": "^8.0.27",
     "react-sticky": "^6.0.3",
