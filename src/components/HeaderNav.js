@@ -1,18 +1,18 @@
-import React, { useState, useCallback, useEffect, useRef } from "react"
-import { navigate } from "gatsby"
+import React, { useState, useCallback, useEffect, useRef } from 'react'
+import { navigate } from 'gatsby'
 
-import S from "./styles/header-nav.module.scss"
+import S from './styles/header-nav.module.scss'
 
-import HomeOutlinedIcon from "@material-ui/icons/HomeOutlined"
-import ListAltIcon from "@material-ui/icons/ListAlt"
-import PersonOutlineOutlinedIcon from "@material-ui/icons/PersonOutlineOutlined"
-import FindInPageOutlinedIcon from "@material-ui/icons/FindInPageOutlined"
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined'
+import ListAltIcon from '@material-ui/icons/ListAlt'
+import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined'
+import FindInPageOutlinedIcon from '@material-ui/icons/FindInPageOutlined'
 
-import StateSearch from "./StateSearch"
+import StateSearch from './StateSearch'
 
 const IconStyle = {
   style: {
-    fontSize: "2.3rem",
+    fontSize: '2.3rem',
   },
 }
 
@@ -39,23 +39,23 @@ const HeaderNav = ({ isShow }) => {
 
   return (
     <>
-      {" "}
-      <div style={{ height: "5rem" }}>
+      {' '}
+      <div style={{ height: '5rem' }}>
         <div
-          style={{ opacity: Number(show), height: show ? "5rem" : "0" }}
+          style={{ opacity: Number(show), height: show ? '5rem' : '0' }}
           onClick={toggleShow}
           className={S.navSticky}
         >
           <div className={S.menu}>
-            <span onClick={e => handleNavigateTo(e, "/")}>
+            <span onClick={e => handleNavigateTo(e, '/')}>
               <HomeOutlinedIcon {...IconStyle} />
               <i>Home</i>
             </span>
-            <span onClick={e => handleNavigateTo(e, "/other")}>
+            <span onClick={e => handleNavigateTo(e, '/other')}>
               <ListAltIcon {...IconStyle} />
               <i>Other</i>
             </span>
-            <span onClick={e => handleNavigateTo(e, "/about")}>
+            <span onClick={e => handleNavigateTo(e, '/about')}>
               <PersonOutlineOutlinedIcon {...IconStyle} />
               <i>About</i>
             </span>

@@ -2,12 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Link, graphql, navigate } from 'gatsby'
 
-import Grid from '@material-ui/core/Grid';
+import Grid from '@material-ui/core/Grid'
 
-
-import NavigateNextOutlinedIcon from '@material-ui/icons/NavigateNextOutlined';
-import NavigateBeforeOutlinedIcon from '@material-ui/icons/NavigateBeforeOutlined';
-
+import NavigateNextOutlinedIcon from '@material-ui/icons/NavigateNextOutlined'
+import NavigateBeforeOutlinedIcon from '@material-ui/icons/NavigateBeforeOutlined'
 
 import Bio from '../components/Boi'
 import Comment from '../components/Comment'
@@ -113,7 +111,7 @@ class BlogPostTemplate extends React.Component {
                   </article>
                 </Grid>
 
-                <Grid  xs={0} md={1}></Grid>
+                <Grid xs={0} md={1}></Grid>
 
                 <Grid xs={0} md={3}>
                   <div className={S.leftToc}>
@@ -152,7 +150,12 @@ class BlogPostTemplate extends React.Component {
               >
                 <li>
                   {next && (
-                    <Link style={{ display: 'flex', alignItems: 'center' }} className="nextText" to={next.fields.slug} rel="next">
+                    <Link
+                      style={{ display: 'flex', alignItems: 'center' }}
+                      className="nextText"
+                      to={next.fields.slug}
+                      rel="next"
+                    >
                       <NavigateBeforeOutlinedIcon />
                       {next.frontmatter.title}
                     </Link>

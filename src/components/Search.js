@@ -16,7 +16,6 @@ const searchClient = algoliasearch(
 )
 
 function Hit({ hit }) {
-
   return (
     <div
       onClick={() => {

@@ -8,10 +8,9 @@
 import React, { useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Image from 'gatsby-image'
-import Button from '@material-ui/core/Button';
-import ButtonGroup from '@material-ui/core/ButtonGroup';
-import LocalCafeOutlinedIcon from '@material-ui/icons/LocalCafeOutlined';
-
+import Button from '@material-ui/core/Button'
+import ButtonGroup from '@material-ui/core/ButtonGroup'
+import LocalCafeOutlinedIcon from '@material-ui/icons/LocalCafeOutlined'
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -55,38 +54,44 @@ const Bio = () => {
 
       <div
         style={{
-          margin: "2rem 0",
-          display: "flex",
+          margin: '2rem 0',
+          display: 'flex',
         }}
       >
         {isShow ? (
           <div
             style={{
-              display: "flex",
-              justifyContent: "center",
-              flexDirection: "column",
+              display: 'flex',
+              justifyContent: 'center',
+              flexDirection: 'column',
             }}
           >
             <p
-              style={{ fontFamily: "Ma Shan Zheng,cursive", fontSize: "1rem" }}
+              style={{ fontFamily: 'Ma Shan Zheng,cursive', fontSize: '1rem' }}
             >
-              {" "}
-              如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!{" "}
+              {' '}
+              如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!{' '}
             </p>
             <ButtonGroup
               variant="text"
               color="primary"
               style={{ margin: '2rem 0' }}
             >
-              <Button onClick={() => setQrcode(data.wechat.childImageSharp.fixed)} >{`微  信`}</Button>
-              <Button onClick={() => setQrcode(data.alipay.childImageSharp.fixed)}>支付宝</Button>
+              <Button
+                onClick={() => setQrcode(data.wechat.childImageSharp.fixed)}
+              >{`微  信`}</Button>
+              <Button
+                onClick={() => setQrcode(data.alipay.childImageSharp.fixed)}
+              >
+                支付宝
+              </Button>
             </ButtonGroup>
 
             <div>
               <Image
                 fixed={qrcode}
                 style={{
-                  maxHeight: "30rem",
+                  maxHeight: '30rem',
                 }}
               />
             </div>

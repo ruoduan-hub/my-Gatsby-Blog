@@ -1,35 +1,35 @@
-import React, { useState, useEffect } from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline"
+import React, { useState, useEffect } from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline'
 
-import Grid from "@material-ui/core/Grid"
-import Card from "@material-ui/core/Card"
-import CardHeader from "@material-ui/core/CardHeader"
-import CardContent from "@material-ui/core/CardContent"
-import Typography from "@material-ui/core/Typography"
+import Grid from '@material-ui/core/Grid'
+import Card from '@material-ui/core/Card'
+import CardHeader from '@material-ui/core/CardHeader'
+import CardContent from '@material-ui/core/CardContent'
+import Typography from '@material-ui/core/Typography'
 
-import { rhythm } from "../utils/typography"
+import { rhythm } from '../utils/typography'
 
 const MusicPlay = props => {
-  let [isShow, setShow] = useState("none")
+  let [isShow, setShow] = useState('none')
 
   const actionShow = () => {
-    if (isShow === "none") {
-      setShow("block")
+    if (isShow === 'none') {
+      setShow('block')
     } else {
-      setShow("none")
+      setShow('none')
     }
   }
 
   const keyDownClose = () => {
     document.onkeydown = e => {
       if (Number(e.keyCode) === 27) {
-        setShow("none")
+        setShow('none')
       }
     }
   }
 
-  useEffect(() => typeof window !== "undefined" && keyDownClose(), [])
+  useEffect(() => typeof window !== 'undefined' && keyDownClose(), [])
 
   const music = useStaticQuery(graphql`
     query music {
@@ -54,16 +54,16 @@ const MusicPlay = props => {
         role="button"
         onClick={actionShow}
         style={{
-          fontSize: "2rem",
-          fontFamily: "Black Ops One",
-          cursor: "pointer",
-          margin: "2rem 0",
-          display: "flex",
-          alignItems: "center",
+          fontSize: '2rem',
+          fontFamily: 'Black Ops One',
+          cursor: 'pointer',
+          margin: '2rem 0',
+          display: 'flex',
+          alignItems: 'center',
         }}
       >
         <PlayCircleOutlineIcon
-          style={{ fontSize: "2rem", marginRight: "0.3rem" }}
+          style={{ fontSize: '2rem', marginRight: '0.3rem' }}
         />
         <span>My Guitar Song</span>
       </div>
@@ -95,7 +95,7 @@ const MusicPlay = props => {
                 />
                 <CardContent>
                   <div>
-                    <audio style={{ width: "100%" }} controls>
+                    <audio style={{ width: '100%' }} controls>
                       <source src={item.src} />
                       <source src={item.src} />
                       <track label={item.title} kind="captions"></track>

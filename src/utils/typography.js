@@ -1,5 +1,5 @@
-import Typography from "typography"
-import grandViewTheme from "typography-theme-grand-view"
+import Typography from 'typography'
+import grandViewTheme from 'typography-theme-grand-view'
 // import Wordpress2016 from 'typography-theme-wordpress-2016'
 // import githubTheme from "typography-theme-github"
 // import wordpressKubrickTheme from 'typography-theme-wordpress-kubrick'
