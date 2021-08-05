@@ -8,13 +8,9 @@
 import React, { useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Image from 'gatsby-image'
-import {
-  AlipayOutlined,
-  QrcodeOutlined,
-  WechatOutlined,
-} from '@ant-design/icons'
-import { Button } from 'antd'
-const ButtonGroup = Button.Group
+import Button from '@material-ui/core/Button'
+import ButtonGroup from '@material-ui/core/ButtonGroup'
+import LocalCafeOutlinedIcon from '@material-ui/icons/LocalCafeOutlined'
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -47,7 +43,12 @@ const Bio = () => {
   let [qrcode, setQrcode] = useState(data.wechat.childImageSharp.fixed)
   return (
     <>
-      <Button onClick={() => setShow(!isShow)} icon={<QrcodeOutlined />}>
+      <Button
+        variant="contained"
+        color="primary"
+        startIcon={<LocalCafeOutlinedIcon />}
+        onClick={() => setShow(!isShow)}
+      >
         打赏支持
       </Button>
 
@@ -71,23 +72,18 @@ const Bio = () => {
               {' '}
               如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!{' '}
             </p>
-            <ButtonGroup style={{ margin: '2rem 0' }}>
+            <ButtonGroup
+              variant="text"
+              color="primary"
+              style={{ margin: '2rem 0' }}
+            >
               <Button
                 onClick={() => setQrcode(data.wechat.childImageSharp.fixed)}
-                style={{ backgroundColor: '#24AA39', borderColor: '#24AA39' }}
-                color="red"
-                type="primary"
-              >
-                <WechatOutlined />
-                微&nbsp;&nbsp;&nbsp;&nbsp;信
-              </Button>
+              >{`微  信`}</Button>
               <Button
                 onClick={() => setQrcode(data.alipay.childImageSharp.fixed)}
-                style={{ backgroundColor: '#039AE3', borderColor: '#039AE3' }}
-                type="primary"
               >
                 支付宝
-                <AlipayOutlined />
               </Button>
             </ButtonGroup>
 

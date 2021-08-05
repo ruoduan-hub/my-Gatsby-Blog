@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
-import { Drawer } from 'antd'
-import { WindowsFilled } from '@ant-design/icons'
-
+import Drawer from '@material-ui/core/Drawer'
+import MenuIcon from '@material-ui/icons/Menu'
 const WithDrawer = props => {
-  console.log(props)
   // 抽屉状态
   let [visible, setVisible] = useState(false)
 
@@ -30,19 +28,12 @@ const WithDrawer = props => {
             cursor: 'pointer',
           }}
         >
-          {props.button ? (
-            props.button
-          ) : (
-            <WindowsFilled style={{ fontSize: '2rem' }} />
-          )}
+          <MenuIcon fontSize="2rem" />
         </span>
-        <Drawer
-          placement="left"
-          onClose={onClose}
-          visible={visible}
-          mask={false}
-        >
-          {props.data}
+        <Drawer anchor="left" open={visible} onClose={onClose}>
+          <div style={{ padding: '0.5rem 1rem', minWidth: '230px' }}>
+            {props.data}
+          </div>
         </Drawer>
       </div>
     </>

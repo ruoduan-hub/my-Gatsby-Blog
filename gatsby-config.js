@@ -209,13 +209,6 @@ module.exports = {
         },
       },
     },
-    // antd 按需
-    {
-      resolve: "gatsby-plugin-antd",
-      options: {
-        style: true,
-      },
-    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

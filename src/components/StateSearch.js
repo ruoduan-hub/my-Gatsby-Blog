@@ -8,7 +8,7 @@ import { useHotkeys } from 'react-hotkeys-hook'
 const StateSearch = (props, ref) => {
   const [visible, setVisible] = useState(false)
 
-  useHotkeys('shift+k,command+k', () => setVisible(true));
+  useHotkeys('shift+k,command+k', () => setVisible(true))
 
   useImperativeHandle(ref, () => ({
     // handleVisible 暴露给父组件
@@ -16,9 +16,9 @@ const StateSearch = (props, ref) => {
   }))
 
   return (
-      <Modal setVisible={setVisible} visible={visible}>
-        <Search />
-      </Modal>
+    <Modal setVisible={setVisible} visible={visible}>
+      <Search />
+    </Modal>
   )
 }
 

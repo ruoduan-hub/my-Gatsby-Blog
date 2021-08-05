@@ -40,6 +40,10 @@ $pd: 0 10rem;
       @media (max-width: 40.625em) {
         width: 100%;
       }
+
+      > i {
+        cursor: pointer;
+      }
     }
   }
 }
