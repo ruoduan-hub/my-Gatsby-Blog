@@ -1,12 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Link, graphql, navigate } from 'gatsby'
-import {
-  DoubleLeftOutlined,
-  DoubleRightOutlined,
-  ProfileFilled,
-} from '@ant-design/icons'
-import { BackTop, Row, Col } from 'antd'
+
+import Grid from '@material-ui/core/Grid';
+
+
+import NavigateNextOutlinedIcon from '@material-ui/icons/NavigateNextOutlined';
+import NavigateBeforeOutlinedIcon from '@material-ui/icons/NavigateBeforeOutlined';
+
 
 import Bio from '../components/Boi'
 import Comment from '../components/Comment'
@@ -62,14 +63,12 @@ class BlogPostTemplate extends React.Component {
           {typeof window !== 'undefined' &&
             ReactDOM.createPortal(
               <div>
-                <BackTop visibilityHeight={800} />
                 <WithDrawer
                   data={
                     <Toc
                       tocHtml={this.props.data.markdownRemark.tableOfContents}
                     />
                   }
-                  button={<ProfileFilled className={S.BtnToc} />}
                 />
               </div>,
               this.el
@@ -88,8 +87,8 @@ class BlogPostTemplate extends React.Component {
             <StateSearch />
 
             <div className={S.article}>
-              <Row>
-                <Col xs={24} md={16}>
+              <Grid container>
+                <Grid xs={12} md={8}>
                   <article>
                     <header>
                       <p
@@ -112,11 +111,11 @@ class BlogPostTemplate extends React.Component {
                       <Bio />
                     </footer>
                   </article>
-                </Col>
+                </Grid>
 
-                <Col xs={0} md={2}></Col>
+                <Grid  xs={0} md={1}></Grid>
 
-                <Col xs={0} md={6}>
+                <Grid xs={0} md={3}>
                   <div className={S.leftToc}>
                     <h3>Tags</h3>
                     <div className={S.tabs}>
@@ -136,8 +135,8 @@ class BlogPostTemplate extends React.Component {
                       }}
                     ></div>
                   </div>
-                </Col>
-              </Row>
+                </Grid>
+              </Grid>
             </div>
 
             <nav>
@@ -153,8 +152,8 @@ class BlogPostTemplate extends React.Component {
               >
                 <li>
                   {next && (
-                    <Link className="nextText" to={next.fields.slug} rel="next">
-                      <DoubleLeftOutlined />
+                    <Link style={{ display: 'flex', alignItems: 'center' }} className="nextText" to={next.fields.slug} rel="next">
+                      <NavigateBeforeOutlinedIcon />
                       {next.frontmatter.title}
                     </Link>
                   )}
@@ -165,9 +164,10 @@ class BlogPostTemplate extends React.Component {
                     <Link
                       className="nextText"
                       to={previous.fields.slug}
+                      style={{ display: 'flex', alignItems: 'center' }}
                       rel="prev"
                     >
-                      {previous.frontmatter.title} <DoubleRightOutlined />
+                      {previous.frontmatter.title} <NavigateNextOutlinedIcon />
                     </Link>
                   )}
                 </li>

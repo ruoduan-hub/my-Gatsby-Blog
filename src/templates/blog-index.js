@@ -8,7 +8,8 @@ import './styles/index.scss'
 import QueueAnim from 'rc-queue-anim'
 
 import S from './styles/index.module.scss'
-import { Pagination } from 'antd'
+import Pagination from '@material-ui/lab/Pagination';
+
 
 class BlogIndex extends React.Component {
   render() {
@@ -73,15 +74,9 @@ class BlogIndex extends React.Component {
             })}
 
             <div className={S.PaginationDv}>
-              <Pagination
-                onChange={c => {
-                  c === 1 ? navigate(`/`) : navigate(`/${c}`)
-                }}
-                defaultPageSize={limit}
-                current={currentPage}
-                total={numPages * limit}
-                showSizeChanger={false}
-              />
+              <Pagination onChange={(obj, page) => {
+                page === 1 ? navigate(`/`) : navigate(`/${page}`)
+              }} page={currentPage}  count={numPages}   />
             </div>
           </QueueAnim>
         </Layout>

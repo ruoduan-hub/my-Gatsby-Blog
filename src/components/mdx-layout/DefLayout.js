@@ -5,7 +5,6 @@ import Header from '../Header'
 import { Link } from 'gatsby'
 import ThemeContext from '../../context/ThemeContext'
 import Comment from '../Comment'
-import { Divider } from 'antd'
 import Footer from '../Footer'
 
 import S from './def-layout.module.scss'
@@ -68,8 +67,6 @@ const DefLayout = ({ children, path }) => {
                           {children}
                         </body>
                       </MDXProvider>
-
-                      <Divider>留言</Divider>
 
                       <Comment path={path} />
                     </main>
