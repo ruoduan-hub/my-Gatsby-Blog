@@ -1,10 +1,10 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import CssBaseline from "@material-ui/core/CssBaseline"
-import { ThemeProvider } from "@material-ui/core/styles"
-import { theme, themeDark } from "../../src/theme"
-import ThemeContext from "./ThemeContext"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Helmet } from 'react-helmet'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import { ThemeProvider } from '@material-ui/core/styles'
+import { theme, themeDark } from '../../src/theme'
+import ThemeContext from './ThemeContext'
 
 /**
  * material-ui 主题
@@ -15,7 +15,7 @@ const TopLayout = props => {
   return (
     <ThemeContext.Consumer>
       {/* 使用 Context 配合 material-ui theme 切换深色模式 */}
-      { themeContext => {
+      {themeContext => {
         return (
           <React.Fragment>
             <Helmet>
@@ -28,7 +28,7 @@ const TopLayout = props => {
                 rel="stylesheet"
               />
             </Helmet>
-            <ThemeProvider theme={ themeContext.dark ? theme : themeDark}>
+            <ThemeProvider theme={themeContext.dark ? theme : themeDark}>
               {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
               <CssBaseline />
               {props.children}

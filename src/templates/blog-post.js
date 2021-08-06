@@ -1,34 +1,34 @@
-import React from "react"
-import ReactDOM from "react-dom"
-import { Link, graphql, navigate } from "gatsby"
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Link, graphql, navigate } from 'gatsby'
 
-import Grid from "@material-ui/core/Grid"
-import Hidden from "@material-ui/core/Hidden"
-import NavigateNextOutlinedIcon from "@material-ui/icons/NavigateNextOutlined"
-import NavigateBeforeOutlinedIcon from "@material-ui/icons/NavigateBeforeOutlined"
+import Grid from '@material-ui/core/Grid'
+import Hidden from '@material-ui/core/Hidden'
+import NavigateNextOutlinedIcon from '@material-ui/icons/NavigateNextOutlined'
+import NavigateBeforeOutlinedIcon from '@material-ui/icons/NavigateBeforeOutlined'
 
-import Bio from "../components/Boi"
-import Comment from "../components/Comment"
-import Layout from "../components/layout"
-import SEO from "../components/SEO"
-import { rhythm, scale } from "../utils/typography"
+import Bio from '../components/Boi'
+import Comment from '../components/Comment'
+import Layout from '../components/layout'
+import SEO from '../components/SEO'
+import { rhythm, scale } from '../utils/typography'
 
-import WithDrawer from "../components/WithDrawer"
-import Toc from "../components/Toc"
-import StateSearch from "../components/StateSearch"
+import WithDrawer from '../components/WithDrawer'
+import Toc from '../components/Toc'
+import StateSearch from '../components/StateSearch'
 
-import S from "./styles/post.module.scss"
+import S from './styles/post.module.scss'
 
 // portals 插槽 插到到DOM元素
 const PortalsRoot =
-  typeof document !== "undefined" ? document.getElementById("___gatsby") : null
+  typeof document !== 'undefined' ? document.getElementById('___gatsby') : null
 
 class BlogPostTemplate extends React.Component {
   state = {
     tabs: {},
   }
 
-  el = typeof document !== `undefined` ? document.createElement("div") : null
+  el = typeof document !== `undefined` ? document.createElement('div') : null
 
   componentDidMount() {
     // 挂载到dom元素上
@@ -58,7 +58,7 @@ class BlogPostTemplate extends React.Component {
       <>
         {/* portals 挂载到外层 */}
         <div>
-          {typeof window !== "undefined" &&
+          {typeof window !== 'undefined' &&
             ReactDOM.createPortal(
               <div>
                 <WithDrawer
@@ -152,13 +152,13 @@ class BlogPostTemplate extends React.Component {
                   justifyContent: `space-between`,
                   listStyle: `none`,
                   padding: 0,
-                  margin: "2rem 0",
+                  margin: '2rem 0',
                 }}
               >
                 <li>
                   {next && (
                     <Link
-                      style={{ display: "flex", alignItems: "center" }}
+                      style={{ display: 'flex', alignItems: 'center' }}
                       className="nextText"
                       to={next.fields.slug}
                       rel="next"
@@ -174,7 +174,7 @@ class BlogPostTemplate extends React.Component {
                     <Link
                       className="nextText"
                       to={previous.fields.slug}
-                      style={{ display: "flex", alignItems: "center" }}
+                      style={{ display: 'flex', alignItems: 'center' }}
                       rel="prev"
                     >
                       {previous.frontmatter.title} <NavigateNextOutlinedIcon />
