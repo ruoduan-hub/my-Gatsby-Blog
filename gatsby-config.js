@@ -1,5 +1,4 @@
-const queries = require('./config/algolia-config')
-
+const queries = require("./config/algolia-config")
 
 module.exports = {
   // 设置个人信息
@@ -249,7 +248,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sentry",
       options: {
-        dsn: "https://4fbce79e87204965940cc53ec287c210@o394392.ingest.sentry.io/5852479",
+        dsn:
+          "https://4fbce79e87204965940cc53ec287c210@o394392.ingest.sentry.io/5852479",
         // Optional settings, see https://docs.sentry.io/clients/node/config/#optional-settings
         environment: process.env.NODE_ENV,
         // enabled: (() =>
