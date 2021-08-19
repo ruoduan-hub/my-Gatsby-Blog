@@ -60,6 +60,7 @@
     "rc-tween-one": "^2.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-draggable": "^4.4.3",
     "react-helmet": "^5.2.1",
     "react-hotkeys-hook": "^3.4.0",
     "react-instantsearch-dom": "^6.11.1",

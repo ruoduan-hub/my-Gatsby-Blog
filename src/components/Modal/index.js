@@ -1,5 +1,18 @@
 import React, { useCallback } from 'react'
-import S from './index.module.scss'
+import Dialog from '@material-ui/core/Dialog'
+import DialogContent from '@material-ui/core/DialogContent'
+import DialogTitle from '@material-ui/core/DialogTitle'
+import Draggable from 'react-draggable'
+import Paper from '@material-ui/core/Paper'
+
+const PaperComponent = props => (
+  <Draggable
+    handle="#draggable-dialog-title"
+    cancel={'[class*="MuiDialogContent-root"]'}
+  >
+    <Paper {...props} />
+  </Draggable>
+)
 
 const Modal = ({ visible, setVisible, children }) => {
   const handleClose = useCallback(() => {
@@ -7,27 +20,18 @@ const Modal = ({ visible, setVisible, children }) => {
   }, [setVisible])
 
   return (
-    <div hidden={!visible} class={S.modalRoot}>
-      <div class={S.modalContent}>
-        <div class={S.modalHeader}>
-          <div onClick={handleClose} className={S.close}>
-            <svg
-              viewBox="64 64 896 896"
-              focusable="false"
-              data-icon="close"
-              width="1em"
-              height="1em"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"></path>
-            </svg>
-          </div>
-        </div>
-        <div class={S.modalBody}>{children}</div>
-      </div>
-      <div onClick={handleClose} class={S.modalMask} />
-    </div>
+    <Dialog
+      PaperComponent={PaperComponent}
+      open={visible}
+      onClose={handleClose}
+      fullWidth
+      maxWidth="md"
+    >
+      <DialogTitle style={{ cursor: 'move' }} id="draggable-dialog-title">
+        搜索内容
+      </DialogTitle>
+      <DialogContent>{children}</DialogContent>
+    </Dialog>
   )
 }
 
