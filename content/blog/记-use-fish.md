@@ -49,6 +49,6 @@ chsh -s /usr/local/bin/fish
 fish_config
 ```
 
-![fish_config](https://tva1.sinaimg.cn/large/008eGmZEly1gmrnafd191j31r60u0tnr.jpg)
+![fish_config](https://i.loli.net/2021/09/15/6C23n4wyKQdFs9p.jpg)
 
 

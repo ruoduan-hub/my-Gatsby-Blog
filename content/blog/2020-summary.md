@@ -50,7 +50,7 @@ categories: 记
 
 - ### 前端微服务（微前端）：
 
-<img src="https://tva1.sinaimg.cn/large/008i3skNly1gsfbi41hbsj30dw0dw3yg.jpg" alt="qiankun" style="zoom:50%;" />
+<img src="https://i.loli.net/2021/09/15/FoBOdzlLbrIuWHj.jpg" alt="qiankun" style="zoom:50%;" />
 
 - `微服务`不是一个新的概念可以说是一个老生常谈的东西，在服务端或许都玩烂了；比较优秀的解决方案也比较多例如：`single-spa`、`qiankun` 等；
 
@@ -74,7 +74,7 @@ categories: 记
 
 - ### 跨平台解决方案：
 
-  <img src="https://tva1.sinaimg.cn/large/008i3skNly1gsfblewpsjj30u00azq33.jpg" alt="flutter" style="zoom:50%;" />
+  <img src="https://i.loli.net/2021/09/15/hFwclX1bQKEkZoU.jpg" alt="flutter" style="zoom:50%;" />
   
 - 今年是神奇的一年 华为发布`鸿蒙`、Google 的 `flutter`& `Fuchsia` 等、万物互联的时代可能马上在逼近。
 
@@ -89,7 +89,7 @@ categories: 记
 
 - ### 全端 App 的时代
 
-<img src="https://tva1.sinaimg.cn/large/008i3skNly1gsfbmvvuayj60m80cdglw02.jpg" alt="w11" style="zoom:50%;" />
+<img src="https://i.loli.net/2021/09/15/wtai8o1dCYcpXU2.jpg" alt="w11" style="zoom:50%;" />
 
 <br>
 
@@ -121,7 +121,7 @@ categories: 记
   
   <br>
   
-  <img src="https://tva1.sinaimg.cn/large/008i3skNly1gsfcqebhqoj30eu08cwes.jpg" alt="显卡" style="zoom:67%;" />
+  <img src="https://i.loli.net/2021/09/15/LoWMvblX9cKxBDk.jpg" alt="显卡" style="zoom:67%;" />
   
 - ### 房产&贷款
   
@@ -141,7 +141,7 @@ categories: 记
   
     <br>
 
-<img src="https://tva1.sinaimg.cn/large/008i3skNly1gsfdygswekj30dw0a13yn.jpg" alt="特斯拉" style="zoom:67%;" />
+<img src="https://sm.ms/image/1LMBAaHiPsZUIh6" alt="特斯拉" style="zoom:67%;" />
 
 ---
 

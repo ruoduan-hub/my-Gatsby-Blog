@@ -8,7 +8,7 @@ categories: 记
 
 ### macOS下蓝牙键盘(Keychron K2)连接失败的解决办法
 
-![图片](https://tva1.sinaimg.cn/large/0081Kckwly1glilh161fnj31400u0grn.jpg)
+![图片](https://i.loli.net/2021/09/15/2A1OzsP7k5XWLDB.jpg)
 
 #### 缘起
 

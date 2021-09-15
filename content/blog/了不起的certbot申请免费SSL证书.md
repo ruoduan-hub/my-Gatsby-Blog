@@ -9,7 +9,7 @@ categories: 记
 ## 缘起
 > 最近 阿里云的SSL 到期了。需要重新申请一个，调研后目前免费的就是`certbot`比较好用，特此记录 流程和坑
 
-![封面](https://tva1.sinaimg.cn/large/008eGmZEly1gmm1bjazwhj30d606ldg9.jpg)
+![封面](https://i.loli.net/2021/09/15/ewXvh4NmO6qYITn.jpg)
 
 [官网地址](https://certbot.eff.org/lets-encrypt/centosrhel7-nginx)
 

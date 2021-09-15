@@ -149,7 +149,7 @@ resolve: {
 
 - 这时候页面上的按钮就有样式了
 
-<img src="https://tva1.sinaimg.cn/large/008eGmZEly1gou13klu6mj30rq0on0ur.jpg" alt="demo-app" style="zoom:50%;" />
+<img src="https://i.loli.net/2021/09/15/aDgMb1OtRQFnm5W.jpg" alt="demo-app" style="zoom:50%;" />
 
 
 ## 安装 react-router
@@ -227,7 +227,7 @@ export default Layout;
 
 - 到这里 demo 就完成了
 
-<img src="https://tva1.sinaimg.cn/large/008eGmZEly1gou1fq0lkhj30rm0pndhx.jpg" alt="demo" style="zoom:50%;" />
+<img src="https://i.loli.net/2021/09/15/MFIDozpZK4ShnYC.jpg" alt="demo" style="zoom:50%;" />
 
 
 > [demo-源码](https://github.com/Chad97/vite-react-demo)
