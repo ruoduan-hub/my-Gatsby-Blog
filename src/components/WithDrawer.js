@@ -31,7 +31,7 @@ const WithDrawer = props => {
           <MenuIcon fontSize="2rem" />
         </span>
         <Drawer anchor="left" open={visible} onClose={onClose}>
-          <div style={{ padding: '0.5rem 1rem', minWidth: '230px' }}>
+          <div style={{ padding: '0.5rem 1rem', minWidth: '230px', maxWidth: '280px' }}>
             {props.data}
           </div>
         </Drawer>
