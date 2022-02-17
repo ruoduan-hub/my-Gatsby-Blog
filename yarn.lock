@@ -9514,8 +9514,8 @@ gatsby-plugin-utils@^0.9.0:
 
 gatsby-plugin-valine@^1.0.2:
   version "1.0.2"
-  resolved "https://registry.npm.taobao.org/gatsby-plugin-valine/download/gatsby-plugin-valine-1.0.2.tgz#09c4b1789e9e46f209af923f3db54f8bf5b5f005"
-  integrity sha1-CcSxeJ6eRvIJr5I/PbVPi/W18AU=
+  resolved "https://registry.npmmirror.com/gatsby-plugin-valine/-/gatsby-plugin-valine-1.0.2.tgz#09c4b1789e9e46f209af923f3db54f8bf5b5f005"
+  integrity sha512-K+lc8puRylCCab5q2w4NBsA4u7UCLt1crb6kpIZDveJ9/zc0j+Kc0N0uB7S6U+arw0w4AvRm6Pb9eGRwDdq/NA==
   dependencies:
     lodash "^4.17.15"
     react "^16.13.1"

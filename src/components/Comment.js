@@ -5,6 +5,7 @@ const CONFIG = {
   appId: process.env.VALINE_APPID,
   appKey: process.env.VALINE_APPKEY,
   avatar: 'wavatar',
+  serverURLs: 'https://lean.ruoduan.cn' // leanCloud API 自定义域名
 }
 
 const Comment = props => {
