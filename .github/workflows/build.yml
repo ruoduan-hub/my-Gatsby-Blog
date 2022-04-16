@@ -35,12 +35,12 @@ jobs:
     - name: Create .env.production
       run: echo -e "VALINE_APPID=${{secrets.VALINE_APPID}}\nVALINE_APPKEY=${{secrets.VALINE_APPKEY}}\nALGOLIA_APP_ID=${{secrets.ALGOLIA_APP_ID}}\nALGOLIA_API_KEY=${{secrets.ALGOLIA_API_KEY}}\nALGOLIA_INDEX_NAME=blog" > .env.production
     
-    - name: gatsby clean
-      run: yarn clean
-    
     - name: Install Dependencies
       run: yarn config set registry https://registry.yarnpkg.com | yarn install  --network-timeout 1000000
-  
+
+    - name: gatsby clean
+      run: yarn clean
+
     - name: Build
       run: yarn build
 
