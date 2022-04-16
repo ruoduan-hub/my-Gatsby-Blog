@@ -5,8 +5,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  > span {
+  > div {
     margin: 5px 0;
+    > a {
+      cursor: pointer;
+      width: 0.8rem;
+      margin-left: 0.5rem;
+      > svg {
+       width: 0.8rem;
+       
+      }
+    }
   }
 }
 
