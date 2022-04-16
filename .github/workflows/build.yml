@@ -18,7 +18,7 @@ jobs:
     - name: Install Node.js # 安装指定Node版本，使用actions/setup-node@v1
       uses: actions/setup-node@v1
       with:
-        node-version: '12.x'
+        node-version: '16.14.2'
 
     - name: Cache node modules #缓存依赖
       uses: actions/cache@v1
