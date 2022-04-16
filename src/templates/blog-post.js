@@ -17,7 +17,7 @@ import WithDrawer from '../components/WithDrawer'
 import Toc from '../components/Toc'
 import StateSearch from '../components/StateSearch'
 
-import S from './styles/post.module.scss'
+import * as S from './styles/post.module.scss'
 
 // portals 插槽 插到到DOM元素
 const PortalsRoot =
@@ -40,7 +40,6 @@ class BlogPostTemplate extends React.Component {
     edges.forEach(item => {
       _t[item.node.frontmatter.tags] = item.node.frontmatter.tags
     })
-    console.log(this.props.data.allMarkdownRemark, 1)
     this.setState({
       tabs: _t,
     })

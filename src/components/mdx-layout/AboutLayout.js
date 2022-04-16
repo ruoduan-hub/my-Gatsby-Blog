@@ -14,7 +14,7 @@ import MusicPlay from '../MusicPlay'
 import Footer from '../Footer'
 import StateSearch from '../StateSearch'
 
-import S from './about-layout.module.scss'
+import * as S from './about-layout.module.scss'
 
 const shortcodes = { Link }
 

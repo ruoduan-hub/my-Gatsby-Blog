@@ -1,5 +1,5 @@
 import React from 'react'
-import S from './styles/header.module.scss'
+import * as S from './styles/header.module.scss'
 import ThemeContext from '../context/ThemeContext'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'

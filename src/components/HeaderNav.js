@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect, useRef } from 'react'
 import { navigate } from 'gatsby'
 
-import S from './styles/header-nav.module.scss'
+import * as S from './styles/header-nav.module.scss'
 
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined'
 import ListAltIcon from '@material-ui/icons/ListAlt'
@@ -34,7 +34,7 @@ const HeaderNav = ({ isShow }) => {
   }, [isShow])
 
   const handleV = set => {
-    console.log(set)
+    // console.log(set)
   }
 
   return (

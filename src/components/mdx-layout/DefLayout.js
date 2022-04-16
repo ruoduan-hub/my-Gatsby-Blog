@@ -7,7 +7,7 @@ import ThemeContext from '../../context/ThemeContext'
 import Comment from '../Comment'
 import Footer from '../Footer'
 
-import S from './def-layout.module.scss'
+import * as S from './def-layout.module.scss'
 
 const shortcodes = { Link }
 

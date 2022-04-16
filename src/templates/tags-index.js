@@ -7,7 +7,7 @@ import { rhythm } from '../utils/typography'
 import './styles/index.scss'
 import QueueAnim from 'rc-queue-anim'
 
-import S from './styles/index.module.scss'
+import * as S from './styles/index.module.scss'
 class TagsIndex extends React.Component {
   render() {
     const { data } = this.props

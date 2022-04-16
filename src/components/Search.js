@@ -8,7 +8,7 @@ import {
   Hits,
   Highlight,
 } from 'react-instantsearch-dom'
-import S from './styles/search.module.scss'
+import * as S from './styles/search.module.scss'
 
 const searchClient = algoliasearch(
   'Y0TJ9RIKLI',

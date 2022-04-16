@@ -1,5 +1,5 @@
 import React from 'react'
-import S from './styles/footer.module.scss'
+import * as S from './styles/footer.module.scss'
 
 const STYLE = {
   position: 'absolute',

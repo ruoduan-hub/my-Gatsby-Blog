@@ -6,7 +6,7 @@ import 'rc-texty/assets/index.css'
 import TweenOne from 'rc-tween-one'
 import HeaderNav from './HeaderNav'
 
-import S from './styles/header.module.scss'
+import * as S from './styles/header.module.scss'
 
 const Header = ({ isHome, title, theme, imgSrc }) => {
   const { dark, toggleDark } = theme
