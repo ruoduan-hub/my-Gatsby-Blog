@@ -4,6 +4,9 @@
   "description": "my Gatsby and Blog .",
   "version": "0.1.0",
   "author": "Ruoduan.cn",
+  "engines": {
+    "node": ">= v16.14.2"
+  },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
