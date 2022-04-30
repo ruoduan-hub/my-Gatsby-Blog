@@ -7,4 +7,4 @@ interface Props {
   children: React.ReactElement
 }
 
-export const Modal: Reacr.FunctionComponent<Props>
+export const Modal: React.FunctionComponent<Props>

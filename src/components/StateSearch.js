@@ -22,4 +22,4 @@ const StateSearch = (props, ref) => {
   )
 }
 
-export default forwardRef(StateSearch)
+export default React.memo(forwardRef(StateSearch))

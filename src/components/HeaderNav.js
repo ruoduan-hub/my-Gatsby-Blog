@@ -10,6 +10,9 @@ import FindInPageOutlinedIcon from '@material-ui/icons/FindInPageOutlined'
 
 import StateSearch from './StateSearch'
 
+import { throttle, debounce } from '@src/utils/utils'
+
+
 const IconStyle = {
   style: {
     fontSize: '2.3rem',
@@ -39,11 +42,9 @@ const HeaderNav = ({ isShow }) => {
 
   return (
     <>
-      {' '}
-      <div style={{ height: '5rem' }}>
+      <div onClick={throttle(toggleShow, 700)} className={S.nav}>
         <div
-          style={{ opacity: Number(show), height: show ? '5rem' : '0' }}
-          onClick={toggleShow}
+          style={{ top: show ? '0' : '-6rem', }}
           className={S.navSticky}
         >
           <div className={S.menu}>

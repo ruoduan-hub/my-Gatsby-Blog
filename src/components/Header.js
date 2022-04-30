@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { Link } from 'gatsby'
 
 import Texty from 'rc-texty'
@@ -6,24 +6,30 @@ import 'rc-texty/assets/index.css'
 import TweenOne from 'rc-tween-one'
 import HeaderNav from './HeaderNav'
 
+import { throttle } from '@src/utils/utils'
+
 import * as S from './styles/header.module.scss'
 
 const Header = ({ isHome, title, theme, imgSrc }) => {
   const { dark, toggleDark } = theme
 
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(true)
+
+  const MouseOver =  useCallback(throttle((e) => {
+    setShow(true)
+    e.stopPropagation()
+  }, 1500), []) 
+
+  const MouseOut = useCallback(throttle((e) => {
+    setShow(false)
+    e.stopPropagation()
+  }, 1500))
 
   if (isHome) {
     return (
       <div
-        onMouseOver={e => {
-          e.stopPropagation()
-          setShow(true)
-        }}
-        onMouseOut={e => {
-          e.stopPropagation()
-          setShow(false)
-        }}
+        onMouseEnter={(e) => MouseOver(e)}
+        onMouseLeave={(e) => MouseOut(e)}
       >
         <div className={dark ? S.isDk : S.isWh}>
           <div

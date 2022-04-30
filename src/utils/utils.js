@@ -20,4 +20,38 @@ const openPage = uri => {
   window.open(uri)
 }
 
-export { randomColor, randomImg, openPage }
+/**
+ * 防抖函数
+ * @param fn  要执行的函数
+ * @param delay 延迟的时间
+ */
+const debounce = (fn, delay) => {
+  let timer = null
+  return (...rest) => {
+    clearTimeout(timer)
+    setTimeout(() => {
+      fn.apply(this, rest)
+    }, delay)
+  }
+}
+
+
+
+/**
+ * 节流函数
+ * @param fn  要执行的函数
+ * @param delay 延迟的时间
+ */
+const throttle = (fn, delay) => {
+  let lastTime = 0
+  return (...rest) => {
+    let nowTime = Date.now()
+    if (nowTime - lastTime > delay) {
+      fn.apply(this, rest)
+      lastTime = nowTime
+    }
+  }
+}
+
+
+export { randomColor, randomImg, openPage, debounce, throttle }

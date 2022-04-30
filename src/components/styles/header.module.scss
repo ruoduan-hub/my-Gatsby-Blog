@@ -47,12 +47,16 @@ $pd: 0 10rem;
 }
 
 // 首页配色
-.isDk{
-  @include publicHeader(rgba(33, 33, 41), rgba(254, 254, 254))
+.isDk {
+  @include publicHeader(rgba(33, 33, 41), rgba(254, 254, 254));
+  position: relative;
+  z-index: 1;
 }
 
 .isWh {
-  @include publicHeader(rgba(254, 254, 254), rgba(33, 33, 41))
+  @include publicHeader(rgba(254, 254, 254), rgba(33, 33, 41));
+  position: relative;
+  z-index: 1;
 }
 
 // post 页配色
@@ -72,7 +76,7 @@ $pd: 0 10rem;
 }
 
 .isMainWh {
-  background: rgb(33, 33, 41);
+  // background: rgb(33, 33, 41);
   @include pad;
 }
 

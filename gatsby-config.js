@@ -113,6 +113,15 @@ module.exports = {
             },
           },
           {
+            resolve: `gatsby-plugin-alias-imports`,
+            options: {
+              alias: {
+                "@src": "src",
+              },
+              extensions: []
+            }
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
