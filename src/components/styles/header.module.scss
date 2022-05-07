@@ -42,6 +42,9 @@ $pd: 0 10rem;
       font-weight: 900;
       font-size: 5rem;
       margin-top: 5rem;
+      @media (max-width: 40.625em) {
+        margin-top: 0rem;
+      }
     }
   }
 }
