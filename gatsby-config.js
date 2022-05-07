@@ -265,11 +265,26 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `layout404`,
+        path: `${__dirname}/src/pagex/404`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-page-creator",
+      options: {
+        name: `layout404`,
+        path: `${__dirname}/src/pagex/404`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
           default: require.resolve("./src/components/mdx-layout/DefLayout.js"),
           about: require.resolve("./src/components/mdx-layout/AboutLayout.js"),
+          layout404: require.resolve("./src/components/mdx-layout/Layout404.js"),
         },
       },
     },

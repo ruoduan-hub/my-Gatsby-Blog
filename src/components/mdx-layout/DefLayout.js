@@ -51,7 +51,6 @@ const DefLayout = ({ children, path }) => {
         return (
           <ThemeContext.Consumer>
             {theme => {
-              console.log(S, 11)
               return (
                 <div>
                   <Header theme={theme} isHome={true} title={'Other'} />

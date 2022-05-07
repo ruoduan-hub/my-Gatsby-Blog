@@ -21,7 +21,7 @@ class TagsIndex extends React.Component {
           title={`Article Tags`}
           count={posts?.length}
         >
-          <SEO title="所有文章" description="若端blog‘ Tags 文章" />
+          <SEO title="标签页" description="若端blog‘ Tags 文章" />
 
           <QueueAnim
             delay={300}

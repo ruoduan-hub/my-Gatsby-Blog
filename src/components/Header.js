@@ -10,7 +10,7 @@ import { throttle } from '@src/utils/utils'
 
 import * as S from './styles/header.module.scss'
 
-const Header = ({ isHome, title, theme, imgSrc }) => {
+const Header = ({ isHome, title, theme, imgSrc, message = 'Welcome to Ruoduan.com' }) => {
   const { dark, toggleDark } = theme
 
   const [show, setShow] = useState(true)
@@ -92,7 +92,7 @@ const Header = ({ isHome, title, theme, imgSrc }) => {
                   interval={30}
                   mode="sync"
                 >
-                  Welcome to Ruoduan.com
+                  {message}
                 </Texty>
               </Link>
             </h1>
