@@ -168,10 +168,10 @@ module.exports = {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
-                  title: edge.node.frontmatter.tags,
+                  title: edge.node.frontmatter.title,
                   author: 'Ruoduan',
                   description: edge.node.excerpt,
-                  categories: edge.node.frontmatter.date,
+                  categories: [edge.node.frontmatter.tags],
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
