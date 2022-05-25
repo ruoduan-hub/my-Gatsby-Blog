@@ -1,40 +1,17 @@
-.modalMask {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 100%;
-    background-color: #00000073;
-    z-index: 9;
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    
+    .DialogTitle {
+        cursor: move;
+    }
 }
 
-.modalRoot {
-    position: relative;
-    .modalContent {
-        z-index: 10;
-        padding: 1rem;
-        width: 80%;
-        max-width: calc(100vh - 32px);
-        position: absolute;
-        left: 50%;
-        height: 450px;
-        /* 偏移50% */
-        transform: translateX(-50%) translateY(-50%);
-        top: 60px;
-        background-color: #fff;
-        box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
-        overflow-y: auto;
 
-        .modalHeader {
-            display: flex;
-            justify-content: flex-end;
-
-            .close {
-                font-size: 20px;
-            }
-        }
-
-        .modalBody {}
+:global {
+    .MuiDialogContent-root {
+        padding: 0 24px 24px 8px !important;
     }
 }

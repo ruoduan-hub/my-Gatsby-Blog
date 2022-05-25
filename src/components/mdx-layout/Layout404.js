@@ -39,42 +39,42 @@ const Layout404 = ({ children, path }) => {
           }
         }
       `}
-      render={data => {
-        const {
-          github,
-          zhihu,
-          juejin,
-          email,
-          aboutLike,
-          skill,
-        } = data.site.siteMetadata.social
+      render={(data) => {
+        const { github, zhihu, juejin, email, aboutLike, skill } =
+          data.site.siteMetadata.social
         return (
-            <>
-                <SEO title="404" description="Not Found Page" />
-                <ThemeContext.Consumer>
-                    {theme => {
-                        return (
-                            <div>
-                                <Header theme={theme} isHome={true} title={'404'} message="Not Found Page" />
+          <>
+            <SEO title="404" description="Not Found Page" />
+            <ThemeContext.Consumer>
+              {(theme) => {
+                return (
+                  <div>
+                    <Header
+                      theme={theme}
+                      isHome={true}
+                      title={'404'}
+                      message="Not Found Page"
+                    />
 
-                                <div
-                                    className={`${S.main} ${theme.dark ? S.isMainDk : S.isMainWh
-                                        }`}
-                                >
-                                    <main>
-                                        <MDXProvider components={shortcodes}>
-                                            <body style={{ backgroundColor: 'inherit' }}>
-                                                {children}
-                                            </body>
-                                        </MDXProvider>
-                                    </main>
-                                </div>
-                                <Footer theme={theme} />
-                            </div>
-                        )
-                    }}
-                </ThemeContext.Consumer>
-            </>
+                    <div
+                      className={`${S.main} ${
+                        theme.dark ? S.isMainDk : S.isMainWh
+                      }`}
+                    >
+                      <main>
+                        <MDXProvider components={shortcodes}>
+                          <body style={{ backgroundColor: 'inherit' }}>
+                            {children}
+                          </body>
+                        </MDXProvider>
+                      </main>
+                    </div>
+                    <Footer theme={theme} />
+                  </div>
+                )
+              }}
+            </ThemeContext.Consumer>
+          </>
         )
       }}
     />

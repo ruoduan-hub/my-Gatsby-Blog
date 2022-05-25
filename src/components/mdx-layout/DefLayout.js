@@ -39,18 +39,12 @@ const DefLayout = ({ children, path }) => {
           }
         }
       `}
-      render={data => {
-        const {
-          github,
-          zhihu,
-          juejin,
-          email,
-          aboutLike,
-          skill,
-        } = data.site.siteMetadata.social
+      render={(data) => {
+        const { github, zhihu, juejin, email, aboutLike, skill } =
+          data.site.siteMetadata.social
         return (
           <ThemeContext.Consumer>
-            {theme => {
+            {(theme) => {
               return (
                 <div>
                   <Header theme={theme} isHome={true} title={'Other'} />

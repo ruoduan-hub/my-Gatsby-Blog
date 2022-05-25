@@ -24,9 +24,9 @@ const Layout = ({ children, title, isHome, count }) => {
           }
         }
       `}
-      render={data => (
+      render={(data) => (
         <ThemeContext.Consumer>
-          {theme => (
+          {(theme) => (
             <div style={STYLE} className={theme.dark ? 'dark' : 'light'}>
               <Header theme={theme} isHome={isHome} title={title} />
 

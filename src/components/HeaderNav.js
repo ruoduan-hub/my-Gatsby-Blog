@@ -12,7 +12,6 @@ import StateSearch from './StateSearch'
 
 import { throttle, debounce } from '@src/utils/utils'
 
-
 const IconStyle = {
   style: {
     fontSize: '2.3rem',
@@ -36,27 +35,24 @@ const HeaderNav = ({ isShow }) => {
     setShow(isShow)
   }, [isShow])
 
-  const handleV = set => {
+  const handleV = (set) => {
     // console.log(set)
   }
 
   return (
     <>
       <div onClick={throttle(toggleShow, 700)} className={S.nav}>
-        <div
-          style={{ top: show ? '0' : '-6rem', }}
-          className={S.navSticky}
-        >
+        <div style={{ top: show ? '0' : '-6rem' }} className={S.navSticky}>
           <div className={S.menu}>
-            <span onClick={e => handleNavigateTo(e, '/')}>
+            <span onClick={(e) => handleNavigateTo(e, '/')}>
               <HomeOutlinedIcon {...IconStyle} />
               <i>Home</i>
             </span>
-            <span onClick={e => handleNavigateTo(e, '/other')}>
+            <span onClick={(e) => handleNavigateTo(e, '/other')}>
               <ListAltIcon {...IconStyle} />
               <i>Other</i>
             </span>
-            <span onClick={e => handleNavigateTo(e, '/about')}>
+            <span onClick={(e) => handleNavigateTo(e, '/about')}>
               <PersonOutlineOutlinedIcon {...IconStyle} />
               <i>About</i>
             </span>

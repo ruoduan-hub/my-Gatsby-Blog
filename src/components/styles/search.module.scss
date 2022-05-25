@@ -1,5 +1,6 @@
 .searchContent {
     padding: 0.5rem 1rem;
+    min-height: 30rem;
 
     .hits {
         padding: 0 1rem;
@@ -27,7 +28,6 @@
     }
 
     .list {
-        max-height: 20rem;
         overflow-y: auto;
         display: flex;
         flex-direction: column;
@@ -49,4 +49,9 @@
     color: #888;
     font-size: 14px;
     margin-bottom: 0.5em;
+}
+
+.SearchBox {
+    position: sticky;
+    top: 0;
 }

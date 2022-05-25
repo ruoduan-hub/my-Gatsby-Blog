@@ -37,7 +37,10 @@ const Search = () => {
   return (
     <div className={S.searchContent}>
       <InstantSearch searchClient={searchClient} indexName="blog">
-        <SearchBox onChange={e => setKeyWord(e.target.value)} />
+        <SearchBox
+          className={S.SearchBox}
+          onChange={(e) => setKeyWord(e.target.value)}
+        />
 
         {!!keyWord.length && (
           <div className={S.list}>

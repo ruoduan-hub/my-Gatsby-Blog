@@ -11,11 +11,11 @@ import ThemeContext from './ThemeContext'
  * @param {any} props
  * @returns {node}
  */
-const TopLayout = props => {
+const TopLayout = (props) => {
   return (
     <ThemeContext.Consumer>
       {/* 使用 Context 配合 material-ui theme 切换深色模式 */}
-      {themeContext => {
+      {(themeContext) => {
         return (
           <React.Fragment>
             <Helmet>

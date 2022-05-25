@@ -10,27 +10,35 @@ import { throttle } from '@src/utils/utils'
 
 import * as S from './styles/header.module.scss'
 
-const Header = ({ isHome, title, theme, imgSrc, message = 'Welcome to Ruoduan.com' }) => {
+const Header = ({
+  isHome,
+  title,
+  theme,
+  imgSrc,
+  message = 'Welcome to Ruoduan.com',
+}) => {
   const { dark, toggleDark } = theme
 
   const [show, setShow] = useState(true)
 
-  const MouseOver =  useCallback(throttle((e) => {
-    setShow(true)
-    e.stopPropagation()
-  }, 1500), []) 
+  const MouseOver = useCallback(
+    throttle((e) => {
+      setShow(true)
+      e.stopPropagation()
+    }, 1500),
+    []
+  )
 
-  const MouseOut = useCallback(throttle((e) => {
-    setShow(false)
-    e.stopPropagation()
-  }, 1500))
+  const MouseOut = useCallback(
+    throttle((e) => {
+      setShow(false)
+      e.stopPropagation()
+    }, 1500)
+  )
 
   if (isHome) {
     return (
-      <div
-        onMouseEnter={(e) => MouseOver(e)}
-        onMouseLeave={(e) => MouseOut(e)}
-      >
+      <div onMouseEnter={(e) => MouseOver(e)} onMouseLeave={(e) => MouseOut(e)}>
         <div className={dark ? S.isDk : S.isWh}>
           <div
             style={
@@ -48,7 +56,7 @@ const Header = ({ isHome, title, theme, imgSrc, message = 'Welcome to Ruoduan.co
                   textDecoration: `none`,
                   color: `inherit`,
                 }}
-                onClick={e => e.stopPropagation()}
+                onClick={(e) => e.stopPropagation()}
                 to={`/`}
               >
                 <Texty
@@ -127,7 +135,7 @@ const Header = ({ isHome, title, theme, imgSrc, message = 'Welcome to Ruoduan.co
                 color: `inherit`,
                 fontSize: '3rem',
               }}
-              onClick={e => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()}
               to={`/`}
             >
               <Texty

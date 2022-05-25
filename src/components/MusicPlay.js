@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography'
 
 import { rhythm } from '../utils/typography'
 
-const MusicPlay = props => {
+const MusicPlay = (props) => {
   let [isShow, setShow] = useState('none')
 
   const actionShow = () => {
@@ -22,7 +22,7 @@ const MusicPlay = props => {
   }
 
   const keyDownClose = () => {
-    document.onkeydown = e => {
+    document.onkeydown = (e) => {
       if (Number(e.keyCode) === 27) {
         setShow('none')
       }
@@ -73,7 +73,7 @@ const MusicPlay = props => {
           {/* {typeof window !== "undefined" && (
           <Cplayer onPlay={onPlay} playlist={props.list} />
         )} */}
-          {music.site.siteMetadata.social.myMusicList.map(item => (
+          {music.site.siteMetadata.social.myMusicList.map((item) => (
             <Grid key={item.title} item xs={12} md={6}>
               <Card>
                 <CardHeader

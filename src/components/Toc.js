@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Toc = props => {
+const Toc = (props) => {
   const html = { __html: String(props.tocHtml) }
   return (
     <>

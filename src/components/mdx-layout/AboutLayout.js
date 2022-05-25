@@ -47,21 +47,15 @@ const AboutLayout = ({ children, path }) => {
           }
         }
       `}
-      render={data => {
-        const {
-          github,
-          zhihu,
-          juejin,
-          email,
-          aboutLike,
-          skill,
-        } = data.site.siteMetadata.social
+      render={(data) => {
+        const { github, zhihu, juejin, email, aboutLike, skill } =
+          data.site.siteMetadata.social
 
         return (
           <>
             <SEO title="关于我" description="👨🏻" />
             <ThemeContext.Consumer>
-              {theme => (
+              {(theme) => (
                 <div>
                   <Header
                     theme={theme}

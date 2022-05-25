@@ -16,7 +16,7 @@ const randomImg = {
 }
 
 // 打开网页
-const openPage = uri => {
+const openPage = (uri) => {
   window.open(uri)
 }
 
@@ -35,8 +35,6 @@ const debounce = (fn, delay) => {
   }
 }
 
-
-
 /**
  * 节流函数
  * @param fn  要执行的函数
@@ -52,6 +50,5 @@ const throttle = (fn, delay) => {
     }
   }
 }
-
 
 export { randomColor, randomImg, openPage, debounce, throttle }

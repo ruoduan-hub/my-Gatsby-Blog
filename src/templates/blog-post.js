@@ -37,7 +37,7 @@ class BlogPostTemplate extends React.Component {
     // 生成标签
     const edges = this.props.data.allMarkdownRemark.edges
     let _t = {}
-    edges.forEach(item => {
+    edges.forEach((item) => {
       _t[item.node.frontmatter.tags] = item.node.frontmatter.tags
     })
     this.setState({
@@ -119,7 +119,7 @@ class BlogPostTemplate extends React.Component {
                     <div className={S.leftToc}>
                       <h3>Tags</h3>
                       <div className={S.tabs}>
-                        {Object?.keys(this.state.tabs).map(key => (
+                        {Object?.keys(this.state.tabs).map((key) => (
                           <nav
                             key={key}
                             onClick={() => navigate(`/tags/${key}`)}
