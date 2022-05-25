@@ -37,8 +37,8 @@ const Modal = ({ visible, setVisible, children }) => {
       style={{ padding: '0 24px 24px 8px' }}
       fullScreen={isFullScreen}
     >
-      <div className={S.title}>
-        <DialogTitle className={S.DialogTitle} id="draggable-dialog-title">
+      <div className={S.title} id="draggable-dialog-title">
+        <DialogTitle className={S.DialogTitle}>
           搜索内容
         </DialogTitle>
         <div>
