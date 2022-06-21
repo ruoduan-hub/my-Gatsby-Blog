@@ -81,6 +81,8 @@ warn --- config file  - /root/verdaccio/config.yaml
 
 - 这个时候我们已经可以访问到了
 
+<h5 id="jump1">初始页面</h5>
+
 ![image-20220621144010607](https://i.postimg.cc/ZKbw758q/20220621144203.jpg)
 
 
@@ -120,15 +122,15 @@ touch .npmrc
 vim .npmrc
 ```
 
-
-
-👇🏻
-
-
+>  next
 
 ```shell
 registry = "http://47.114.102.165:20010/"
 ```
+
+
+
+[操作说明 依据初始页面的说明](#jump1)
 
 
 
@@ -139,6 +141,12 @@ registry = "http://47.114.102.165:20010/"
 - 用户配置文件：~/.npmrc
 - 全局配置文件：$PREFIX/etc/npmrc
 - npm 内置配置文件 /path/to/npm/npmrc
+
+
+
+
+
+
 
 
 
