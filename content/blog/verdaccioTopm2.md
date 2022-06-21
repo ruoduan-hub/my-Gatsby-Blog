@@ -107,5 +107,40 @@ nohup verdaccio >/root/verdaccio/verdaccio.log 2>&1 &
 
 
 
+---
+
+
+
+#### 发布一个测试包
+
+
+
+```shell
+touch .npmrc
+vim .npmrc
+```
+
+
+
+👇🏻
+
+
+
+```shell
+registry = "http://47.114.102.165:20010/"
+```
+
+
+
+#### .npmrc 配置文件的优先级
+
+
+- 项目配置文件: /project/.npmrc
+- 用户配置文件：~/.npmrc
+- 全局配置文件：$PREFIX/etc/npmrc
+- npm 内置配置文件 /path/to/npm/npmrc
+
+
+
 #### 完
 
