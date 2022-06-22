@@ -1,6 +1,6 @@
 ---
 title: Verdaccio搭建私有包管理库
-date: 2022-07-21
+date: 2022-06-21
 tags: Nodejs
 categories: Nodejs
 ---
