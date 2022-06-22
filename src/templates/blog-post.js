@@ -43,6 +43,12 @@ class BlogPostTemplate extends React.Component {
     this.setState({
       tabs: _t,
     })
+    const imgs = typeof document !== `undefined` ? Array.from(document.querySelectorAll('img')).slice(1) : []
+    imgs.forEach(item => {
+      item.addEventListener('click', () => {
+        window.open(item.src)
+      })
+    })
   }
   componentWillUnmount() {
     // 清除元素

@@ -83,7 +83,7 @@ warn --- config file  - /root/verdaccio/config.yaml
 
 <h5 id="jump1">初始页面</h5>
 
-![image-20220621144010607](https://i.postimg.cc/ZKbw758q/20220621144203.jpg)
+![img](https://i.postimg.cc/ZKbw758q/20220621144203.jpg)
 
 
 
