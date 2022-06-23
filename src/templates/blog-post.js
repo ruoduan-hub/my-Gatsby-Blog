@@ -23,6 +23,33 @@ import * as S from './styles/post.module.scss'
 const PortalsRoot =
   typeof document !== 'undefined' ? document.getElementById('___gatsby') : null
 
+const openImage = (e) => {
+  window?.open(e.target.src)
+}
+
+/**
+ * 
+ * @returns { 
+ *    start: () => void, 
+ *    stop: () => void 
+ *  }
+ */
+const openEventImg = () => {
+  const imgs = typeof document !== `undefined` ? Array.from(document.querySelectorAll('img')).slice(1) : []
+  return {
+    start: () => {
+      imgs.forEach(item => {
+        item.addEventListener('click', openImage)
+      })
+    },
+
+    stop: () => {
+      imgs.forEach(item => {
+        item.removeEventListener('click', openImage)
+      })
+    }
+  }
+}
 class BlogPostTemplate extends React.Component {
   state = {
     tabs: {},
@@ -43,16 +70,12 @@ class BlogPostTemplate extends React.Component {
     this.setState({
       tabs: _t,
     })
-    const imgs = typeof document !== `undefined` ? Array.from(document.querySelectorAll('img')).slice(1) : []
-    imgs.forEach(item => {
-      item.addEventListener('click', () => {
-        window.open(item.src)
-      })
-    })
+    openEventImg().start()
   }
   componentWillUnmount() {
     // 清除元素
     PortalsRoot.removeChild(this.el)
+    openEventImg().stop()
   }
 
   render() {
