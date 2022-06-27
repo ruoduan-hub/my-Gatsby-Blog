@@ -136,9 +136,206 @@ external :  申明外部依赖
 
 
 
-### Other
+### TypeScript
 
-> 一起其他依赖 EditorConfig \ ESLint \ 等 这里不表了
+- 更改 `src/index.js `  => `index.ts`
+
+- 安装依赖
+
+```shell
+yarn add -D @rollup/plugin-typescript typescript
+```
+
+- 增加配置文件 `tsconfig.json`
+
+```json
+{
+  "compilerOptions": {
+    "jsx": "preserve",
+    "jsxFactory": "VueTsxSupport",
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "experimentalDecorators": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.d.ts",
+  ],
+  "exclude": ["node_modules", "dist", "scripts"],
+}
+```
+
+
+
+- `rollup.config.js`
+
+```js
+...
+
+import ts from '@rollup/plugin-typescript';
+
+// ts
+const tsPlugin = ts({
+  tsconfig: getPath('./tsconfig.json'), // 导入本地ts配置
+  exclude: 'node_modules/**',
+});
+
+export default [
+  {
+    input: 'src/index.ts',
+    external: ['ms'],
+    output: [
+      { file: `${process.cwd()}/dist/cjs/index.js`, format: 'cjs' },
+      { file: `${process.cwd()}/dist/esm/index.js`, format: 'esm' },
+      { file: `${process.cwd()}/dist/index.js`, format: 'umd', name: pkg.name },
+    ],
+    plugins: [
+			...
+      tsPlugin,
+    ],
+  },
+];
+...
+
+
+```
+
+
+
+- `package.json`
+
+```json
+  "types": "src/index.d.ts",
+	
+```
+
+
+
+### ESLint
+
+> ESlint 还要安装 支持 TS 的插件
+
+- 安装依赖
+
+```shell
+yarn add -D @rollup/plugin-eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-plugin-prettier
+```
+
+
+
+- `rollup.config.js`
+
+```js
+...
+import eslint from '@rollup/plugin-eslint'; // eslint
+
+// eslint
+const esPlugin = eslint({
+  throwOnError: true,
+  include: ['src/**/*.ts'],
+  exclude: ['node_modules/**'],
+});
+
+
+export default [
+  {
+    ...
+    plugins: [
+			...
+      tsPlugin,
+    ],
+  },
+];
+
+```
+
+
+
+- `.eslintrc.js`
+
+```js
+module.exports = {
+  env: {
+    browser: true,
+    node: true,
+    amd: true,
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+  ],
+  parserOptions: {
+    ecmaVersion: 2015,
+    sourceType: 'module',
+  },
+  plugins: ['@typescript-eslint', 'prettier'],
+  rules: {
+    'prettier/prettier': 'warn',
+  },
+};
+
+```
+
+
+
+- `.eslintignore`
+
+```toml
+dist/*.js
+config/*.js
+scripts/*.js
+test/*.js
+```
+
+
+
+- `.prettierrc`
+
+```js
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "endOfLine": "auto",
+  "printWidth": 100,
+  "proseWrap": "never",
+  "arrowParens": "avoid",
+  "htmlWhitespaceSensitivity": "ignore",
+  "overrides": [
+    {
+      "files": ".prettierrc.js",
+      "options": {
+        "parser": "json"
+      }
+    }
+  ]
+}
+
+```
+
+
+
+- `package.json`
+
+> 添加脚本
+
+```json
+  "lint": "eslint --ext .js,.ts src",
+  "format": "eslint --ext .js,.ts src --fix",
+```
 
 
 
