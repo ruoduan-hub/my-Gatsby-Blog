@@ -32,7 +32,7 @@ categories:  Front-end
 
 > ps：这里有一个坑，就是使用 yarn 的话要多装一个 `postinstall-postinstall` [Why use postinstall-postinstall with Yarn](https://github.com/ds300/patch-package#why-use-postinstall-postinstall-with-yarn)
 
-大概意思就是说：大多数情况下在npm包 安装和卸载的时候 `patch-package ` 会通过 diff 去替换包内的源码，但是 yarn 只会在 安装的时候执行，卸载的时候不回去执行，使用 `postinstall-postinstall` 后确保卸载的时候也会执行.
+大概意思就是说：大多数情况下在npm包 安装和卸载的时候 `patch-package ` 会通过 diff 去替换包内的源码，但是 yarn 只会在 安装的时候执行，卸载的时候不会去执行，使用 `postinstall-postinstall` 后确保卸载的时候也会执行.
 
 
 ## 生成源码
@@ -71,14 +71,14 @@ npx patch-package package-name（npm版本 > 5.2）
 这样每次 install 完成后 执行 `patchinstall` 就会去替换源文件中的更改
 
 
-然后正常 体积 commit 就行 . 
+然后正常 提交 commit 就行 . 
 
 
 > 这样以后，其他人每次 install 后只要 执行下 patchinstall 就可以了
 
 **注意：**
 
-> patch-package 是锁定版本的，所以在 `package.json` 最后是吧版本锁定到当前 `patchinstall` 整个版本
+> patch-package 是锁定版本的，所以在 `package.json` 最后是把版本锁定到当前 `patchinstall` 的这个版本
 
 
 ### other 
