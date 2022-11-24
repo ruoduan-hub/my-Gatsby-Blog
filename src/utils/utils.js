@@ -51,4 +51,21 @@ const throttle = (fn, delay) => {
   }
 }
 
-export { randomColor, randomImg, openPage, debounce, throttle }
+/**
+ * @param {string} url
+ * @param {number} time=6000
+ * @returns {false | Promise}
+ */
+const isNetRes = async (url, time = 6000) => {
+  let controller = new AbortController()
+  setTimeout(() => {
+    controller.abort()
+  }, time)
+
+  return await fetch(url, {
+    mode: "no-cors",
+    signal: controller.signal,
+  }).catch(() => false)
+}
+
+export { randomColor, randomImg, openPage, debounce, throttle, isNetRes }
