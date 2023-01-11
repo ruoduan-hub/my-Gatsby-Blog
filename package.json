@@ -52,7 +52,7 @@
     "gatsby-remark-smartypants": "^5.12.1",
     "gatsby-remark-vscode": "^3.3.1",
     "gatsby-source-filesystem": "^4.12.1",
-    "gatsby-transformer-remark": "^5.12.1",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^4.12.1",
     "gitalk": "^1.6.2",
     "js-md5": "^0.7.3",
