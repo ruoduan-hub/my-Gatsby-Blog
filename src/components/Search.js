@@ -40,6 +40,7 @@ const Search = () => {
         <SearchBox
           className={S.SearchBox}
           onChange={(e) => setKeyWord(e.target.value)}
+          autoFocus
         />
 
         {!!keyWord.length && (
