@@ -77,31 +77,29 @@ class TagsIndex extends React.Component {
 
 export default TagsIndex
 
-export const pageQuery = graphql`
-  query ($tags: String!) {
-    site {
-      siteMetadata {
-        title
-      }
+export const pageQuery = graphql`query ($tags: String!) {
+  site {
+    siteMetadata {
+      title
     }
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tags] } } }
-    ) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "YYYY 年 MM 月 DD 日")
-            title
-            tags
-            categories
-          }
+  }
+  allMarkdownRemark(
+    sort: {frontmatter: {date: DESC}}
+    filter: {frontmatter: {tags: {in: [$tags]}}}
+  ) {
+    edges {
+      node {
+        excerpt
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "YYYY 年 MM 月 DD 日")
+          title
+          tags
+          categories
         }
       }
     }
   }
-`
+}`

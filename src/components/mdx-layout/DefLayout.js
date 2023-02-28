@@ -1,6 +1,6 @@
 import React from 'react'
 import { MDXProvider } from '@mdx-js/react'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, useStaticQuery, graphql } from 'gatsby'
 import Header from '../Header'
 import { Link } from 'gatsby'
 import ThemeContext from '../../context/ThemeContext'
@@ -13,10 +13,7 @@ const shortcodes = { Link }
 
 const DefLayout = ({ children, path }) => {
   // console.log(props)
-
-  return (
-    <StaticQuery
-      query={graphql`
+  const { github, zhihu, juejin, email, aboutLike, skill } = useStaticQuery(graphql`
         query {
           site {
             siteMetadata {
@@ -38,40 +35,34 @@ const DefLayout = ({ children, path }) => {
             }
           }
         }
-      `}
-      render={(data) => {
-        const { github, zhihu, juejin, email, aboutLike, skill } =
-          data.site.siteMetadata.social
+      `).site.siteMetadata.social;
+
+  return (
+    <ThemeContext.Consumer>
+      {(theme) => {
         return (
-          <ThemeContext.Consumer>
-            {(theme) => {
-              return (
-                <div>
-                  <Header theme={theme} isHome={true} title={'Other'} />
+          <div>
+            <Header theme={theme} isHome={true} title={'Other'} />
 
-                  <div
-                    className={`${S.main} ${
-                      theme.dark ? S.isMainDk : S.isMainWh
-                    }`}
-                  >
-                    <main>
-                      <MDXProvider components={shortcodes}>
-                        <body style={{ backgroundColor: 'inherit' }}>
-                          {children}
-                        </body>
-                      </MDXProvider>
+            <div
+              className={`${S.main} ${theme.dark ? S.isMainDk : S.isMainWh
+                }`}
+            >
+              <main>
+                <MDXProvider components={shortcodes}>
+                  <body style={{ backgroundColor: 'inherit' }}>
+                    {children}
+                  </body>
+                </MDXProvider>
 
-                      <Comment path={path} />
-                    </main>
-                  </div>
-                  <Footer theme={theme} />
-                </div>
-              )
-            }}
-          </ThemeContext.Consumer>
+                <Comment path={path} />
+              </main>
+            </div>
+            <Footer theme={theme} />
+          </div>
         )
       }}
-    />
+    </ThemeContext.Consumer>
   )
 }
 

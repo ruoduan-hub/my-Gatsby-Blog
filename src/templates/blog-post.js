@@ -225,44 +225,42 @@ class BlogPostTemplate extends React.Component {
 
 export default BlogPostTemplate
 
-export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-        gitalkConfig {
-          clientID
-          clientSecret
-        }
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "YYYY 年 MM 月 DD 日")
-            title
-            tags
-            categories
-          }
-        }
-      }
-    }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      excerpt(pruneLength: 160)
-      html
-      tableOfContents
-      frontmatter {
-        date(formatString: "YYYY 年 MM 月 DD 日")
-        title
-        tags
-        categories
+export const pageQuery = graphql`query BlogPostBySlug($slug: String!) {
+  site {
+    siteMetadata {
+      title
+      gitalkConfig {
+        clientID
+        clientSecret
       }
     }
   }
-`
+  allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+    edges {
+      node {
+        excerpt
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "YYYY 年 MM 月 DD 日")
+          title
+          tags
+          categories
+        }
+      }
+    }
+  }
+  markdownRemark(fields: {slug: {eq: $slug}}) {
+    id
+    excerpt(pruneLength: 160)
+    html
+    tableOfContents
+    frontmatter {
+      date(formatString: "YYYY 年 MM 月 DD 日")
+      title
+      tags
+      categories
+    }
+  }
+}`
