@@ -121,12 +121,12 @@ module.exports = {
               extensions: []
             }
           },
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 590,
-            },
-          },
+          // {
+          //   resolve: `gatsby-remark-images`,
+          //   options: {
+          //     maxWidth: 590,
+          //   },
+          // },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
@@ -179,26 +179,24 @@ module.exports = {
                 })
               })
             },
-            query: `
-              {
-                allMarkdownRemark(
-                  sort: { order: DESC, fields: [frontmatter___date] },
-                ) {
-                  edges {
-                    node {
-                      excerpt
-                      html
-                      fields { slug }
-                      frontmatter {
-                        title
-                        date(formatString: "YYYY年MM月DD日")
-                        tags
-                      }
-                    }
-                  }
-                }
-              }
-            `,
+            query: `{
+  allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+    edges {
+      node {
+        excerpt
+        html
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          date(formatString: "YYYY年MM月DD日")
+          tags
+        }
+      }
+    }
+  }
+}`,
             output: "/rss.xml",
             title: "若端的博客网站 - Ruoduan's blog site",
           },
@@ -281,10 +279,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        defaultLayouts: {
-          default: require.resolve("./src/components/mdx-layout/DefLayout.js"),
-          about: require.resolve("./src/components/mdx-layout/AboutLayout.js"),
-          layout404: require.resolve("./src/components/mdx-layout/Layout404.js"),
+        // defaultLayouts: {
+        //   default: require.resolve("./src/components/mdx-layout/DefLayout.js"),
+        //   about: require.resolve("./src/components/mdx-layout/AboutLayout.js"),
+        //   layout404: require.resolve("./src/components/mdx-layout/Layout404.js"),
+        // },
+        mdxOptions: {
+          remarkPlugins: [],
+          rehypePlugins: [],
         },
       },
     },

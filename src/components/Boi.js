@@ -7,7 +7,8 @@
 
 import React, { useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Image from 'gatsby-image'
+// import Image from 'gatsby-image'
+import { GatsbyImage } from "gatsby-plugin-image"
 import Button from '@material-ui/core/Button'
 import ButtonGroup from '@material-ui/core/ButtonGroup'
 import LocalCafeOutlinedIcon from '@material-ui/icons/LocalCafeOutlined'
@@ -17,16 +18,12 @@ const Bio = () => {
     query BioQuery {
       wechat: file(absolutePath: { regex: "/wechatImage.jpg/" }) {
         childImageSharp {
-          fixed {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(layout: FIXED)
         }
       }
       alipay: file(absolutePath: { regex: "/alipayImage.jpg/" }) {
         childImageSharp {
-          fixed {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(layout: FIXED)
         }
       }
       site {
@@ -88,7 +85,7 @@ const Bio = () => {
             </ButtonGroup>
 
             <div>
-              <Image
+              <GatsbyImage
                 fixed={qrcode}
                 style={{
                   maxHeight: '30rem',

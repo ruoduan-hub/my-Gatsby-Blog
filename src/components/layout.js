@@ -2,7 +2,7 @@ import React from 'react'
 import * as S from './styles/header.module.scss'
 import ThemeContext from '../context/ThemeContext'
 import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, useStaticQuery, graphql } from 'gatsby'
 import Header from './Header'
 import Footer from './Footer'
 
@@ -11,11 +11,9 @@ const STYLE = {
   minHeight: '100vh',
 }
 
-const Layout = ({ children, title, isHome, count }) => {
+const Layout = ({ children, isHome, count }) => {
   // const rootPath = `${__PATH_PREFIX__}/`
-  return (
-    <StaticQuery
-      query={graphql`
+  const { title } = useStaticQuery(graphql`
         query SiteTitleQuery {
           site {
             siteMetadata {
@@ -23,27 +21,26 @@ const Layout = ({ children, title, isHome, count }) => {
             }
           }
         }
-      `}
-      render={(data) => (
-        <ThemeContext.Consumer>
-          {(theme) => (
-            <div style={STYLE} className={theme.dark ? 'dark' : 'light'}>
-              <Header theme={theme} isHome={isHome} title={title} />
+      `).site.siteMetadata
+  
+  return (
+    <ThemeContext.Consumer>
+      {(theme) => (
+        <div style={STYLE} className={theme.dark ? 'dark' : 'light'}>
+          <Header theme={theme} isHome={isHome} title={title} />
 
-              <main
-                className={
-                  theme.dark ? S.isMainDk : isHome ? S.isMainWh : S.isMainWhPost
-                }
-              >
-                <div>{children}</div>
-              </main>
+          <main
+            className={
+              theme.dark ? S.isMainDk : isHome ? S.isMainWh : S.isMainWhPost
+            }
+          >
+            <div>{children}</div>
+          </main>
 
-              <Footer count={count} theme={theme} />
-            </div>
-          )}
-        </ThemeContext.Consumer>
+          <Footer count={count} theme={theme} />
+        </div>
       )}
-    />
+    </ThemeContext.Consumer>
   )
 }
 
