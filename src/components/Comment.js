@@ -14,7 +14,6 @@ const CONFIG = {
 const Comment = (props) => {
   // console.log(process.env.VALINE_APPID, 'evn')
   // console.log(process.env.VALINE_APPKEY, 'evn')
-  console.log('RECAPTCHA_KEY:', process?.env?.RECAPTCHA_KEY)
 
   const [token, setToken] = useState(null)
 
@@ -39,7 +38,7 @@ const Comment = (props) => {
           </MuiAlert>
 
           <ReCAPTCHA
-            sitekey={process?.env?.RECAPTCHA_KEY}
+            sitekey={process.env.RECAPTCHA_KEY}
             onChange={(value) => setToken(value)}
           />
         </div>
@@ -48,4 +47,4 @@ const Comment = (props) => {
   )
 }
 
-export default Comment
+export default React.memo(Comment)

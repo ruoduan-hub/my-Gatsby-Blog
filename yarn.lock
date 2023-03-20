@@ -6806,7 +6806,7 @@ gatsby-plugin-less@^6.12.1:
     "@babel/runtime" "^7.15.4"
     less-loader "^6.2.0"
 
-gatsby-plugin-manifest@^5.0.0-next:
+gatsby-plugin-manifest@^5.7.0:
   version "5.7.0"
   resolved "https://registry.npmmirror.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-5.7.0.tgz#254580801c8ad9081abed0a99115ed5fb931be62"
   integrity sha512-UiMKCqIOLUFvjJsny0wOMCQWs/Wx0BXmBTQ7Ck1HJsgvq4N3yKTlwAlgu1+eV/ExcpESKc6bncKZFUibwnE/QA==
@@ -6865,14 +6865,14 @@ gatsby-plugin-netlify-cms@^6.12.1:
     mini-css-extract-plugin "1.6.2"
     netlify-identity-widget "^1.9.2"
 
-gatsby-plugin-offline@^5.0.0-next:
-  version "5.25.0"
-  resolved "https://registry.npmmirror.com/gatsby-plugin-offline/-/gatsby-plugin-offline-5.25.0.tgz#d3ef5b5067f8d0b73b508221b858af8ced105e8c"
-  integrity sha512-WqAcnYvMpL1xwXF5Jf9BXTihLNktuqQHFUX0TPsQVJrmfjSNv4LxhgiWfeUuGiCO881EOHClXnBn6TqxIdS4EA==
+gatsby-plugin-offline@^6.7.0:
+  version "6.7.0"
+  resolved "https://registry.npmmirror.com/gatsby-plugin-offline/-/gatsby-plugin-offline-6.7.0.tgz#367c530699306e77dcd29eb35dbb160ee005a97a"
+  integrity sha512-hdSHOLMfd3bGwLt79sj6OsxSmZh49/lYP6T4uroUbPZO3d0suRlG30n0xjuTmF8dR06F14EHP0DaL2HDEfnVbQ==
   dependencies:
-    "@babel/runtime" "^7.15.4"
+    "@babel/runtime" "^7.20.13"
     cheerio "^1.0.0-rc.10"
-    gatsby-core-utils "^3.25.0"
+    gatsby-core-utils "^4.7.0"
     glob "^7.2.3"
     idb-keyval "^3.2.0"
     lodash "^4.17.21"
@@ -6913,14 +6913,14 @@ gatsby-plugin-react-helmet@^5.12.1:
   dependencies:
     "@babel/runtime" "^7.15.4"
 
-gatsby-plugin-sass@^5.23.0-next.0:
-  version "5.25.0"
-  resolved "https://registry.npmmirror.com/gatsby-plugin-sass/-/gatsby-plugin-sass-5.25.0.tgz#8aedec8d58f50826c1c25faa52f94175e69b8017"
-  integrity sha512-e+47Z24DI+Uh3KcUbj/WvTyH4ZPXcC4zlwqhzspv1Ye+xMS1ipTsIelvBuTwiiEWBs6cqdcYAPhn7HoXX/errw==
+gatsby-plugin-sass@^6.7.0:
+  version "6.7.0"
+  resolved "https://registry.npmmirror.com/gatsby-plugin-sass/-/gatsby-plugin-sass-6.7.0.tgz#37ea307dc0249cd5bbb1ba9d034001d884e0e16c"
+  integrity sha512-cNaAX1x6V3VoQxcncuX5Ibg22tmcwXCRbOGpAl+2Gg7RGc2FS4F0VboQ+8u5WPb1W6VFjWCCsnQy1g1Ad/b/MA==
   dependencies:
-    "@babel/runtime" "^7.15.4"
-    resolve-url-loader "^3.1.4"
-    sass-loader "^10.1.1"
+    "@babel/runtime" "^7.20.13"
+    resolve-url-loader "^3.1.5"
+    sass-loader "^10.4.1"
 
 gatsby-plugin-sentry@^1.0.1:
   version "1.0.1"
@@ -6929,7 +6929,7 @@ gatsby-plugin-sentry@^1.0.1:
   dependencies:
     "@sentry/browser" latest
 
-gatsby-plugin-sharp@^5.0.0-next:
+gatsby-plugin-sharp@^5.7.0:
   version "5.7.0"
   resolved "https://registry.npmmirror.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-5.7.0.tgz#70a87512ea89a3486ab6a0606e7804e62fafbae5"
   integrity sha512-LU1OwWwA3Drhk6BCAGN+OhoNJ0Gft/lz6vS/hPIS9stn41gCyOyN/qAMzgz2k4BYF5H9Dh+iRGBUrQ34b9wKcA==
@@ -7192,7 +7192,7 @@ gatsby-transformer-remark@^6.0.0:
     unist-util-select "^3.0.4"
     unist-util-visit "^2.0.3"
 
-gatsby-transformer-sharp@^5.0.0-next:
+gatsby-transformer-sharp@^5.7.0:
   version "5.7.0"
   resolved "https://registry.npmmirror.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-5.7.0.tgz#5f9a1da1490b1e4e7781119b2d58895a9caae299"
   integrity sha512-iFyN4qAz1oeeuEOh0qxGrqD80vIkrrzJkCaaeIKHx2FROvvU5PCcJGlvBICFtva+iuiMSafwFV1ZYixUBcKnWg==
@@ -7216,7 +7216,7 @@ gatsby-worker@^2.7.0:
     fs-extra "^11.1.0"
     signal-exit "^3.0.7"
 
-gatsby@^5.0.0-next.0:
+gatsby@^5.7.0:
   version "5.7.0"
   resolved "https://registry.npmmirror.com/gatsby/-/gatsby-5.7.0.tgz#6a5dc7870f49e8271e30bd878ef82f21dd47e6d4"
   integrity sha512-aFUC8a6rubY/2EwK62TS0ra/e9g3js+8N6A1wcO6xZ5zKHvcACFYnrh7h1FBA9FMyJNJiHSY3rTy3keP1vxLxQ==
@@ -12351,7 +12351,7 @@ resolve-from@^5.0.0:
   resolved "https://registry.npmmirror.com/resolve-from/-/resolve-from-5.0.0.tgz#c35225843df8f776df21c57557bc087e9dfdfc69"
   integrity sha512-qYg9KP24dD5qka9J47d0aVky0N+b4fTU89LN9iDnjB5waksiC49rvMB0PrUJQGoTmH50XPiqOvAjDfaijGxYZw==
 
-resolve-url-loader@^3.1.4:
+resolve-url-loader@^3.1.5:
   version "3.1.5"
   resolved "https://registry.npmmirror.com/resolve-url-loader/-/resolve-url-loader-3.1.5.tgz#1dce0847d4a2ef43c51f63c9fd30bf6dfbf26716"
   integrity sha512-mgFMCmrV/tA4738EsFmPFE5/MaqSgUMe8LK971kVEKA/RrNVb7+VqFsg/qmKyythf34eyq476qIobP/gfFBGSQ==
@@ -12559,7 +12559,7 @@ sanitize-html@^2.7.3:
     parse-srcset "^1.0.2"
     postcss "^8.3.11"
 
-sass-loader@^10.1.1:
+sass-loader@^10.4.1:
   version "10.4.1"
   resolved "https://registry.npmmirror.com/sass-loader/-/sass-loader-10.4.1.tgz#bea4e173ddf512c9d7f53e9ec686186146807cbf"
   integrity sha512-aX/iJZTTpNUNx/OSYzo2KsjIUQHqvWsAhhUijFjAPdZTEhstjZI9zTNvkTTwsx+uNUJqUwOw5gacxQMx4hJxGQ==
