@@ -14,6 +14,7 @@ const CONFIG = {
 const Comment = (props) => {
   // console.log(process.env.VALINE_APPID, 'evn')
   // console.log(process.env.VALINE_APPKEY, 'evn')
+  console.log('RECAPTCHA_KEY:', process?.env?.RECAPTCHA_KEY)
 
   const [token, setToken] = useState(null)
 
@@ -37,10 +38,10 @@ const Comment = (props) => {
             请连接外网，先进行Google人机验证在进行评论哦 ~
           </MuiAlert>
 
-          {/* <ReCAPTCHA
-            sitekey={process.env.RECAPTCHA_KEY}
+          <ReCAPTCHA
+            sitekey={process?.env?.RECAPTCHA_KEY}
             onChange={(value) => setToken(value)}
-          /> */}
+          />
         </div>
       )}
     </>
