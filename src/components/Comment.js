@@ -37,10 +37,10 @@ const Comment = (props) => {
             请连接外网，先进行Google人机验证在进行评论哦 ~
           </MuiAlert>
 
-          <ReCAPTCHA
+          {/* <ReCAPTCHA
             sitekey={process.env.RECAPTCHA_KEY}
             onChange={(value) => setToken(value)}
-          />
+          /> */}
         </div>
       )}
     </>
