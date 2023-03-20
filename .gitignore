@@ -80,3 +80,4 @@ yarn-error.log
 .yarn-integrity
 
 .idea
+.vercel
