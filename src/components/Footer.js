@@ -15,7 +15,11 @@ const Footer = ({ theme, count = 3 }) => {
       <div>
         <span>关注本站 RSS</span>
         {typeof window !== 'undefined' && (
-          <a target="_blank" href={`${window.location.origin}/rss.xml`} rel="noreferrer">
+          <a
+            target="_blank"
+            href={`${window.location.origin}/rss.xml`}
+            rel="noreferrer"
+          >
             <svg
               aria-hidden="true"
               focusable="false"
@@ -48,7 +52,8 @@ const Footer = ({ theme, count = 3 }) => {
         原创文章遵循
         <a
           target="_blank"
-          href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="noreferrer"
+          href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh"
+          rel="noreferrer"
         >
           CC BY-SA 4.0
         </a>

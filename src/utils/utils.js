@@ -63,7 +63,7 @@ const isNetRes = async (url, time = 6000) => {
   }, time)
 
   return await fetch(url, {
-    mode: "no-cors",
+    mode: 'no-cors',
     signal: controller.signal,
   }).catch(() => false)
 }

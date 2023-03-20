@@ -38,9 +38,7 @@ const Modal = ({ visible, setVisible, children }) => {
       fullScreen={isFullScreen}
     >
       <div className={S.title} id="draggable-dialog-title">
-        <DialogTitle className={S.DialogTitle}>
-          搜索内容
-        </DialogTitle>
+        <DialogTitle className={S.DialogTitle}>搜索内容</DialogTitle>
         <div>
           <IconButton
             onClick={() => setFullScreen(!isFullScreen)}

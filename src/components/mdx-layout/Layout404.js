@@ -14,29 +14,30 @@ const shortcodes = { Link }
 const Layout404 = ({ children, path }) => {
   // console.log(props)
 
-  const { github, zhihu, juejin, email, aboutLike, skill } = useStaticQuery(graphql`
-        query {
-          site {
-            siteMetadata {
-              title
-              author
-              description
-              gitalkConfig {
-                clientID
-                clientSecret
-              }
-              social {
-                github
-                zhihu
-                juejin
-                email
-                aboutLike
-                skill
-              }
+  const { github, zhihu, juejin, email, aboutLike, skill } =
+    useStaticQuery(graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+            author
+            description
+            gitalkConfig {
+              clientID
+              clientSecret
+            }
+            social {
+              github
+              zhihu
+              juejin
+              email
+              aboutLike
+              skill
             }
           }
         }
-      `).site.siteMetadata.social;
+      }
+    `).site.siteMetadata.social
 
   return (
     <>
@@ -53,8 +54,7 @@ const Layout404 = ({ children, path }) => {
               />
 
               <div
-                className={`${S.main} ${theme.dark ? S.isMainDk : S.isMainWh
-                  }`}
+                className={`${S.main} ${theme.dark ? S.isMainDk : S.isMainWh}`}
               >
                 <main>
                   <MDXProvider components={shortcodes}>

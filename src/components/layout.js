@@ -14,15 +14,15 @@ const STYLE = {
 const Layout = ({ children, isHome, count }) => {
   // const rootPath = `${__PATH_PREFIX__}/`
   const { title } = useStaticQuery(graphql`
-        query SiteTitleQuery {
-          site {
-            siteMetadata {
-              title
-            }
-          }
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
         }
-      `).site.siteMetadata
-  
+      }
+    }
+  `).site.siteMetadata
+
   return (
     <ThemeContext.Consumer>
       {(theme) => (

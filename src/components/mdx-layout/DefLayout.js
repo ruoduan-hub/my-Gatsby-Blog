@@ -13,29 +13,30 @@ const shortcodes = { Link }
 
 const DefLayout = ({ children, path }) => {
   // console.log(props)
-  const { github, zhihu, juejin, email, aboutLike, skill } = useStaticQuery(graphql`
-        query {
-          site {
-            siteMetadata {
-              title
-              author
-              description
-              gitalkConfig {
-                clientID
-                clientSecret
-              }
-              social {
-                github
-                zhihu
-                juejin
-                email
-                aboutLike
-                skill
-              }
+  const { github, zhihu, juejin, email, aboutLike, skill } =
+    useStaticQuery(graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+            author
+            description
+            gitalkConfig {
+              clientID
+              clientSecret
+            }
+            social {
+              github
+              zhihu
+              juejin
+              email
+              aboutLike
+              skill
             }
           }
         }
-      `).site.siteMetadata.social;
+      }
+    `).site.siteMetadata.social
 
   return (
     <ThemeContext.Consumer>
@@ -45,14 +46,11 @@ const DefLayout = ({ children, path }) => {
             <Header theme={theme} isHome={true} title={'Other'} />
 
             <div
-              className={`${S.main} ${theme.dark ? S.isMainDk : S.isMainWh
-                }`}
+              className={`${S.main} ${theme.dark ? S.isMainDk : S.isMainWh}`}
             >
               <main>
                 <MDXProvider components={shortcodes}>
-                  <body style={{ backgroundColor: 'inherit' }}>
-                    {children}
-                  </body>
+                  <body style={{ backgroundColor: 'inherit' }}>{children}</body>
                 </MDXProvider>
 
                 <Comment path={path} />

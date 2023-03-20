@@ -20,30 +20,30 @@ import * as S from './about-layout.module.scss'
 const shortcodes = { Link }
 
 const AboutLayout = ({ children, path }) => {
-
-  const { github, zhihu, juejin, email, aboutLike, skill } = useStaticQuery(graphql`
-        query {
-          site {
-            siteMetadata {
-              title
-              author
-              description
-              gitalkConfig {
-                clientID
-                clientSecret
-              }
-              social {
-                github
-                zhihu
-                juejin
-                email
-                aboutLike
-                skill
-              }
+  const { github, zhihu, juejin, email, aboutLike, skill } =
+    useStaticQuery(graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+            author
+            description
+            gitalkConfig {
+              clientID
+              clientSecret
+            }
+            social {
+              github
+              zhihu
+              juejin
+              email
+              aboutLike
+              skill
             }
           }
         }
-      `).site.siteMetadata.social;
+      }
+    `).site.siteMetadata.social
   return (
     <>
       <SEO title="关于我" description="👨🏻" />

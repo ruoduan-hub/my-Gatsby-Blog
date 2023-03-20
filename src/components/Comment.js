@@ -1,14 +1,14 @@
-import React, { useState } from "react"
-import Valine from "gatsby-plugin-valine"
-import ReCAPTCHA from "react-google-recaptcha"
-import MuiAlert from "@material-ui/lab/Alert"
+import React, { useState } from 'react'
+import Valine from 'gatsby-plugin-valine'
+import ReCAPTCHA from 'react-google-recaptcha'
+import MuiAlert from '@material-ui/lab/Alert'
 
 const CONFIG = {
   appId: process.env.VALINE_APPID,
   appKey: process.env.VALINE_APPKEY,
-  avatar: "wavatar",
+  avatar: 'wavatar',
   recordIP: true,
-  serverURLs: "https://lean.ruoduan.cn", // leanCloud API 自定义域名
+  serverURLs: 'https://lean.ruoduan.cn', // leanCloud API 自定义域名
 }
 
 const Comment = (props) => {
@@ -21,7 +21,7 @@ const Comment = (props) => {
     <>
       {token ? (
         <Valine
-          requiredFields={["nick", "mail"]}
+          requiredFields={['nick', 'mail']}
           enableQQ={true}
           {...CONFIG}
           path={props.path}
@@ -29,7 +29,7 @@ const Comment = (props) => {
       ) : (
         <div>
           <MuiAlert
-            style={{ marginBottom: "2rem" }}
+            style={{ marginBottom: '2rem' }}
             elevation={6}
             variant="outlined"
             severity="info"
