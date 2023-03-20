@@ -42,7 +42,7 @@ jobs:
     - name: Build
       run: yarn build
     
-    - name: Deploy to Vercel
-      uses: vercel/action@v21
+    - name: gatsby clean
+      uses: amondnet/vercel-action@v19
       with:
-        token: ${{ secrets.VERCEL_TOKEN }}
+        vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
