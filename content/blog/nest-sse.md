@@ -10,9 +10,9 @@ categories: Nodejs
 
 
 ## 缘起
-> 一些涉及到 “实时更新”的场景,使用 "websocket" | “SSE”，老生常谈的问题了，这篇文章会用一个通俗、简单的例子，来解释在 Nodejs 框架 "Nest" 中使用 SSE 技术完成状态同步。
+> 一些涉及到 “实时更新”的场景,使用 "websocket" | “SSE”，老生常谈的问题了，这篇文章会用一个通俗、简单的例子，来解释在 Nodejs 框架 "Nest" 中使用 SSE 技术完成状态同步。、
 
-![server-sent-events-with-v0-s00S-XOXy-QQgPFrZ5k7QZWPUtemVADc0XrZIQj-nMM](https://s2.loli.net/2023/07/26/G51SoC6cWKtjvE4.webp)
+
 
 [Demo 完整代码](https://github.com/ruoduan-hub/nest-demo-sse)
 
@@ -37,11 +37,11 @@ Connection: keep-alive
 
 **HTTP**
 
-![HTTP.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d63b59ab5ffd4dcdb700c2afe44fe429~tplv-k3u1fbpfcp-watermark.image?)
+![HTTP.png](https://s2.loli.net/2023/07/26/ZfHVM5iX8qzwD6P.png)
 
 **SSE**
 
-![SSE.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/96f877f48f424e5e99a21f0d24a0478d~tplv-k3u1fbpfcp-watermark.image?)
+![SSE.png](https://s2.loli.net/2023/07/26/8Yp4VobTfCPl5zQ.png)
 
 
 ### 场景
