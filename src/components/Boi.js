@@ -5,25 +5,48 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useState } from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 // import Image from 'gatsby-image'
-import { GatsbyImage } from 'gatsby-plugin-image'
-import Button from '@material-ui/core/Button'
-import ButtonGroup from '@material-ui/core/ButtonGroup'
-import LocalCafeOutlinedIcon from '@material-ui/icons/LocalCafeOutlined'
+import { GatsbyImage } from "gatsby-plugin-image"
+import Button from "@material-ui/core/Button"
+import { makeStyles } from "@material-ui/core/styles"
+import LocalCafeOutlinedIcon from "@material-ui/icons/LocalCafeOutlined"
+import Accordion from "@material-ui/core/Accordion"
+import AccordionSummary from "@material-ui/core/AccordionSummary"
+import AccordionDetails from "@material-ui/core/AccordionDetails"
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
+import Typography from "@material-ui/core/Typography"
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: "100%",
+    alignItems: 'center'
+  },
+  heading: {
+    fontSize: theme.typography.pxToRem(15),
+    flexBasis: "33.33%",
+    flexShrink: 0,
+  },
+  secondaryHeading: {
+    fontSize: theme.typography.pxToRem(15),
+    color: theme.palette.text.secondary,
+  },
+}))
 
 const Bio = () => {
+  const classes = useStyles()
+
   const data = useStaticQuery(graphql`
     query BioQuery {
-      wechat: file(absolutePath: { regex: "/wechatImage.jpg/" }) {
+      wechat: file(absolutePath: { regex: "/we_p.png/" }) {
         childImageSharp {
-          gatsbyImageData(layout: FIXED)
+          gatsbyImageData(width: 175, height: 175, layout: FIXED)
         }
       }
-      alipay: file(absolutePath: { regex: "/alipayImage.jpg/" }) {
+      alipay: file(absolutePath: { regex: "/al_p.png/" }) {
         childImageSharp {
-          gatsbyImageData(layout: FIXED)
+          gatsbyImageData(width: 175, height: 175, layout: FIXED)
         }
       }
       site {
@@ -36,66 +59,30 @@ const Bio = () => {
       }
     }
   `)
-  let [isShow, setShow] = useState(false)
-  let [qrcode, setQrcode] = useState(data.wechat.childImageSharp.fixed)
   return (
-    <>
-      <Button
-        variant="contained"
-        color="primary"
-        startIcon={<LocalCafeOutlinedIcon />}
-        onClick={() => setShow(!isShow)}
+    <Accordion>
+      <AccordionSummary
+        expandIcon={<ExpandMoreIcon />}
+        IconButtonProps={<LocalCafeOutlinedIcon />}
       >
-        打赏支持
-      </Button>
+        <Button
+          className={classes.heading}
+          startIcon={<LocalCafeOutlinedIcon />}
+        >
+          喝杯咖啡
+        </Button>
 
-      <div
-        style={{
-          margin: '2rem 0',
-          display: 'flex',
-        }}
+        <Typography className={classes.secondaryHeading}>
+          您的支持是我创作的最大动力
+        </Typography>
+      </AccordionSummary>
+      <AccordionDetails
+        style={{ display: "flex", justifyContent: "space-around" }}
       >
-        {isShow ? (
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              flexDirection: 'column',
-            }}
-          >
-            <p
-              style={{ fontFamily: 'Ma Shan Zheng,cursive', fontSize: '1rem' }}
-            >
-              {' '}
-              如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!{' '}
-            </p>
-            <ButtonGroup
-              variant="text"
-              color="primary"
-              style={{ margin: '2rem 0' }}
-            >
-              <Button
-                onClick={() => setQrcode(data.wechat.childImageSharp.fixed)}
-              >{`微  信`}</Button>
-              <Button
-                onClick={() => setQrcode(data.alipay.childImageSharp.fixed)}
-              >
-                支付宝
-              </Button>
-            </ButtonGroup>
-
-            <div>
-              <GatsbyImage
-                fixed={qrcode}
-                style={{
-                  maxHeight: '30rem',
-                }}
-              />
-            </div>
-          </div>
-        ) : null}
-      </div>
-    </>
+        <GatsbyImage image={data.wechat.childImageSharp.gatsbyImageData} />
+        <GatsbyImage image={data.alipay.childImageSharp.gatsbyImageData} />
+      </AccordionDetails>
+    </Accordion>
   )
 }
 
