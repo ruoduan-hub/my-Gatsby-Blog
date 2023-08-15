@@ -21,16 +21,22 @@ import Typography from "@material-ui/core/Typography"
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    alignItems: 'center'
   },
   heading: {
-    fontSize: theme.typography.pxToRem(15),
-    flexBasis: "33.33%",
-    flexShrink: 0,
+    fontSize: theme.typography.pxToRem(16),
+    paddingLeft: "3%",
   },
   secondaryHeading: {
-    fontSize: theme.typography.pxToRem(15),
+    fontSize: theme.typography.pxToRem(14),
     color: theme.palette.text.secondary,
+  },
+  details: {
+    display: "flex",
+    justifyContent: "space-around",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+      alignItems: "center",
+    },
   },
 }))
 
@@ -64,21 +70,11 @@ const Bio = () => {
       <AccordionSummary
         expandIcon={<ExpandMoreIcon />}
         IconButtonProps={<LocalCafeOutlinedIcon />}
+        className={classes.heading}
       >
-        <Button
-          className={classes.heading}
-          startIcon={<LocalCafeOutlinedIcon />}
-        >
-          喝杯咖啡
-        </Button>
-
-        <Typography className={classes.secondaryHeading}>
-          您的支持是我创作的最大动力
-        </Typography>
+        <Button startIcon={<LocalCafeOutlinedIcon />}>喝杯咖啡</Button>
       </AccordionSummary>
-      <AccordionDetails
-        style={{ display: "flex", justifyContent: "space-around" }}
-      >
+      <AccordionDetails className={classes.details}>
         <GatsbyImage image={data.wechat.childImageSharp.gatsbyImageData} />
         <GatsbyImage image={data.alipay.childImageSharp.gatsbyImageData} />
       </AccordionDetails>
