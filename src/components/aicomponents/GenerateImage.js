@@ -41,18 +41,11 @@ const GenerateImage = () => {
     n: 1,
     size: "512x512",
     content: "Cartoon boy avatar",
-    response_format: "b64_json",
+    response_format: "url",
   })
 
   const postImages = async () => {
-    const js = await fetch(`https://serverless.ruoduan.cn/api/create_image`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(form)
-    })
-
+    const js = await fetch(`https://serverless.ruoduan.cn/api/create_image?content=${form.content}&n=${form.n}&seze=${form.size}&response_format=${form.response_format}`)
     const res = await js.json()
     console.log(res)
   }
