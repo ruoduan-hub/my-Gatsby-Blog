@@ -18,7 +18,7 @@ const Comment = (props) => {
   const [token, setToken] = useState(null)
 
   return (
-    <>
+    <div style={{ marginTop: '20px' }}>
       {token ? (
         <Valine
           requiredFields={['nick', 'mail']}
@@ -43,7 +43,7 @@ const Comment = (props) => {
           />
         </div>
       )}
-    </>
+    </div>
   )
 }
 
