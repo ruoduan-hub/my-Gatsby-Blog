@@ -11084,6 +11084,11 @@ periscopic@^3.0.0:
     estree-walker "^3.0.0"
     is-reference "^3.0.0"
 
+photoswipe@^5.3.8:
+  version "5.3.8"
+  resolved "https://registry.npmjs.org/photoswipe/-/photoswipe-5.3.8.tgz#bea7db18e79383833f85c005b833da2029f0daee"
+  integrity sha512-4vTzOQt8GP4Chsm0s+8j2xDtVHAEN252PxrU12A1zXauNn0zD5HRHgjALKO2GKTyBnTnOrJUOxbV8LTrFIMrYw==
+
 physical-cpu-count@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmmirror.com/physical-cpu-count/-/physical-cpu-count-2.0.0.tgz#18de2f97e4bf7a9551ad7511942b5496f7aba660"
@@ -11916,6 +11921,11 @@ react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.npmmirror.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
+
+react-photoswipe-gallery@^2.2.7:
+  version "2.2.7"
+  resolved "https://registry.npmjs.org/react-photoswipe-gallery/-/react-photoswipe-gallery-2.2.7.tgz#27fd45e84a3b7f15846761830c600b2c719053e3"
+  integrity sha512-AEYNoL4/IIRosIUonn4haaFQNn1ui4vdVgAY9LHd/imVamNCkqUcyWeT6317UILp/yJI2gohsd3lWmcJEbjCag==
 
 react-refresh@^0.14.0:
   version "0.14.0"
