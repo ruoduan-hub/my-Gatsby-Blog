@@ -2,12 +2,11 @@ import AboutLayout from '../../components/mdx-layout/AboutLayout'
 
 <AboutLayout>
 # 关于我
+> 若端
+>
+> 我们逆水行舟，奋力向前，直至被推回到往昔岁月。
 
-> Name：若端
->
-> Source：上善若水，端人正士
->
-> Introduce：我该如何向你介绍我自己 ？
+---
 
 ### Github Langs
 
@@ -19,13 +18,18 @@ import AboutLayout from '../../components/mdx-layout/AboutLayout'
 
 ---
 
-## 技术栈
+<details open>
+  <summary>
+    <span>#点击展开折叠#</span>
+    ## 技术栈
+  </summary>
 
 - TypeScript & JavaScript
 - Python
 - HTML & CSS
 - Bash Script
 - C
+- Dart
 
 ## 框架类
 
@@ -34,39 +38,60 @@ import AboutLayout from '../../components/mdx-layout/AboutLayout'
 - React
 - Electron
 - Vue
+- GetX(Flutter)
+- WeChat
 
-## 其他框架
+### 其他框架
 
 - Django
 - Flask
+- Nestjs
+- Expressjs
+- Puppeteer
+- NumPy & Pandas
 
-# 关于本站
+### Other
 
-- 2018 年 7 月 使用`hexo`正式搭建博客
-- 2019 年 3 月 切换到`Vuepress`
-- 2020 年 2 月 使用 `Gatsby`
-- 2021 年 2 月 重构`Gatsby`博客 —— 你问你为什么要用 Gatsby ? 因为 「 了不起的盖茨比 」
-- 2021 年 3 月 增加部署评论管理后台 `Valine-Admin` —— <a href="https://admin.ruoduan.cn/" target="_blank">链接 🔗</a>
-- 2021 年 7 月 增加`Search`功能 —— `algolia`
-- 2021 年 7 月 增加错误监控功能 ——`Sentry`
-- 2021 年 8 月 移除 `antd` use `material-ui` & 优化 `typographyjs`
-  - 使用 `Context` 配合 `material-ui` ` theme` 切换深色模式
-- 2022 年 4 月 框架升级到V4版本，webpack 5、React18、等一些列插件更新，升级
-- 2022 年 11月 25 日 添加 Google-reCAPTCHA
+- Docker & Docker Compose
+- Linux Develop
+- Mysql、Sqlite、MongoDB
+- ServerLess(Nodejs & Python)
+</details>
+
+
+<details open>
+  <summary>
+  <span>#点击展开折叠#</span>
+  ## 关于本站
+  </summary>
+
+- 2023年09月09日 添加 OpenAI DALL.E 绘图工具 `/other` 路由下（预计对接音频处理和文件处理） 
+- 2022年11月25日 添加 Google-reCAPTCHA
+- 2022年4月 框架升级到V4版本，webpack 5、React18、等一些列插件更新，升级
+- 使用 `Context` 配合 `material-ui` ` theme` 切换深色模式
+- 2021年8月 移除 `antd` use `material-ui` & 优化 `typographyjs`
+- 2021年7月 增加错误监控功能 ——`Sentry`
+- 2021年7月 增加`Search`功能 —— `algolia`
+- 2021年3月 增加部署评论管理后台 `Valine-Admin` —— <a href="https://admin.ruoduan.cn/" target="_blank">链接 🔗</a>
+- 2021年2月 重构`Gatsby`博客 —— 你问你为什么要用 Gatsby ? 因为 「 了不起的盖茨比 」
+- 2020年2月 使用 `Gatsby`
+- 2019年3月 切换到`Vuepress`
+- 2018年7月 使用`hexo`正式搭建博客
+
 ---
 **大版本更新分割线**
+- 2023年4月 迁移部署
+  - 迁移阿里云服务器使用`Vercel` + `ServerLess` 部署
+  - Github-Actions CI 部署 迁移至 Vercel CI / CD
 
-- 2023 年 3 月 Gatsby 升级到 V5 版本 使用 Nodejs18 Build
-  - `Gatsby-plugin-*` 一些插件更新
+- 2023 年 3 月 重构Gatsby 升级到 V5 版本 使用 Nodejs18 Build
+  - `Gatsby-plugin-*` 一系列插件更新
   - mdxjs 升级使用 `WrappdeLayout`  写法
-
-
-
 
 ## 本站技术栈
 
 ```
-Gatsby
+Gatsby <他们都是烂人，那些混蛋加起来也不如你高贵>
 
 本站的 `暗色模式` 使用`Context`来管理全局状态和 `SCSS` 实现主题切换
 
@@ -102,6 +127,8 @@ Antd 后续准备移除，全手动造 ❎ [ 已移除 ]
 ... 一堆插件
 
 ```
+</details>
+
 
 - ### 下面是我的一些小曲儿，好久没练了； 还得练 还得练啊少年 ！
 </AboutLayout>
