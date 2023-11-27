@@ -30,6 +30,21 @@ module.exports = {
       ],
       myMusicList: [
         {
+          src: "../music/老男孩-(片段).m4a",
+          title: "老男孩 - ruoduan .cover 筷子兄弟",
+          description: "也许永远都不会跟她说出那句话 注定我要浪迹天涯 怎么能有牵挂。",
+        },
+        {
+          src: "../music/我是真的爱上你-cover王杰.m4a",
+          title: "我是真的爱上你 - ruoduan .cover 王杰",
+          description: "你有一双会说话的眼睛 你有善解人意的心。",
+        },
+        {
+          src: "../music/晴天-coverJay.m4a",
+          title: "晴天 - ruoduan .cover 周杰伦",
+          description: "刮风这天 我试过握着你手 但偏偏 雨渐渐 大到我看你不见。",
+        },
+        {
           src: "../music/玫瑰.mp3",
           title: "玫瑰 - ruoduan .cover 贰佰",
           description: "玫瑰你在哪里，你说你爱过的人都已经离去。",
