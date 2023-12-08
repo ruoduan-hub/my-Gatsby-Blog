@@ -10,7 +10,7 @@ import FindInPageOutlinedIcon from '@material-ui/icons/FindInPageOutlined'
 
 import StateSearch from './StateSearch'
 
-import { throttle, debounce } from '@src/utils/utils'
+import { throttle } from '@src/utils/utils'
 
 const IconStyle = {
   style: {
