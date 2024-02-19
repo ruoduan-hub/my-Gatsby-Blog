@@ -71,6 +71,7 @@ module.exports = {
           description: "我手一杯，品尝你的美，留下唇印的嘴",
         },
       ],
+      douyinlink: 'https://www.douyin.com/user/MS4wLjABAAAAfI8zw_OOjs8BNCdbVEjadn0mvib_BH8aZVlMEozfKt7tgufYvaxtzCT2Ik9OaYY_',
     },
   },
   plugins: [

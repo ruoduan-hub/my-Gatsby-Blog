@@ -54,7 +54,7 @@ const AboutLayout = ({ children, path }) => {
               theme={theme}
               isHome={false}
               title={'About'}
-              imgSrc="https://i.loli.net/2021/09/15/ahWet8mwBYiqoGO.jpg"
+              imgSrc="https://s2.loli.net/2024/02/19/NxsD9rMOvu1VS5g.jpg"
             />
 
             <StateSearch />
