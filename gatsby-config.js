@@ -8,6 +8,7 @@ module.exports = {
     description: `我的介绍...`,
     siteUrl: `https://www.ruoduan.cn`,
     keywords: "react, 前端, python, js, ",
+    avatarImg: '../images/avatarImg.jpg',
     gitalkConfig: {
       //github api
       clientID: "0dd4bb9091d53a67d59a",

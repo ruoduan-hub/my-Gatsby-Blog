@@ -20,18 +20,12 @@ import * as S from './about-layout.module.scss'
 const shortcodes = { Link }
 
 const AboutLayout = ({ children, path }) => {
-  const { github, zhihu, juejin, email, aboutLike, skill } =
+  const { avatarImg, social  }  =
     useStaticQuery(graphql`
       query {
         site {
           siteMetadata {
-            title
-            author
-            description
-            gitalkConfig {
-              clientID
-              clientSecret
-            }
+            avatarImg
             social {
               github
               zhihu
@@ -43,7 +37,9 @@ const AboutLayout = ({ children, path }) => {
           }
         }
       }
-    `).site.siteMetadata.social
+    `).site.siteMetadata;
+
+  const { github, zhihu, juejin, email, aboutLike, skill }  =  social
   return (
     <>
       <SEO title="关于我" description="👨🏻" />
@@ -54,7 +50,8 @@ const AboutLayout = ({ children, path }) => {
               theme={theme}
               isHome={false}
               title={'About'}
-              imgSrc="https://s2.loli.net/2024/02/19/NxsD9rMOvu1VS5g.jpg"
+              // imgSrc="https://s2.loli.net/2024/02/19/NxsD9rMOvu1VS5g.jpg"
+              imgSrc={avatarImg}
             />
 
             <StateSearch />
