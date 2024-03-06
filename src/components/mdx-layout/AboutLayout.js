@@ -10,12 +10,13 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline'
 import GitHubIcon from '@material-ui/icons/GitHub'
 
 import { openPage } from '../../utils/utils'
-import MusicPlay from '../MusicPlay'
 import Footer from '../Footer'
 import StateSearch from '../StateSearch'
 import SEO from '@src/components/SEO'
 
 import * as S from './about-layout.module.scss'
+
+const MusicPlayLazy = React.lazy(() => import('../MusicPlay.js'))
 
 const shortcodes = { Link }
 
@@ -115,7 +116,7 @@ const AboutLayout = ({ children, path }) => {
                   </div>
 
                   <div style={{ margin: '2em 0' }}>
-                    <MusicPlay />
+                    <MusicPlayLazy />
                   </div>
 
                   <Comment path={path} />

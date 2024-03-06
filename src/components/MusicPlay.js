@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Suspense } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline'
 
@@ -53,7 +53,7 @@ const MusicPlay = (props) => {
   `)
 
   return (
-    <div>
+    <Suspense>
       {/* eslint-disable */}
       <div
         role="button"
@@ -116,7 +116,7 @@ const MusicPlay = (props) => {
           ))}
         </Grid>
       </div>
-    </div>
+    </Suspense>
   )
 }
 
