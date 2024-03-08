@@ -248,7 +248,6 @@ module.exports = {
         head: false,
       },
     },
-    `gatsby-plugin-valine`,
     // 配置mdx
     {
       resolve: `gatsby-source-filesystem`,
