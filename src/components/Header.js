@@ -205,9 +205,9 @@ const Header = ({
           </h1>
           <div className={S.img}>
             {typeof imgSrc === "string" ? (
-              <img src={imgSrc} alt="img" />
+              <img className={S.propsImg} src={imgSrc} alt="img" />
             ) : (
-              <img src="https://source.unsplash.com/random/600x400" alt="img" />
+              <img className={S.randomImg} src="https://source.unsplash.com/random/600x400" alt="img" />
             )}
           </div>
         </div>

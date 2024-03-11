@@ -108,6 +108,16 @@ $pd: 0 10rem;
     height: 100%;
     object-fit: cover;
     object-position: center center;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: .6s;
+  }
+  .propsImg:hover {
+    filter: blur(3px);
+  }
+
+  .randomImg:hover {
+    filter: sepia(0.8)
   }
 }
 
