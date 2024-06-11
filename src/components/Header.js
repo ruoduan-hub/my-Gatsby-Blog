@@ -33,7 +33,7 @@ const LightToDark = ({ theme }) => {
   )
 }
 
-const Header = ({
+const Header = React.memo(({
   isHome,
   title,
   theme,
@@ -207,13 +207,13 @@ const Header = ({
             {typeof imgSrc === "string" ? (
               <img className={S.propsImg} src={imgSrc} alt="img" />
             ) : (
-              <img className={S.randomImg} src="https://source.unsplash.com/random/600x400" alt="img" />
+              <img className={S.randomImg} src="https://picsum.photos/600/400" alt="img" />
             )}
           </div>
         </div>
       </div>
     </div>
   )
-}
+})
 
 export default Header
