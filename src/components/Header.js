@@ -12,6 +12,39 @@ import Brightness5OutlinedIcon from "@material-ui/icons/Brightness5Outlined"
 
 import * as S from "./styles/header.module.scss"
 
+function getRandomKeyword() {
+  const keywords = [
+    "Nature",
+    "Landscape",
+    "Sunset",
+    "Sunrise",
+    "Mountains",
+    "Beach",
+    "Forest",
+    "Flowers",
+    "Wildlife",
+    "Cityscape",
+    "Architecture",
+    "Portrait",
+    "Abstract",
+    "Aerial",
+    "Macro",
+    "Minimalist",
+    "Vintage",
+    "Black and White",
+    "Travel",
+    "Adventure",
+    "Food",
+    "Fashion",
+    "Street Photography",
+    "Night Sky",
+    "Seasons",
+  ]
+
+  const randomIndex = Math.floor(Math.random() * keywords.length)
+  return keywords[randomIndex]
+}
+
 const LightToDark = ({ theme }) => {
   const { dark, toggleDark } = theme
 
@@ -207,7 +240,7 @@ const Header = React.memo(({
             {typeof imgSrc === "string" ? (
               <img className={S.propsImg} src={imgSrc} alt="img" />
             ) : (
-              <img className={S.randomImg} src="https://picsum.photos/600/400" alt="img" />
+              <img className={S.randomImg} src={`https://loremflickr.com/600/400/${getRandomKeyword()}`} alt="source loremflickr img" />
             )}
           </div>
         </div>
